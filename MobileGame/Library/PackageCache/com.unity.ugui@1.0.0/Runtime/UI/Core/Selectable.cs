@@ -605,10 +605,10 @@ namespace UnityEngine.UI
                     return SelectionState.Disabled;
                 if (isPointerDown)
                     return SelectionState.Pressed;
-                if (hasSelection)
-                    return SelectionState.Selected;
                 if (isPointerInside)
                     return SelectionState.Highlighted;
+                if (hasSelection)
+                    return SelectionState.Selected;
                 return SelectionState.Normal;
             }
         }

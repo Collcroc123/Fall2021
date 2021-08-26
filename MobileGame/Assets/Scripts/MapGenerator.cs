@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour
         else
         {
             randomizer = Random.Range(0, 7);
-            Invoke("Generate", 0.05f);
+            Invoke("Generate", Random.Range(0.05f, 1f));
         }
     }
 
@@ -42,22 +42,22 @@ public class MapGenerator : MonoBehaviour
             if (directionNum == 1)
             {
                 var newRoom = Instantiate(southRooms.array[randomizer], gameObject.transform.position, southRooms.array[randomizer].transform.rotation);
-                //newRoom.transform.parent = gameObject.transform;
+                newRoom.transform.parent = gameObject.transform;
             }
             else if (directionNum == 2)
             {
                 var newRoom = Instantiate(westRooms.array[randomizer], gameObject.transform.position, westRooms.array[randomizer].transform.rotation);
-                //newRoom.transform.parent = gameObject.transform;
+                newRoom.transform.parent = gameObject.transform;
             }
             else if (directionNum == 3)
             {
                 var newRoom = Instantiate(northRooms.array[randomizer], gameObject.transform.position, northRooms.array[randomizer].transform.rotation);
-                //newRoom.transform.parent = gameObject.transform;
+                newRoom.transform.parent = gameObject.transform;
             }
             else if (directionNum == 4)
             {
                 var newRoom = Instantiate(eastRooms.array[randomizer], gameObject.transform.position, eastRooms.array[randomizer].transform.rotation);
-                //newRoom.transform.parent = gameObject.transform;
+                newRoom.transform.parent = gameObject.transform;
             }
             
             totalRooms.value++;
@@ -71,11 +71,6 @@ public class MapGenerator : MonoBehaviour
         {
             Destroy(gameObject);
             print("Destroyed due to overlap with existing wall!");
-            /*WHERE YOU LEFT OFF LAST NIGHT:
-             Doors to the void generate when room cap is hit
-             Somehow you need to detect when the map is done generating
-             Find the doors to the void and use HoleFiller
-            */
         }
     }
 }

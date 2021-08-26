@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HoleFiller : MonoBehaviour
@@ -9,24 +6,38 @@ public class HoleFiller : MonoBehaviour
     public GameObject lDoor;
     public GameObject rDoor;
     private MeshFilter mesh;
+    private bool door = false;
 
     private void Start()
     {
         mesh = GetComponent<MeshFilter>();
+        Invoke("FillHole", 5f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Wall"))
+        if (other.CompareTag("Door"))
         {
-            print("Wall Detected!");
-            Destroy(lDoor);
-            Destroy(rDoor);
-            mesh.mesh = wall;
+            door = true;
         }
-        else if (other.CompareTag("Player"))
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Door"))
         {
-            
+            door = false;
+        }
+    }
+    
+    void FillHole()
+    {
+        if (!door)
+        { 
+            print("Hole Detected!"); 
+            Destroy(lDoor); 
+            Destroy(rDoor); 
+            mesh.mesh = wall;
         }
     }
 }
