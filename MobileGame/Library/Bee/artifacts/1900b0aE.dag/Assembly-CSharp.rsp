@@ -340,7 +340,6 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
-"Assets/HoleFiller.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Constant.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Enum.cs"
 "Assets/ProCore/ProGrids/Classes/pg_IconUtility.cs"
@@ -350,9 +349,11 @@
 "Assets/ProCore/ProGrids/MonoBehaviour/pg_IgnoreSnap.cs"
 "Assets/Scripts/ArrayData.cs"
 "Assets/Scripts/FloatData.cs"
+"Assets/Scripts/HoleFiller.cs"
 "Assets/Scripts/IntData.cs"
 "Assets/Scripts/IntResetter.cs"
 "Assets/Scripts/MapGenerator.cs"
+"Assets/Scripts/RoomLister.cs"
 "Assets/Scripts/StringData.cs"
 -langversion:8.0
 

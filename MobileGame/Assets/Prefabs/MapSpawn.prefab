@@ -50,6 +50,7 @@ MonoBehaviour:
   eastRooms: {fileID: 11400000, guid: 4f5a1b1f9442e144ea3638baa2ea683a, type: 2}
   southRooms: {fileID: 11400000, guid: b0d1c942624315e40a26e7bf39343687, type: 2}
   westRooms: {fileID: 11400000, guid: 5a604b582cad81a4d95067a259f5a881, type: 2}
+  manager: {fileID: 9021753149640543802, guid: 93c57008d9998774797472d62892a254, type: 3}
   isSpawn: 0
   totalRooms: {fileID: 11400000, guid: 29aea88f3cf49a54b9c1513cd9ec7979, type: 2}
 --- !u!65 &4329881873852256953
