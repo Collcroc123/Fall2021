@@ -342,7 +342,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
-"Assets/MapGenerator.cs"
+"Assets/HoleFiller.cs"
+"Assets/IntResetter.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Constant.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Enum.cs"
 "Assets/ProCore/ProGrids/Classes/pg_IconUtility.cs"
@@ -350,6 +351,12 @@
 "Assets/ProCore/ProGrids/Classes/pg_SceneMeshRender.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Util.cs"
 "Assets/ProCore/ProGrids/MonoBehaviour/pg_IgnoreSnap.cs"
+"Assets/Scripts/ArrayData.cs"
+"Assets/Scripts/FloatData.cs"
+"Assets/Scripts/IntData.cs"
+"Assets/Scripts/MapGenerator.cs"
+"Assets/Scripts/StringData.cs"
+"Assets/VoidFiller.cs"
 -langversion:8.0
 
 /deterministic
