@@ -1,16 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public HoleFiller door1, door2, door3, door4;
+    private bool roomComplete;
+    
+    
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -24,4 +27,20 @@ public class RoomManager : MonoBehaviour
      * Open all doors
      * Detect items left in rooms (icons on minimap)
      */
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !roomComplete)
+        {
+            door1.CloseDoor();
+            door2.CloseDoor();
+            door3.CloseDoor();
+            door4.CloseDoor();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
 }

@@ -18,26 +18,11 @@ public class HoleFiller : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Door")) { door = true; }
-
-        if (other.CompareTag("Player"))
-        {
-            print("Opened!");
-            //doorAnim.SetBool("Close", false);
-            doorAnim.SetBool("Open", true);
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Door")) { door = false; }
-        
-        if (other.CompareTag("Player"))
-        {
-            print("Closed!");
-            doorAnim.SetBool("Open", false);
-            //doorAnim.SetBool("Close", true);
-            
-        }
     }
 
     void FillHole()
@@ -49,5 +34,17 @@ public class HoleFiller : MonoBehaviour
             Destroy(rDoor); 
             mesh.mesh = wall;
         }
+    }
+
+    public void OpenDoor()
+    {
+        print("Opened!");
+        doorAnim.SetBool("Open", true);
+    }
+    
+    public void CloseDoor()
+    {
+        print("Closed!");
+        doorAnim.SetBool("Open", false);
     }
 }
