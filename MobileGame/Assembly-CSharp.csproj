@@ -296,6 +296,9 @@
      <Reference Include="Unity.Analytics.StandardEvents">
      <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
      </Reference>
+     <Reference Include="clipper_library">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.cinemachine@2.7.8/Runtime/ThirdParty/clipper_library.dll</HintPath>
+     </Reference>
      <Reference Include="Newtonsoft.Json">
      <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
      </Reference>
@@ -757,6 +760,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

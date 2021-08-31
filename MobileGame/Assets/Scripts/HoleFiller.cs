@@ -1,18 +1,31 @@
+using System;
 using UnityEngine;
 
 public class HoleFiller : MonoBehaviour
 {
+    private RoomLister list;
     public Mesh wall;
     public GameObject lDoor, rDoor;
     private MeshFilter mesh;
     private bool door = false;
     private Animator doorAnim;
+    private bool done; //If done=true, keeps door from constantly filling
 
     private void Start()
     {
+        list = GameObject.Find("/Manager").GetComponent<RoomLister>();
         doorAnim = GetComponent<Animator>();
         mesh = GetComponent<MeshFilter>();
-        Invoke("FillHole", 3f);
+        //Invoke(nameof(FillHole), 3f);
+    }
+
+    private void Update()
+    {
+        if (list.levelDone && !done)
+        {
+            done = true;
+            FillHole();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

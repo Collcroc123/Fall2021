@@ -309,6 +309,7 @@
 -r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.analytics@3.5.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
 -r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Editor.dll"
 -r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.analytics@3.5.3/Unity.Analytics.Tracker.dll"
+-r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.cinemachine@2.7.8/Runtime/ThirdParty/clipper_library.dll"
 -r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.collab-proxy@1.7.1/Lib/Editor/PlasticSCM/log4netPlastic.dll"
 -r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.collab-proxy@1.7.1/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"
 -r:"C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/PackageCache/com.unity.collab-proxy@1.7.1/Lib/Editor/PlasticSCM/unityplastic.dll"

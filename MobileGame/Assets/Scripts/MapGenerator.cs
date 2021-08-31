@@ -3,29 +3,28 @@ using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour
 {   //https://www.youtube.com/watch?v=qAf9axsyijY
-    public int directionNum; //1234 = SWNE
     public ArrayData northRooms, eastRooms, southRooms, westRooms;
-    public GameObject manager;
+    public IntData totalRooms;
+    public bool isSpawn, isEnd;
+    public int directionNum;
     private RoomLister allRooms;
     private bool roomGenerated;
     private int randomizer;
-    public bool isSpawn = false, isEnd = false;
-    public IntData totalRooms;
+
 
     void Start()
     {
-        manager = GameObject.Find("/Manager");
-        allRooms = manager.GetComponent<RoomLister>();
+        allRooms = GameObject.Find("/Manager").GetComponent<RoomLister>();
         if (isSpawn)
         {
             randomizer = Random.Range(1, 7);
             directionNum = Random.Range(1, 4);
-            Invoke("Generate", 0.05f);
+            Invoke(nameof(Generate), 0.05f);
         }
         else
         {
             randomizer = Random.Range(0, 7);
-            Invoke("Generate", Random.Range(0.05f, 1f));
+            Invoke(nameof(Generate), Random.Range(0.05f, 1f));
         }
     }
 
@@ -33,7 +32,6 @@ public class MapGenerator : MonoBehaviour
     {
         if (!roomGenerated && totalRooms.value < allRooms.array.Length)
         {
-            //if (totalRooms.value == allRooms.array.Length) { isEnd = true; }
             if (directionNum == 1)
             {
                 var newRoom = Instantiate(southRooms.array[randomizer], gameObject.transform.position, southRooms.array[randomizer].transform.rotation);

@@ -1,14 +1,13 @@
-using System;
 using UnityEngine;
 
 public class RoomLister : MonoBehaviour
 {
     public GameObject[] array;
-    public bool levelDone = false;
+    public bool levelDone;
 
     private void Start()
     {
-        Invoke("Ender", 10f);
+        Invoke(nameof(Ender), 10f);
     }
 
     void Ender()
