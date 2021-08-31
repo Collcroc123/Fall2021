@@ -7,11 +7,15 @@ public class RoomManager : MonoBehaviour
 {
     public HoleFiller door1, door2, door3, door4;
     private bool roomComplete;
+    public MapGenerator mapGen;
     
     
     void Start()
     {
-        
+        if (mapGen.isSpawn)
+        {
+            roomComplete = true;
+        }
     }
     
     void Update()
