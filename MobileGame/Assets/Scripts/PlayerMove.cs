@@ -1,23 +1,31 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 5f;
+    private CharacterController controller;
+    public float speed = 6f;
+    private PlayerControls input;
 
-    private void Start()
+    private void Awake()
     {
-        //controller = gameObject.AddComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        input = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        input.Enable();
+    }
+
+    private void OnDisable()
+    {
+        input.Disable();
     }
 
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        Vector2 stick = input.Player.Move.ReadValue<Vector2>();
+        Vector3 direction = new Vector3(stick.x, 0f, stick.y).normalized;
         if (direction.magnitude >= 0.1f)
         {
             controller.Move(direction * speed * Time.deltaTime);

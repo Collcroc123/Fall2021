@@ -10,21 +10,26 @@ public class MapGenerator : MonoBehaviour
     private RoomLister allRooms;
     private bool roomGenerated;
     private int randomizer;
-
-
+    
+    /* TO DO:
+    * Spawn enemies (random enemy, position, and amount)
+    * Spawn furniture and items
+    * Detect items left in rooms (icons on minimap)
+    */
+    
     void Start()
     {
         allRooms = GameObject.Find("/Manager").GetComponent<RoomLister>();
         if (isSpawn)
         {
-            randomizer = Random.Range(1, 7);
-            directionNum = Random.Range(1, 4);
+            randomizer = Random.Range(4, 7); //Always has 3 or 4 doors
+            directionNum = Random.Range(1, 4); //First room has no direction num, makes one up
             Invoke(nameof(Generate), 0.05f);
         }
         else
         {
             randomizer = Random.Range(0, 7);
-            Invoke(nameof(Generate), Random.Range(0.05f, 1f));
+            Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents rooms deleting each other at same time
         }
     }
 
@@ -70,7 +75,7 @@ public class MapGenerator : MonoBehaviour
     {
         if (other.CompareTag("Room") && other.GetComponent<MapGenerator>().roomGenerated)
         {
-            print("Destroyed due to overlap with existing wall!");
+            print("Destroyed due to overlap with existing room!");
             Destroy(gameObject);
         }
     }

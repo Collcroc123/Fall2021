@@ -98,6 +98,7 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -313,6 +314,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Tilemap.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Analytics.DataPrivacy.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TextMeshPro.Editor.ref.dll"
@@ -350,15 +352,17 @@
 "Assets/ProCore/ProGrids/Classes/pg_SceneMeshRender.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Util.cs"
 "Assets/ProCore/ProGrids/MonoBehaviour/pg_IgnoreSnap.cs"
-"Assets/RoomManager.cs"
 "Assets/Scripts/ArrayData.cs"
+"Assets/Scripts/CamMover.cs"
 "Assets/Scripts/FloatData.cs"
 "Assets/Scripts/HoleFiller.cs"
 "Assets/Scripts/IntData.cs"
 "Assets/Scripts/IntResetter.cs"
 "Assets/Scripts/MapGenerator.cs"
+"Assets/Scripts/PlayerControls.cs"
 "Assets/Scripts/PlayerMove.cs"
 "Assets/Scripts/RoomLister.cs"
+"Assets/Scripts/RoomManager.cs"
 "Assets/Scripts/StringData.cs"
 -langversion:8.0
 
