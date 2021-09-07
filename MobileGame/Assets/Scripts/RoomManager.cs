@@ -3,14 +3,14 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     public HoleFiller door1, door2, door3, door4; //All doors in the room
-    private MapGenerator mapGen; //Auto sets spawn room as complete
+    private RoomGenerator mapGen; //Auto sets spawn room as complete
     public bool roomComplete; //True if no enemies in room, controls door state
     private bool done; //If done=true, keeps door from ever opening or closing
 
     void Start()
     {
         roomComplete = true;
-        mapGen = GetComponentInParent<MapGenerator>();
+        mapGen = GetComponentInParent<RoomGenerator>();
         if (mapGen.isSpawn) { roomComplete = true; }
         Invoke(nameof(Open), 0.5f);
     }

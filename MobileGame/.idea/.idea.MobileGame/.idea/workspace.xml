@@ -29,6 +29,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RoomGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/OLDMAPGEN.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -103,6 +105,8 @@
       <workItem from="1630441387619" duration="901000" />
       <workItem from="1630442801572" duration="4706000" />
       <workItem from="1630600625475" duration="17893000" />
+      <workItem from="1631031357584" duration="3969000" />
+      <workItem from="1631046635343" duration="8445000" />
     </task>
     <servers />
   </component>

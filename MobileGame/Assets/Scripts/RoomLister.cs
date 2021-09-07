@@ -23,7 +23,7 @@ public class RoomLister : MonoBehaviour
                 yield return new WaitForSeconds(1f);
                 if (array[i] == null)
                 {
-                    array[i-1].GetComponent<MapGenerator>().isEnd = true;
+                    array[i-1].GetComponent<RoomGenerator>().isEnd = true;
                     levelDone = true;
                     print("Finished!");
                     genPanel.SetBool("LoadingDone", true);
@@ -33,7 +33,7 @@ public class RoomLister : MonoBehaviour
             }
             else if (i == array.Length-1 && array[i] != null)
             {
-                array[i].GetComponent<MapGenerator>().isEnd = true;
+                array[i].GetComponent<RoomGenerator>().isEnd = true;
                 levelDone = true;
                 print("Finished!");
                 genPanel.SetBool("LoadingDone", true);

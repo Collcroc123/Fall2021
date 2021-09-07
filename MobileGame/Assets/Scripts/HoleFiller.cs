@@ -15,20 +15,27 @@ public class HoleFiller : MonoBehaviour
     {
         door = false;
         done = false;
-        print("Number of doorways: ");
+        print("Number of doors pre-done: ");
         list = GameObject.Find("/Manager").GetComponent<RoomLister>();
         doorAnim = GetComponent<Animator>();
         mesh = GetComponent<MeshFilter>();
         boxCollider = GetComponent<BoxCollider>();
+        
     }
 
     private void Update()
     {
-        if (list.levelDone && !door && !done) //WHY IS IT NOT DETECTING NO DOOR SOMETIMES?
+        if (list.levelDone && !done) //WHY IS IT NOT DETECTING NO DOOR SOMETIMES?
         {
-            print("Number of doors done: ");
+            //boxCollider.enabled = false;
+            //boxCollider.enabled = true;
+            print("Number of doors post-done: ");
             done = true;
-            FillHole();
+            if (!door)
+            {
+                print("Doors filled: ");
+                FillHole();
+            }
         }
     }
 
@@ -49,7 +56,6 @@ public class HoleFiller : MonoBehaviour
 
     void FillHole()
     {
-        print("Holes Filled!"); 
         Destroy(lDoor); 
         Destroy(rDoor); 
         mesh.mesh = wall; 

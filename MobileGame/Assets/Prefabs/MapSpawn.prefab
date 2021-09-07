@@ -45,14 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260ae3dafa595534b91444d8a0ed31c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionNum: 0
   northRooms: {fileID: 11400000, guid: 72050a45e51dfb142b6dd294627ccfaa, type: 2}
   eastRooms: {fileID: 11400000, guid: 4f5a1b1f9442e144ea3638baa2ea683a, type: 2}
   southRooms: {fileID: 11400000, guid: b0d1c942624315e40a26e7bf39343687, type: 2}
   westRooms: {fileID: 11400000, guid: 5a604b582cad81a4d95067a259f5a881, type: 2}
-  manager: {fileID: 9021753149640543802, guid: 93c57008d9998774797472d62892a254, type: 3}
-  isSpawn: 0
   totalRooms: {fileID: 11400000, guid: 29aea88f3cf49a54b9c1513cd9ec7979, type: 2}
+  isSpawn: 0
+  isEnd: 0
+  directionNum: 0
 --- !u!65 &4329881873852256953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 0.25, y: 0.25, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4333172041481020667
 Rigidbody:
