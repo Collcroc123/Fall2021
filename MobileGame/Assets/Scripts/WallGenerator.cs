@@ -20,8 +20,8 @@ public class WallGenerator : MonoBehaviour
         {
             isDoor = true;
         }
-        //Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents walls deleting each other at same time
-        Invoke(nameof(Generate), 1f);
+        Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents walls deleting each other at same time
+        //Invoke(nameof(Generate), 0.5f);
     }
     
     

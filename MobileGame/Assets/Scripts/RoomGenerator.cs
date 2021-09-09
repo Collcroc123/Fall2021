@@ -21,8 +21,8 @@ public class RoomGenerator : MonoBehaviour
     void Start()
     {
         allRooms = GameObject.Find("/Manager").GetComponent<RoomLister>();
-        //Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents rooms deleting each other at same time
-        Invoke(nameof(Generate), 1f);
+        Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents rooms deleting each other at same time
+        //Invoke(nameof(Generate), 0.5f);
     }
 
     void Generate()

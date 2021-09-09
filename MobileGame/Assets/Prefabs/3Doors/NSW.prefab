@@ -198,6 +198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3769917885306616819}
     m_Modifications:
+    - target: {fileID: 4909899115698858847, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
+      propertyPath: directionNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5792902706265894872, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
       propertyPath: directionNum
       value: 3
@@ -275,6 +279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3769917885306616819}
     m_Modifications:
+    - target: {fileID: 4909899115698858847, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
+      propertyPath: directionNum
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5792902706265894872, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
       propertyPath: directionNum
       value: 1
@@ -353,6 +361,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3769917885306616819}
     m_Modifications:
     - target: {fileID: 3110314182849576319, guid: 9184140150ad7c5419e307dff3625a5b, type: 3}
+      propertyPath: directionNum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570589778269387256, guid: 9184140150ad7c5419e307dff3625a5b, type: 3}
       propertyPath: directionNum
       value: 4
       objectReference: {fileID: 0}
