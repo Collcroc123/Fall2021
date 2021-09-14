@@ -347,6 +347,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/AimMover.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Constant.cs"
 "Assets/ProCore/ProGrids/Classes/pg_Enum.cs"
 "Assets/ProCore/ProGrids/Classes/pg_IconUtility.cs"

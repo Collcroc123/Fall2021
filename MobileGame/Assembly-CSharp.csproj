@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CamMover.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
+     <Compile Include="Assets\AimMover.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <None Include="Assets\ProCore\ProGrids\About\pc_AboutEntry_ProGrids.txt" />
      <None Include="Assets\ProCore\ProGrids\Shader\pg_GridShader.shader" />
