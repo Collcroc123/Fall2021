@@ -11,19 +11,13 @@ public class WallGenerator : MonoBehaviour
     private Vector3 roomPos;
     private bool done;
     private bool isDoor, wallGenerated;
-    private RoomLister allRooms;
+    public ArrayData allRooms;
 
     void Start()
     {
-        allRooms = GameObject.Find("/Manager").GetComponent<RoomLister>();
-        if (Random.Range(0f, 1f) >= 0.5f)
-        {
-            isDoor = true;
-        }
+        if (Random.Range(0f, 1f) >= 0.5f) { isDoor = true; }
         Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents walls deleting each other at same time
-        //Invoke(nameof(Generate), 0.5f);
     }
-    
     
     void Generate()
     {

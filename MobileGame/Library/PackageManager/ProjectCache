@@ -841,6 +841,7 @@ m_ResolvedPackages:
     - 1.1.0-preview.1
     - 1.1.0-preview.2
     - 1.1.0-preview.3
+    - 1.1.1
     compatible:
     - 1.0.2
     - 1.1.0-pre.5
@@ -848,6 +849,7 @@ m_ResolvedPackages:
     - 1.1.0-preview.1
     - 1.1.0-preview.2
     - 1.1.0-preview.3
+    - 1.1.1
     verified: 1.0.2
   dependencies: []
   resolvedDependencies: []

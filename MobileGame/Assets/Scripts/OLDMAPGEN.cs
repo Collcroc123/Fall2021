@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,11 +7,12 @@ public class OLDMAPGEN : MonoBehaviour
     public IntData totalRooms;
     public bool isSpawn, isEnd;
     public int directionNum;
-    private RoomLister allRooms;
+    public ArrayData allRooms;
     private bool roomGenerated;
     private int randomizer;
     private Vector3 roomPos;
     private bool done;
+    public GameObject emptyRoom;
     
     /* TO DO:
     * Spawn enemies (random enemy, position, and amount)
@@ -23,7 +23,6 @@ public class OLDMAPGEN : MonoBehaviour
     void Start()
     {
         roomPos = gameObject.transform.position;
-        allRooms = GameObject.Find("/Manager").GetComponent<RoomLister>();
         if (isSpawn)
         {
             randomizer = Random.Range(4, 7); //Always has 3 or 4 doors
@@ -41,7 +40,12 @@ public class OLDMAPGEN : MonoBehaviour
     {
         if (!roomGenerated && totalRooms.value < allRooms.array.Length)
         {
-            if (directionNum == 1)
+            if (directionNum == 0)
+            {
+                var newRoom = Instantiate(emptyRoom, gameObject.transform.position, emptyRoom.transform.rotation);
+                newRoom.transform.parent = gameObject.transform;
+            }
+            else if (directionNum == 1)
             {
                 var newRoom = Instantiate(southRooms.array[randomizer], gameObject.transform.position, southRooms.array[randomizer].transform.rotation);
                 newRoom.transform.parent = gameObject.transform;

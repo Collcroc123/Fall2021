@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RoomLister : MonoBehaviour
 {
-    public GameObject[] array;
+    public ArrayData array;
     public bool levelDone;
     public Animator genPanel;
     public PlayerMove movement;
@@ -16,14 +16,14 @@ public class RoomLister : MonoBehaviour
     
     IEnumerator CheckDone()
     {
-        for (int i = 0; i < array.Length; i++)
+        for (int i = 0; i < array.array.Length; i++)
         {
-            if (array[i] == null)
+            if (array.array[i] == null)
             {
                 yield return new WaitForSeconds(1f);
-                if (array[i] == null)
+                if (array.array[i] == null)
                 {
-                    array[i-1].GetComponent<RoomGenerator>().isEnd = true;
+                    array.array[i-1].GetComponent<OLDMAPGEN>().isEnd = true;
                     levelDone = true;
                     print("Finished!");
                     genPanel.SetBool("LoadingDone", true);
@@ -31,23 +31,15 @@ public class RoomLister : MonoBehaviour
                     yield break;
                 }
             }
-            else if (i == array.Length-1 && array[i] != null)
+            else if (i == array.array.Length-1 && array.array[i] != null)
             {
-                array[i].GetComponent<RoomGenerator>().isEnd = true;
+                array.array[i].GetComponent<OLDMAPGEN>().isEnd = true;
                 levelDone = true;
                 print("Finished!");
                 genPanel.SetBool("LoadingDone", true);
                 movement.enabled = true;
                 yield break;
             }
-        }
-    }
-
-    public void Clear()
-    {
-        for (int i = 0; i < array.Length; i++)
-        {
-            array[i] = null;
         }
     }
 }

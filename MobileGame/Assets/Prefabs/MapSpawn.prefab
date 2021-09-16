@@ -54,6 +54,7 @@ MonoBehaviour:
   isSpawn: 0
   isEnd: 0
   directionNum: 0
+  allRooms: {fileID: 11400000, guid: cf90ae42cf2528547ab3a6fc360c61ff, type: 2}
 --- !u!114 &4804063220770036292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,9 +67,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260ae3dafa595534b91444d8a0ed31c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalRooms: {fileID: 11400000, guid: 29aea88f3cf49a54b9c1513cd9ec7979, type: 2}
+  totalRooms: {fileID: 0}
   isSpawn: 0
   isEnd: 0
+  allRooms: {fileID: 0}
   floor: {fileID: 0}
 --- !u!65 &4329881873852256953
 BoxCollider:

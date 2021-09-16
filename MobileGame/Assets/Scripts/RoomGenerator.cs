@@ -6,23 +6,15 @@ public class RoomGenerator : MonoBehaviour
 {   //https://www.youtube.com/watch?v=qAf9axsyijY
     public IntData totalRooms;
     public bool isSpawn, isEnd;
-    private RoomLister allRooms;
+    public ArrayData allRooms;
     private bool roomGenerated;
     private int randomizer;
     private bool done;
     public GameObject floor;
-    
-    /* TO DO:
-    * Spawn enemies (random enemy, position, and amount)
-    * Spawn furniture and items
-    * Detect items left in rooms (icons on minimap)
-    */
-    
+
     void Start()
     {
-        allRooms = GameObject.Find("/Manager").GetComponent<RoomLister>();
         Invoke(nameof(Generate), Random.Range(0.05f, 0.95f)); //prevents rooms deleting each other at same time
-        //Invoke(nameof(Generate), 0.5f);
     }
 
     void Generate()

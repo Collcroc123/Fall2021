@@ -26,7 +26,7 @@ public class HoleFiller : MonoBehaviour
 
     private void Update()
     {
-        if (list.levelDone && !done) //WHY IS IT NOT DETECTING NO DOOR SOMETIMES?
+        if (list.levelDone && !done)
         {
             StartCoroutine(waitDoor());
             print("Number of doors post-done: ");
