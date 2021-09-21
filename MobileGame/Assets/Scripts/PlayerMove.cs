@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private PlayerControls input;
     public float speed = 7f;
     public Toggle kbmToggle;
+    public ObjectData gun;
     
     private void Awake()
     {
@@ -33,6 +35,7 @@ public class PlayerMove : MonoBehaviour
         {
             aimStick.SetActive(false);
             moveStick.SetActive(false);
+            aim.transform.parent = null;
             Vector3 posi = new Vector3();
             if (Input.GetKey("w")) { posi.z = 1; }
             if (Input.GetKey("s")) { posi.z = -1; }
@@ -41,13 +44,15 @@ public class PlayerMove : MonoBehaviour
             if (!Input.anyKey) { posi = Vector3.zero; }
             controller.Move(posi * speed * Time.deltaTime);
             move.transform.localPosition = posi;
-            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            aim.transform.localPosition = new Vector3(Input.mousePosition.x, aim.transform.localPosition.y, Input.mousePosition.y);
+            //aim.transform.localPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, aim.transform.localPosition.y, Input.mousePosition.y));
+            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition); //(9.5f,0,5) full, (1.25f,0,3.75f) small
+            aim.transform.localPosition = new Vector3(Input.mousePosition.x/125, aim.transform.localPosition.y, Input.mousePosition.y/125) - new Vector3(1.25f,0,3.75f);
         }
         else if (!kbmToggle.isOn)
         {
             aimStick.SetActive(true);
             moveStick.SetActive(true);
+            aim.transform.parent = gameObject.transform;
             Vector2 stick = input.Player.Move.ReadValue<Vector2>();
             Vector3 direction = new Vector3(stick.x, 0f, stick.y);
             if (direction.magnitude >= 0.1f)
@@ -74,5 +79,17 @@ public class PlayerMove : MonoBehaviour
             sprite.transform.rotation = sprite.transform.rotation;
             aimSprite.enabled = false;
         }
+
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            StartCoroutine(shoot());
+        }
+    }
+
+    IEnumerator shoot()
+    {
+        Instantiate(gun.bullet, gameObject.transform.position, gameObject.transform.rotation);
+        //AddForce(gameObject.transform.forward * gun.bulletSpeed); WOWOWOW
+        yield return new WaitForSeconds(gun.fireRate);
     }
 }

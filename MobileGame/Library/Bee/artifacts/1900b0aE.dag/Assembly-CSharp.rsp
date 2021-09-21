@@ -367,6 +367,7 @@
 "Assets/Scripts/SimpleScripts/FloatData.cs"
 "Assets/Scripts/SimpleScripts/IntData.cs"
 "Assets/Scripts/SimpleScripts/IntResetter.cs"
+"Assets/Scripts/SimpleScripts/ObjectData.cs"
 "Assets/Scripts/SimpleScripts/StringData.cs"
 "Assets/Scripts/WallGenerator.cs"
 "Assets/TouchStick.cs"

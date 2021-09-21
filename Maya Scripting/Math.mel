@@ -1,25 +1,87 @@
 global float $result;
 
-global proc float Add(float $numbers[])
+global proc float Math(string $type, float $numbers[])
 {
-    float $sum = 0;
-    for($i=0; $i < size($numbers); $i++)
-    {
-        $sum += $numbers[$i];
-    }
+    float $sum = $numbers[0];
     
+    for($i=1; $i < size($numbers); $i++)
+    {
+        if($type == "Add" || $type == "Mean")
+        {
+            $sum += $numbers[$i];
+        }
+        else if($type == "Subtract")
+        {
+            $sum -= $numbers[$i];
+        }
+        else if($type == "Multiply")
+        {
+            $sum *= $numbers[$i];
+        }
+        else if($type == "Divide")
+        {
+            $sum /= $numbers[$i];
+        }
+    }
+    if($type == "Power")
+    {
+        for($i=1; $i < $numbers[1]; $i++)
+        {
+            $sum *= $numbers[0];
+        }
+    }
+    else if($type == "Mean")
+    {
+        $sum /= size($numbers);
+    }
+    else if($type == "Median")
+    {
+        $numbers = `sort $numbers`;
+        $sum = $numbers[size($numbers)/2];
+        if(size($numbers) % 2 == 0)
+        {
+            $sum += $numbers[(size($numbers)/2)-1];
+            $sum /= 2;
+        }
+    }
+    else if($type == "Mode")
+    {
+        $numbers = `sort $numbers`;
+        float $num[];
+        float $frequency[];
+        int $z = 0;
+        $num[0] = $numbers[0];
+        for($i=1; $i < size($numbers); $i++)
+        {
+            $frequency[$z] += 1;
+            if($numbers[$i] != $numbers[$i-1])
+            {
+                $z++;
+                $num[$z] = $numbers[$i];
+            }
+        }
+        $frequency[$z] += 1;
+        
+        for($i=0; $i < size($frequency); $i++)
+        {
+            print($num[$i] + ",");
+            print($frequency[$i] + "x | ");
+        }
+        int $highestnum = $num[0];
+        int $highestfreq = $frequency[0];
+        for($i=1; $i < size($frequency); $i++)
+        {
+            if($frequency[$i] > $highestfreq)
+            {
+                $highestfreq = $frequency[$i];
+                $highestnum = $num[$i];
+            }
+        }
+        $sum = $highestnum;
+    }
     return $sum;
 }
-
-global proc float Subtract(float $numbers[])
-{
-    float $sum = 0;
-    for($i=0; $i < size($numbers); $i++)
-    {
-        $sum += $numbers[$i];
-    }
-    
-    return $sum;
-}
-
-Add({3,4,5,6,7});
+//Add, Subtract, Multiply, Divide, Power, Mean, Median, Mode
+//2nd number is Power, numbers after are ignored
+//Mode returns smallest of numbers if multiple have same frequency
+Math("Mode", {3,5,3,4,4,5,6,6,6,7,3,5,6,3,5,2,5,1});

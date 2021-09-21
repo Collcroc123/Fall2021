@@ -1,0 +1,37 @@
+// a procedure to be called when the text 
+// value changes in the textField
+global proc textValueChanged(string $control)
+{
+    // query the value from the float field
+	$value = `textField -query -value $control`;
+				
+	// print value
+	print("newValue="+ $value +"\n");
+}
+
+proc func()
+{
+	print("button clicked\n");
+}
+
+{
+	window;
+		columnLayout;
+	
+			// create the text field
+			$field = `textField`;
+			button -label "+" -command "func";
+			button -label "-" -command "func";
+			button -label "x" -command "func";
+			button -label "/" -command "func";
+			button -label "^" -command "func";
+	
+			// sets the command to call when the text changes.
+			// Note that we add the name of the control directly
+			// into the command string. This negates the need 
+			// for a global variable to store the textField name
+			textField -edit 
+			    -changeCommand ("textValueChanged("+$field+")")
+			    $field;
+	showWindow;
+}
