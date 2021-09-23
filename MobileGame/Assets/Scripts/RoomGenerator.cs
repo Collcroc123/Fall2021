@@ -39,7 +39,7 @@ public class RoomGenerator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Room") && other.GetComponent<RoomGenerator>().roomGenerated)
+        if (other.CompareTag("Room") && other.GetComponent<RoomGenerator>().roomGenerated) //other.CompareTag(null) == false && 
         {
             print("Destroyed due to overlap with existing room!");
             Destroy(gameObject);

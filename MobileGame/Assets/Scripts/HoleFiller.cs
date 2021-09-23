@@ -64,15 +64,9 @@ public class HoleFiller : MonoBehaviour
         boxCollider.enabled = false;
     }
 
-    public void OpenDoor()
-    {
-        doorAnim.SetBool("Open", true);
-    }
+    public void OpenDoor() { doorAnim.SetBool("Open", true); }
     
-    public void CloseDoor()
-    {
-        doorAnim.SetBool("Open", false);
-    }
+    public void CloseDoor() { doorAnim.SetBool("Open", false); }
 
     IEnumerator waitDoor()
     {

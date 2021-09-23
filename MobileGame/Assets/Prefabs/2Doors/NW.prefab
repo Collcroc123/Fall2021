@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e1bb102614fde41b66ce487ef56781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomFade: {fileID: 3068898401420667941}
   door1: {fileID: 2626477802858940822}
   door2: {fileID: 3641937727049013975}
   door3: {fileID: 0}
@@ -127,6 +128,11 @@ PrefabInstance:
 --- !u!4 &1214322557885420619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3731654499107793007, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+  m_PrefabInstance: {fileID: 2527465040384097316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3068898401420667941 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 686155480673718273, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
   m_PrefabInstance: {fileID: 2527465040384097316}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3627850004051729391

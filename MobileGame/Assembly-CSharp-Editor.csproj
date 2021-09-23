@@ -788,6 +788,12 @@
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
+     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">

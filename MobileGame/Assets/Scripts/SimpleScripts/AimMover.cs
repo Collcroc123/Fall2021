@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AimMover : MonoBehaviour
 {
-    public GameObject stick;
-
-    void FixedUpdate()
+    void Update()
     {
-        gameObject.transform.localPosition = new Vector3(stick.transform.localPosition.x * 0.1f, gameObject.transform.localPosition.y, stick.transform.localPosition.y * 0.1f);
+        if (Gamepad.current != null)
+        {
+            gameObject.transform.localPosition = new Vector3(Gamepad.current.rightStick.x.ReadValue() * 6f, gameObject.transform.localPosition.y, Gamepad.current.rightStick.y.ReadValue() * 6f);
+        }
     }
 }

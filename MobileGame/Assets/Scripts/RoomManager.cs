@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    public Animator roomFade;
     public HoleFiller door1, door2, door3, door4; //All doors in the room
     private OLDMAPGEN mapGen; //Auto sets spawn room as complete
     public bool roomComplete; //True if no enemies in room, controls door state
@@ -44,6 +45,7 @@ public class RoomManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            roomFade.SetBool("Enter", true);
             if (!roomComplete)
             {
                 Close();
@@ -53,7 +55,11 @@ public class RoomManager : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Player"))
+        {
+            roomFade.SetBool("Enter", false);
+        } 
+        else if (other.CompareTag("Enemy"))
         {
             roomComplete = true;
         }

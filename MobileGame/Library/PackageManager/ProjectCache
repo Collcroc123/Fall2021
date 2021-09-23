@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637662103352826030
-    m_Hash: 868441741
+      ticks: 637680213089930714
+    m_Hash: 3380627974
   m_LockFileStatus:
     m_FilePath: C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637662103352943496
-    m_Hash: 1636394570
+      ticks: 637680213090031612
+    m_Hash: 3873214183
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -231,6 +231,67 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 3.7.1
+    nextVersion: 
+- packageId: com.unity.ai.navigation@1.0.0-exp.4
+  testable: 0
+  isDirectDependency: 1
+  version: 1.0.0-exp.4
+  source: 1
+  resolvedPath: C:\Users\10840430\Documents\GitHub\Fall2021\MobileGame\Library\PackageCache\com.unity.ai.navigation@1.0.0-exp.4
+  assetPath: Packages/com.unity.ai.navigation
+  name: com.unity.ai.navigation
+  displayName: AI Navigation
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: High-level NavMesh components for building and using NavMeshes at
+    runtime and at edit time.
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 1.0.0-exp.1
+    - 1.0.0-exp.2
+    - 1.0.0-exp.3
+    - 1.0.0-exp.4
+    compatible:
+    - 1.0.0-exp.1
+    - 1.0.0-exp.2
+    - 1.0.0-exp.3
+    - 1.0.0-exp.4
+    verified: 
+  dependencies:
+  - name: com.unity.modules.ai
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ai
+    version: 1.0.0
+  keywords: []
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637631812400000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.ai.navigation.git
+    revision: e38a28933e4513afa2b6084c2948852bd9daad56
+    path: 
+  unityLifecycle:
+    version: 
     nextVersion: 
 - packageId: com.unity.analytics@3.5.3
   testable: 0
@@ -502,6 +563,8 @@ m_ResolvedPackages:
     - 1.7.1
     - 1.8.0
     - 1.9.0
+    - 1.10.2
+    - 1.11.2
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -516,6 +579,8 @@ m_ResolvedPackages:
     - 1.7.1
     - 1.8.0
     - 1.9.0
+    - 1.10.2
+    - 1.11.2
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15

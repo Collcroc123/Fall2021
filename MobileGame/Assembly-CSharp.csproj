@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\SimpleScripts\AimMover.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\ProCore\ProGrids\MonoBehaviour\pg_IgnoreSnap.cs" />
+     <Compile Include="Assets\Scripts\SimpleScripts\ObjectData.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\IntData.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\ArrayData.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\StringData.cs" />
@@ -64,7 +65,7 @@
      <Compile Include="Assets\Scripts\SimpleScripts\CamMover.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\ObjectData.cs" />
+     <Compile Include="Assets\Scripts\SimpleScripts\BoolData.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <None Include="Assets\ProCore\ProGrids\About\pc_AboutEntry_ProGrids.txt" />
      <None Include="Assets\ProCore\ProGrids\Shader\pg_GridShader.shader" />
@@ -776,6 +777,12 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>C:/Users/10840430/Documents/GitHub/Fall2021/MobileGame/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

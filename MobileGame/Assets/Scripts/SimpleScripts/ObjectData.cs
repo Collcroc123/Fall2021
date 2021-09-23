@@ -4,5 +4,10 @@ using UnityEngine;
 public class ObjectData : ScriptableObject
 {
     public GameObject bullet;
-    public float fireRate, reloadSpeed, bulletSpeed;
+    public Color gunColor;
+    public float fireRate, reloadSpeed, bulletSpeed, bulletDamage;
+    
+    //AI gets current gun damage
+    //AI damages itself
+    //DONT FORGET GAMEACTIONS!
 }

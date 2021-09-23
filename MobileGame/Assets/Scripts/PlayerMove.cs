@@ -1,6 +1,6 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     private Camera mainCamera;
     private PlayerControls input;
     public float speed = 7f;
-    public Toggle kbmToggle;
+    public BoolData kbmToggle;
     public ObjectData gun;
     
     private void Awake()
@@ -29,9 +29,9 @@ public class PlayerMove : MonoBehaviour
     private void OnEnable() { input.Enable(); }
     private void OnDisable() { input.Disable(); }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (kbmToggle.isOn)
+        if (kbmToggle.keyboard)
         {
             aimStick.SetActive(false);
             moveStick.SetActive(false);
@@ -48,10 +48,18 @@ public class PlayerMove : MonoBehaviour
             Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition); //(9.5f,0,5) full, (1.25f,0,3.75f) small
             aim.transform.localPosition = new Vector3(Input.mousePosition.x/125, aim.transform.localPosition.y, Input.mousePosition.y/125) - new Vector3(1.25f,0,3.75f);
         }
-        else if (!kbmToggle.isOn)
+        else if (!kbmToggle.keyboard)
         {
-            aimStick.SetActive(true);
-            moveStick.SetActive(true);
+            if (!kbmToggle.touch)
+            {
+                aimStick.SetActive(false);
+                moveStick.SetActive(false);
+            }
+            else
+            {
+                aimStick.SetActive(true);
+                moveStick.SetActive(true);
+            }
             aim.transform.parent = gameObject.transform;
             Vector2 stick = input.Player.Move.ReadValue<Vector2>();
             Vector3 direction = new Vector3(stick.x, 0f, stick.y);
@@ -61,19 +69,19 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
-        if (aim.transform.localPosition.x > 0.5f || aim.transform.localPosition.x < -0.5f || aim.transform.localPosition.z > 0.5f || aim.transform.localPosition.z < -0.5f)
+        if (aim.transform.localPosition.x > 1.5f || aim.transform.localPosition.x < -1.5f || aim.transform.localPosition.z > 1.5f || aim.transform.localPosition.z < -1.5f)
         {
             Vector3 relativePos = aim.transform.position - transform.position; relativePos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
             sprite.transform.rotation = rotation;
             aimSprite.enabled = true;
         }
-        else if (move.transform.localPosition.x > 0.1f || move.transform.localPosition.x < -0.1f || move.transform.localPosition.z > 0.1f || move.transform.localPosition.z < -0.1f)
+        /*else if (move.transform.localPosition.x > 0.1f || move.transform.localPosition.x < -0.1f || move.transform.localPosition.z > 0.1f || move.transform.localPosition.z < -0.1f)
         {
             Vector3 relativePos = move.transform.position - transform.position; relativePos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
             sprite.transform.rotation = rotation;
-        }
+        }*/
         else
         {
             sprite.transform.rotation = sprite.transform.rotation;
@@ -82,14 +90,19 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
-            StartCoroutine(shoot());
+            StartCoroutine(Shoot());
+        }
+        else if (Gamepad.current != null && Gamepad.current.rightTrigger.isPressed)
+        {
+            StartCoroutine(Shoot());
         }
     }
 
-    IEnumerator shoot()
+    IEnumerator Shoot()
     {
+        print("SHOOTING!!!");
         Instantiate(gun.bullet, gameObject.transform.position, gameObject.transform.rotation);
-        //AddForce(gameObject.transform.forward * gun.bulletSpeed); WOWOWOW
+        //AddForce(gameObject.transform.forward * gun.bulletSpeed);
         yield return new WaitForSeconds(gun.fireRate);
     }
 }
