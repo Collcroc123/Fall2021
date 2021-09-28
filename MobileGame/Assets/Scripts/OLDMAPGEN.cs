@@ -14,12 +14,6 @@ public class OLDMAPGEN : MonoBehaviour
     private bool done;
     public GameObject emptyRoom;
     
-    /* TO DO:
-    * Spawn enemies (random enemy, position, and amount)
-    * Spawn furniture and items
-    * Detect items left in rooms (icons on minimap)
-    */
-    
     void Start()
     {
         roomPos = gameObject.transform.position;

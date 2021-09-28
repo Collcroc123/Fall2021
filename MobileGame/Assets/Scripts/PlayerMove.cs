@@ -5,24 +5,19 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
     private CharacterController controller;
-    private GameObject aim, move, aimStick, moveStick, sprite;
-    private SpriteRenderer aimSprite;
-    private Camera mainCamera;
     private PlayerControls input;
-    public float speed = 7f;
-    public BoolData kbmToggle;
+    public GameObject moveStick;
+    public BoolData controls;
     public ObjectData gun;
+    public SpriteRenderer gunSprite;
+    public GameObject bulletSpawn;
+    private bool isShooting;
+    public float speed = 7f;
     
-    private void Awake()
+    private void Start()
     {
         controller = GetComponent<CharacterController>();
-        aim = GameObject.Find("Aim");
-        move = GameObject.Find("Move");
-        aimStick = GameObject.Find("LookArea");
-        moveStick = GameObject.Find("MoveArea");
-        sprite = GameObject.Find("Sprite");
-        aimSprite = aim.GetComponent<SpriteRenderer>();
-        mainCamera = Camera.main;
+        gunSprite = GetComponent<SpriteRenderer>();
         input = new PlayerControls();
     }
 
@@ -31,11 +26,9 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (kbmToggle.keyboard)
+        if (controls.keyboard)
         {
-            aimStick.SetActive(false);
             moveStick.SetActive(false);
-            aim.transform.parent = null;
             Vector3 posi = new Vector3();
             if (Input.GetKey("w")) { posi.z = 1; }
             if (Input.GetKey("s")) { posi.z = -1; }
@@ -43,66 +36,36 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey("d")) { posi.x = 1; }
             if (!Input.anyKey) { posi = Vector3.zero; }
             controller.Move(posi * speed * Time.deltaTime);
-            move.transform.localPosition = posi;
-            //aim.transform.localPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, aim.transform.localPosition.y, Input.mousePosition.y));
-            Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition); //(9.5f,0,5) full, (1.25f,0,3.75f) small
-            aim.transform.localPosition = new Vector3(Input.mousePosition.x/125, aim.transform.localPosition.y, Input.mousePosition.y/125) - new Vector3(1.25f,0,3.75f);
+            if (Input.GetKey(KeyCode.Mouse0) && !isShooting) { StartCoroutine(Shoot()); }
         }
-        else if (!kbmToggle.keyboard)
+        else if (controls.gamepad && Gamepad.current != null)
         {
-            if (!kbmToggle.touch)
-            {
-                aimStick.SetActive(false);
-                moveStick.SetActive(false);
-            }
+            Vector3 direction = new Vector3(Gamepad.current.leftStick.x.ReadValue(), 0f, Gamepad.current.leftStick.y.ReadValue());
+            if (controls.touch) { moveStick.SetActive(true); }
             else
             {
-                aimStick.SetActive(true);
-                moveStick.SetActive(true);
+                moveStick.SetActive(false);
+                if (Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting) { StartCoroutine(Shoot()); gunSprite.material.color = Color.white; }
             }
-            aim.transform.parent = gameObject.transform;
-            Vector2 stick = input.Player.Move.ReadValue<Vector2>();
-            Vector3 direction = new Vector3(stick.x, 0f, stick.y);
+            
             if (direction.magnitude >= 0.1f)
             {
                 controller.Move(direction * (direction.magnitude*speed) * Time.deltaTime);
+                if (controls.touch && !isShooting) { StartCoroutine(Shoot()); }
             }
         }
         
-        if (aim.transform.localPosition.x > 1.5f || aim.transform.localPosition.x < -1.5f || aim.transform.localPosition.z > 1.5f || aim.transform.localPosition.z < -1.5f)
-        {
-            Vector3 relativePos = aim.transform.position - transform.position; relativePos.y = 0;
-            Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-            sprite.transform.rotation = rotation;
-            aimSprite.enabled = true;
-        }
-        /*else if (move.transform.localPosition.x > 0.1f || move.transform.localPosition.x < -0.1f || move.transform.localPosition.z > 0.1f || move.transform.localPosition.z < -0.1f)
-        {
-            Vector3 relativePos = move.transform.position - transform.position; relativePos.y = 0;
-            Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-            sprite.transform.rotation = rotation;
-        }*/
-        else
-        {
-            sprite.transform.rotation = sprite.transform.rotation;
-            aimSprite.enabled = false;
-        }
-
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            StartCoroutine(Shoot());
-        }
-        else if (Gamepad.current != null && Gamepad.current.rightTrigger.isPressed)
-        {
-            StartCoroutine(Shoot());
-        }
+        if (controls.touch && !controls.gamepad) { print("ERROR: GAMEPAD MUST BE ENABLED FOR TOUCH!!!"); }
+        if (controls.mouse && controls.gamepad) { print("ERROR: YOU CANNOT HAVE BOTH MOUSE AND GAMEPAD ENABLED!!!"); }
     }
 
     IEnumerator Shoot()
     {
+        isShooting = true;
         print("SHOOTING!!!");
-        Instantiate(gun.bullet, gameObject.transform.position, gameObject.transform.rotation);
-        //AddForce(gameObject.transform.forward * gun.bulletSpeed);
+        gunSprite.material.color = gun.gunColor;
+        Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         yield return new WaitForSeconds(gun.fireRate);
+        isShooting = false;
     }
 }

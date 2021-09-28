@@ -3,8 +3,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BoolData : ScriptableObject
 {
-    public bool keyboard;
-    public bool touch;
+    public bool keyboard, mouse, touch, gamepad;
 
     public void Toggle()
     {
