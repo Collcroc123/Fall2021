@@ -1,17 +1,16 @@
-using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private ObjectData gun;
+    public ObjectData gun;
     private Rigidbody rbody;
     private GameObject player;
     void Start()
     {
         player = GameObject.Find("BulletSpawn");
-        gun = player.GetComponent<PlayerMove>().gun;
+        gun = player.GetComponent<GunManager>().gun;
         rbody = GetComponent<Rigidbody>();
-        rbody.velocity = (player.transform.forward * gun.bulletSpeed);
+        rbody.velocity = player.transform.forward * gun.bulletSpeed;
     }
 
     private void Update()
@@ -26,6 +25,10 @@ public class Bullet : MonoBehaviour
             EnemyManager enemy = other.GetComponent<EnemyManager>();
             enemy.health -= gun.bulletDamage;
             Destroy(gameObject);
+        }
+        else if (!other.CompareTag("Player"))
+        {
+            //Destroy(gameObject);
         }
     }
 }

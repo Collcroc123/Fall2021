@@ -1680,6 +1680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246197521}
   - component: {fileID: 1246197522}
+  - component: {fileID: 1246197523}
   m_Layer: 0
   m_Name: BulletSpawn
   m_TagString: Untagged
@@ -1717,6 +1718,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1246197523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246197520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629e841c464de29428af78d4f181ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 11400000, guid: a06850dfde7d29e4c841305e148b01e0, type: 2}
 --- !u!1 &1257968243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +2900,7 @@ MonoBehaviour:
   gun: {fileID: 11400000, guid: a06850dfde7d29e4c841305e148b01e0, type: 2}
   gunSprite: {fileID: 1823542083}
   bulletSpawn: {fileID: 1246197520}
-  speed: 7
+  speed: 5
 --- !u!143 &1883250832
 CharacterController:
   m_ObjectHideFlags: 0

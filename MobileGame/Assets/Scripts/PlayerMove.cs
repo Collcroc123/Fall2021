@@ -17,7 +17,6 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        gunSprite = GetComponent<SpriteRenderer>();
         input = new PlayerControls();
     }
 

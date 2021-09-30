@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\RoomLister.cs" />
+     <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\HoleFiller.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\IntResetter.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\BoolData.cs" />
@@ -54,11 +55,11 @@
      <Compile Include="Assets\Scripts\SimpleScripts\IntData.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\ArrayData.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\StringData.cs" />
+     <Compile Include="Assets\Scripts\SimpleScripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\SimpleScripts\CamMover.cs" />
      <Compile Include="Assets\Scripts\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\Bullet.cs" />
-     <Compile Include="Assets\Scripts\EnemyManager.cs" />
+     <Compile Include="Assets\GunManager.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity 2021.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e6f36b2d5f59ad4e84a4783e1442632, type: 3}
   m_Name: Controls
   m_EditorClassIdentifier: 
-  keyboard: 0
-  mouse: 0
-  touch: 1
-  gamepad: 1
+  keyboard: 1
+  mouse: 1
+  touch: 0
+  gamepad: 0
