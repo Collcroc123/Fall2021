@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
             else
             {
                 moveStick.SetActive(false);
-                if (Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting) { StartCoroutine(Shoot()); gunSprite.material.color = Color.white; }
+                if (Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting) { StartCoroutine(Shoot()); }
             }
             
             if (direction.magnitude >= 0.1f)
@@ -65,6 +65,7 @@ public class PlayerMove : MonoBehaviour
         gunSprite.material.color = gun.gunColor;
         Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
         yield return new WaitForSeconds(gun.fireRate);
+        gunSprite.material.color = Color.white;
         isShooting = false;
     }
 }

@@ -112,7 +112,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.45, z: 0.55}
+  m_Size: {x: 0.38, y: 0.38, z: 0.55}
   m_Center: {x: 0, y: 0, z: 0.02}
 --- !u!54 &7349642651412916008
 Rigidbody:
@@ -224,7 +224,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.55, z: 0.04}
+  m_Size: {x: 0.6, y: 0.55, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &7473705156852944686
 BoxCollider:
@@ -250,7 +250,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.55, z: 0.04}
+  m_Size: {x: 0.6, y: 0.55, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &7473705157246966210
 BoxCollider:
@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
@@ -778,7 +778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
