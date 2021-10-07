@@ -9,5 +9,6 @@ public class BoolData : ScriptableObject
     {
         //if (value) { value = false; }
         //else { value = true; }
+        
     }
 }

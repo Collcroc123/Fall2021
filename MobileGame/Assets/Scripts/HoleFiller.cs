@@ -8,7 +8,7 @@ public class HoleFiller : MonoBehaviour
     private MeshFilter mesh;
     private BoxCollider boxCollider;
     private bool door;
-    public bool done; //If done=true, keeps door from constantly filling
+    public bool done; //keeps door from constantly filling
     public GameObject lDoor, rDoor;
     public Mesh wall;
     
@@ -41,19 +41,19 @@ public class HoleFiller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Door")) { door = true; }
-        else if (other.CompareTag("Wall")) { door = false; }
+        if (other.CompareTag("Door")) door = true;
+        else if (other.CompareTag("Wall")) door = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Door")) { door = true; }
-        else if (other.CompareTag("Wall")) { door = false; }
+        if (other.CompareTag("Door")) door = true;
+        else if (other.CompareTag("Wall")) door = false;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Door")) { door = false; }
+        if (other.CompareTag("Door")) door = false;
     }
 
     void FillHole()
@@ -71,7 +71,7 @@ public class HoleFiller : MonoBehaviour
     IEnumerator waitDoor()
     {
         Vector3 pos = gameObject.transform.position;
-        gameObject.transform.position = new Vector3(pos.x, 10, pos.z);
+        gameObject.transform.position = new Vector3(pos.x, -10, pos.z);
         yield return new WaitForSeconds(0.1f);
         boxCollider.enabled = false;
         yield return new WaitForSeconds(0.1f);
