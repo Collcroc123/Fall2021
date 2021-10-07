@@ -321,6 +321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6334032272585942091}
     m_Modifications:
+    - target: {fileID: 2558698944998740736, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3731654499107793007, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -365,9 +369,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3766071981862260610, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4072009781722657493, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072009781722657493, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218741076498760190, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}

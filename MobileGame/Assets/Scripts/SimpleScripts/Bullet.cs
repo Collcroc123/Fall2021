@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -26,9 +28,19 @@ public class Bullet : MonoBehaviour
             enemy.health -= gun.bulletDamage;
             Destroy(gameObject);
         }
-        else if (!other.CompareTag("Player"))
+        else if (other.CompareTag("Wall"))
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        waitFor(3);
+    }
+
+    private IEnumerator waitFor(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 }

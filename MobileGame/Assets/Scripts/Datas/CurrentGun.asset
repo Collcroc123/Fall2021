@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CurrentGun
   m_EditorClassIdentifier: 
   bullet: {fileID: 2193325140796608648, guid: b1c66b5df193eff46b3be67222a6fed5, type: 3}
-  gunColor: {r: 1, g: 0, b: 0.8057232, a: 0}
+  gunColor: {r: 1, g: 0, b: 0.8057232, a: 1}
   fireRate: 0.2
   reloadSpeed: 1.5
-  bulletSpeed: 5
+  bulletSpeed: 7.5
   bulletDamage: 1
   ammo: 0
