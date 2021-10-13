@@ -41,26 +41,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\GunManager.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\RoomLister.cs" />
-     <Compile Include="Assets\EnemyManager.cs" />
+     <Compile Include="Assets\Scripts\GunManager.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\HoleFiller.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\IntResetter.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\BoolData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\GunData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\BoolData.cs" />
      <Compile Include="Assets\Scripts\WallGenerator.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\FloatData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\FloatData.cs" />
      <Compile Include="Assets\Scripts\OLDMAPGEN.cs" />
      <Compile Include="Assets\Scripts\AimMover.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\IntData.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\ArrayData.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\StringData.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\Bullet.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\CamMover.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\HealthManager.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\IntData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\ArrayData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\StringData.cs" />
+     <Compile Include="Assets\Scripts\Bullet.cs" />
+     <Compile Include="Assets\Scripts\CamMover.cs" />
+     <Compile Include="Assets\Other\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\HealthManager.cs" />
-     <Compile Include="Assets\Scripts\SimpleScripts\GunData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\HealthData.cs" />
+     <Compile Include="Assets\Scripts\DataScripts\StatsData.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity 2021.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

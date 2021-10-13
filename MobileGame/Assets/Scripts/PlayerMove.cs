@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -25,8 +23,7 @@ public class PlayerMove : MonoBehaviour
     private void OnDisable() { input.Disable(); }
 
     void Update()
-    {
-        // Unity Docs
+    { // Unity Docs
         InputSystem.onDeviceChange +=
             (device, change) =>
             {
@@ -43,8 +40,7 @@ public class PlayerMove : MonoBehaviour
                         break;
                 }
             };
-        /*
-        if (Gamepad.current != null)
+        /*if (Gamepad.current != null)
         {
             print(Gamepad.current);
         }
@@ -66,27 +62,33 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey("d")) posi.x = 1;
             if (!Input.anyKey) posi = Vector3.zero;
             controller.Move(posi * speed * Time.deltaTime);
-            if (Input.GetKey(KeyCode.Mouse0) && !isShooting) StartCoroutine(Shoot());
+            if (Input.GetKey(KeyCode.Mouse0) && !isShooting) 
+                StartCoroutine(Shoot());
         }
         else if (controls.gamepad && Gamepad.current != null)
         {
             Vector3 direction = new Vector3(Gamepad.current.leftStick.x.ReadValue(), 0f, Gamepad.current.leftStick.y.ReadValue());
-            if (controls.touch) moveStick.SetActive(true);
+            if (controls.touch) 
+                moveStick.SetActive(true);
             else
             {
                 moveStick.SetActive(false);
-                if (Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting) StartCoroutine(Shoot());
+                if (Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting) 
+                    StartCoroutine(Shoot());
             }
             
             if (direction.magnitude >= 0.1f)
             {
                 controller.Move(direction * (direction.magnitude*speed) * Time.deltaTime);
-                if (controls.touch && !isShooting) StartCoroutine(Shoot());
+                if (controls.touch && !isShooting) 
+                    StartCoroutine(Shoot());
             }
         }
         
-        if (controls.touch && !controls.gamepad) print("ERROR: GAMEPAD MUST BE ENABLED FOR TOUCH!!!");
-        if (controls.mouse && controls.gamepad) print("ERROR: YOU CANNOT HAVE BOTH MOUSE AND GAMEPAD ENABLED!!!");
+        if (controls.touch && !controls.gamepad) 
+            print("ERROR: GAMEPAD MUST BE ENABLED FOR TOUCH!!!");
+        if (controls.mouse && controls.gamepad) 
+            print("ERROR: YOU CANNOT HAVE BOTH MOUSE AND GAMEPAD ENABLED!!!");
     }
 
     IEnumerator Shoot()

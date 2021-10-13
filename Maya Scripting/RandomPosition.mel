@@ -1,0 +1,21 @@
+global proc RandPos(int $doTimes, float $minX, float $maxX, float $minY, float $maxY, float $minZ, float $maxZ)
+{
+    string $objects[] = `ls -sl`;
+    print(size($objects) + " Objects Selected\n");
+    for($i=0; $i<size($objects); $i++)
+    {
+        string $dupe = $objects[$i];
+        for($j=0; $j<$doTimes-1; $j++)
+        {
+            duplicate($dupe);
+            float $x = `rand $minX $maxX`;
+            float $y = `rand $minY $maxY`;
+            float $z = `rand $minZ $maxZ`;
+            move $x $y $z $dupe;
+            rotate ($x*$y) ($y*$z) ($z*$x) $dupe;
+        }
+    }
+}//RandPos(dupes, minX, maxX, minY, maxY, minZ, maxZ);
+RandPos(50, -25, 25, -25, 25, -25, 25);
+//For some reason, first dupe (pCube2, pSphere2) spawns at same XYZ as original, 
+//then original moves to random position. All other dupes are random.

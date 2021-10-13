@@ -29,19 +29,18 @@ public class AimMover : MonoBehaviour
                 Ray castPoint = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 RaycastHit hit;
                 if (Physics.Raycast(castPoint, out hit, Mathf.Infinity))
-                {
                     gameObject.transform.position = new Vector3(hit.point.x, gameObject.transform.position.y, hit.point.z); // * 1.12f
-                }
             }
             else if (controls.gamepad)
             {
-                if (controls.touch) { aimStick.SetActive(true); }
-                else { aimStick.SetActive(false); }
+                if (controls.touch) 
+                    aimStick.SetActive(true);
+                else 
+                    aimStick.SetActive(false);
                 gameObject.transform.parent = player.gameObject.transform;
-                if (Gamepad.current != null)
-                {
+                if (Gamepad.current != null) 
                     gameObject.transform.localPosition = new Vector3(Gamepad.current.rightStick.x.ReadValue() * 6f, gameObject.transform.localPosition.y, Gamepad.current.rightStick.y.ReadValue() * 6f);
-                }
+                
             }
             
             if (gameObject.transform.localPosition.x > 1.5f || gameObject.transform.localPosition.x < -1.5f || gameObject.transform.localPosition.z > 1.5f || gameObject.transform.localPosition.z < -1.5f)

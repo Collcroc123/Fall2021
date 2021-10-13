@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HoleFiller : MonoBehaviour
 {
-    private RoomLister list;
+    private GameManager list;
     private Animator doorAnim;
     private MeshFilter mesh;
     private BoxCollider boxCollider;
@@ -17,7 +17,7 @@ public class HoleFiller : MonoBehaviour
         door = false;
         done = false;
         print("Number of doors pre-done: ");
-        list = GameObject.Find("/Manager").GetComponent<RoomLister>();
+        list = GameObject.Find("/Manager").GetComponent<GameManager>();
         doorAnim = GetComponent<Animator>();
         mesh = GetComponent<MeshFilter>();
         boxCollider = GetComponent<BoxCollider>();
@@ -32,28 +32,25 @@ public class HoleFiller : MonoBehaviour
             print("Number of doors post-done: ");
             done = true;
             if (!door)
-            {
-                print("Doors filled: ");
                 FillHole();
-            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Door")) door = true;
+        if (other.CompareTag("Doorframe")) door = true;
         else if (other.CompareTag("Wall")) door = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Door")) door = true;
+        if (other.CompareTag("Doorframe")) door = true;
         else if (other.CompareTag("Wall")) door = false;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Door")) door = false;
+        if (other.CompareTag("Doorframe")) door = false;
     }
 
     void FillHole()
@@ -62,10 +59,10 @@ public class HoleFiller : MonoBehaviour
         Destroy(rDoor); 
         mesh.mesh = wall; 
         boxCollider.enabled = false;
+        print("Doors filled: ");
     }
 
     public void OpenDoor() { doorAnim.SetBool("Open", true); }
-    
     public void CloseDoor() { doorAnim.SetBool("Open", false); }
 
     IEnumerator waitDoor()

@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
   texture: {fileID: 2210931030017876993}
+  stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
 --- !u!82 &7593976470086029736
 AudioSource:
   m_ObjectHideFlags: 0
@@ -319,7 +320,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 9eabaa9f5145a1f41af017ac1e4324e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

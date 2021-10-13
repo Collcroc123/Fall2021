@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fefcab1a8e87c8144bc9cf20214562a3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gun: {instanceID: 0}
+  - texture: {instanceID: 0}
+  - stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

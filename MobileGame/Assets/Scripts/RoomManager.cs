@@ -10,7 +10,7 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
-        roomComplete = true;
+        roomComplete = true; //TEMP TRUE WITHOUT ENEMIES
         mapGen = GetComponentInParent<OLDMAPGEN>();
         if (mapGen.isSpawn) { roomComplete = true; }
         Invoke(nameof(Open), 0.5f);
@@ -27,18 +27,26 @@ public class RoomManager : MonoBehaviour
     
     private void Open()
     {
-        if (door1 != null) { door1.OpenDoor(); }
-        if (door2 != null) { door2.OpenDoor(); }
-        if (door3 != null) { door3.OpenDoor(); }
-        if (door4 != null) { door4.OpenDoor(); }
+        if (door1 != null) 
+            door1.OpenDoor();
+        if (door2 != null) 
+            door2.OpenDoor();
+        if (door3 != null) 
+            door3.OpenDoor();
+        if (door4 != null) 
+            door4.OpenDoor();
     }
 
     private void Close()
     {
-        if (door1 != null) { door1.CloseDoor(); }
-        if (door2 != null) { door2.CloseDoor(); }
-        if (door3 != null) { door3.CloseDoor(); }
-        if (door4 != null) { door4.CloseDoor(); }
+        if (door1 != null) 
+            door1.CloseDoor();
+        if (door2 != null) 
+            door2.CloseDoor();
+        if (door3 != null) 
+            door3.CloseDoor();
+        if (door4 != null) 
+            door4.CloseDoor();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,22 +54,16 @@ public class RoomManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             roomFade.SetBool("Enter", true);
-            if (!roomComplete)
-            {
+            if (!roomComplete) 
                 Close();
-            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
+        if (other.CompareTag("Player")) 
             roomFade.SetBool("Enter", false);
-        } 
-        else if (other.CompareTag("Enemy"))
-        {
+        else if (other.CompareTag("Enemy")) 
             roomComplete = true;
-        }
     }
 }
