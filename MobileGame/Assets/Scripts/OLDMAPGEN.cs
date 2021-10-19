@@ -4,21 +4,23 @@ using Random = UnityEngine.Random;
 public class OLDMAPGEN : MonoBehaviour
 {   //https://www.youtube.com/watch?v=qAf9axsyijY
     public ArrayData northRooms, eastRooms, southRooms, westRooms;
-    public IntData totalRooms;
+    public IntData totalRooms, maxRooms;
+    public GameObjectData roomObj;
+    public GameObject emptyRoom;
     public bool isSpawn, isEnd;
     public int directionNum;
-    public ArrayData allRooms;
+    
     private bool roomGenerated;
     private int randomizer;
     private Vector3 roomPos;
     private bool done;
-    public GameObject emptyRoom;
-    
+
     void Start()
     {
         roomPos = gameObject.transform.position;
         if (isSpawn)
         {
+            roomObj.start = gameObject;
             randomizer = Random.Range(4, 7); //Always has 3 or 4 doors
             directionNum = Random.Range(1, 4); //First room has no direction num, makes one up
             Invoke(nameof(Generate), 0.05f);
@@ -32,7 +34,7 @@ public class OLDMAPGEN : MonoBehaviour
 
     void Generate()
     {
-        if (!roomGenerated && totalRooms.value < allRooms.array.Length)
+        if (!roomGenerated && totalRooms.value < maxRooms.value) 
         {
             if (directionNum == 0)
             {
@@ -61,15 +63,7 @@ public class OLDMAPGEN : MonoBehaviour
             }
             totalRooms.value++;
             roomGenerated = true;
-
-            for (int i = 0; i < allRooms.array.Length; i++)
-            {
-                if (allRooms.array[i] == null)
-                {
-                    allRooms.array[i] = gameObject;
-                    return;
-                }
-            }
+            roomObj.end = gameObject;
         }
     }
 
@@ -77,7 +71,11 @@ public class OLDMAPGEN : MonoBehaviour
     {
         if (other.CompareTag("Room") && other.GetComponent<OLDMAPGEN>().roomGenerated)
         {
-            print("Destroyed due to overlap with existing room!");
+            if (roomObj.end == gameObject)
+            {
+                roomObj.end = other.gameObject;
+            }
+            print("Destroyed itself due to overlap with existing room!");
             transform.position = new Vector3(roomPos.x, -50, roomPos.z);
             Destroy(gameObject);
         }

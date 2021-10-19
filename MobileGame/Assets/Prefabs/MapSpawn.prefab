@@ -50,11 +50,12 @@ MonoBehaviour:
   southRooms: {fileID: 11400000, guid: b0d1c942624315e40a26e7bf39343687, type: 2}
   westRooms: {fileID: 11400000, guid: 5a604b582cad81a4d95067a259f5a881, type: 2}
   totalRooms: {fileID: 11400000, guid: 29aea88f3cf49a54b9c1513cd9ec7979, type: 2}
+  maxRooms: {fileID: 11400000, guid: 3483769c19b5789438b5e04403430d19, type: 2}
+  roomObj: {fileID: 11400000, guid: afa66472f48b352499efb39b4bebfa20, type: 2}
+  emptyRoom: {fileID: 7274708039908554988, guid: 3be702e9b16feb14387d7f01694b68e6, type: 3}
   isSpawn: 0
   isEnd: 0
   directionNum: 0
-  allRooms: {fileID: 11400000, guid: cf90ae42cf2528547ab3a6fc360c61ff, type: 2}
-  emptyRoom: {fileID: 0}
 --- !u!65 &4329881873852256953
 BoxCollider:
   m_ObjectHideFlags: 0

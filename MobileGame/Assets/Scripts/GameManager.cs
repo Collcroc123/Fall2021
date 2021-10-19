@@ -3,47 +3,47 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public ArrayData array;
-    public bool levelDone;
     public Animator genPanel;
     public PlayerMove movement;
-    public IntData totalRooms;
+    public IntData totalRooms, maxRooms;
+    public GameObjectData lastRoom;
+    public GameObject tempRoom;
     public StatsData stats;
-
+    public bool levelDone;
+    
     private void Start()
     {
         movement.enabled = false;
         totalRooms.value = 0;
-        array.Clear();
         StartCoroutine(CheckDone());
     }
     
     IEnumerator CheckDone()
     {
-        for (int i = 0; i < array.array.Length; i++)
+        while (!levelDone)
         {
-            if (array.array[i] == null)
+            if (totalRooms == maxRooms)
             {
+                FinishMap();
+            }
+            else
+            {
+                tempRoom = lastRoom.end;
                 yield return new WaitForSeconds(1f);
-                if (array.array[i] == null)
+                if (lastRoom.end == tempRoom)
                 {
-                    array.array[i-1].GetComponent<OLDMAPGEN>().isEnd = true;
-                    levelDone = true;
-                    print("Finished!");
-                    genPanel.SetBool("LoadingDone", true);
-                    movement.enabled = true;
-                    yield break;
+                    FinishMap();
                 }
             }
-            else if (i == array.array.Length-1 && array.array[i] != null)
-            {
-                array.array[i].GetComponent<OLDMAPGEN>().isEnd = true;
-                levelDone = true;
-                print("Finished!");
-                genPanel.SetBool("LoadingDone", true);
-                movement.enabled = true;
-                yield break;
-            }
         }
+    }
+
+    void FinishMap()
+    {
+        lastRoom.end.GetComponent<OLDMAPGEN>().isEnd = true;
+        levelDone = true;
+        print("Finished!");
+        genPanel.SetBool("LoadingDone", true);
+        movement.enabled = true;
     }
 }

@@ -32,8 +32,8 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //waitFor(3);
-        //Destroy(gameObject);
+        waitFor(3);
+        Destroy(gameObject);
     }
 
     private IEnumerator waitFor(float seconds)

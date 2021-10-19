@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ffe2b3a10a762f4ba4204ba2845f2ba, type: 3}
+  m_Name: DoorsNorth
+  m_EditorClassIdentifier: 
+  array:
+  - {fileID: 7274708039908554988, guid: 725bce1644785be45a7a92355fb482cb, type: 3}
+  - {fileID: 2749898617388204558, guid: 1ed37887504a7004aa10f4648a17a7ea, type: 3}
+  - {fileID: 8848577325572131951, guid: c8bb65fb44abbd54b8d31ae1e30bac0b, type: 3}
+  - {fileID: 1050517226978863784, guid: 04e2a090497e968458b95dc73d231822, type: 3}
+  - {fileID: 19404432261488734, guid: 25efd0fbbd5236a4baffdfa4d9b9c929, type: 3}
+  - {fileID: 869916510446108147, guid: 449cf21bd935fd04e90888572588c7d7, type: 3}
+  - {fileID: 3769917885306616818, guid: b8ac50ef879f66a489f59ff9b5e62e5e, type: 3}
+  - {fileID: 6334032272585942090, guid: 3b9e863b799f22441b471ac0d415aace, type: 3}

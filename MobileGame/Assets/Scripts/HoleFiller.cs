@@ -7,9 +7,9 @@ public class HoleFiller : MonoBehaviour
     private Animator doorAnim;
     private MeshFilter mesh;
     private BoxCollider boxCollider;
-    private bool door;
-    public bool done; //keeps door from constantly filling
+    private bool door, done; //keeps door from constantly filling
     public GameObject lDoor, rDoor;
+    public SpriteRenderer mapDoor;
     public Mesh wall;
     
     private void Start()
@@ -56,8 +56,10 @@ public class HoleFiller : MonoBehaviour
     void FillHole()
     {
         Destroy(lDoor); 
-        Destroy(rDoor); 
-        mesh.mesh = wall; 
+        Destroy(rDoor);
+        mesh.mesh = wall;
+        gameObject.transform.tag = "Wall";
+        mapDoor.color = new Color(255, 255, 255, 255);
         boxCollider.enabled = false;
         print("Doors filled: ");
     }
@@ -75,6 +77,5 @@ public class HoleFiller : MonoBehaviour
         boxCollider.enabled = true;
         yield return new WaitForSeconds(0.1f);
         gameObject.transform.position = pos;
-        
     }
 }

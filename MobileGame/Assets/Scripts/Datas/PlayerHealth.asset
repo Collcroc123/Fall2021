@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 10
+  stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
