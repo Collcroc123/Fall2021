@@ -77,9 +77,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefcab1a8e87c8144bc9cf20214562a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
+  gun: {fileID: 11400000, guid: a06850dfde7d29e4c841305e148b01e0, type: 2}
   texture: {fileID: 2210931030017876993}
   stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
+  source: {fileID: 7593976470086029736}
 --- !u!82 &7593976470086029736
 AudioSource:
   m_ObjectHideFlags: 0

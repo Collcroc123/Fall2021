@@ -4,15 +4,13 @@ using UnityEngine.InputSystem;
 public class AimMover : MonoBehaviour
 {
     public bool aim, lookAtMove;
-    private GameObject player, sprite, aimStick;
+    public GameObject player, sprite, aimStick;
     private SpriteRenderer aimSprite;
     public BoolData controls;
     private Camera mainCamera;
 
     private void Start()
     {
-        player = GameObject.Find("Player");
-        sprite = GameObject.Find("Sprite");
         aimStick = GameObject.Find("LookArea");
         aimSprite = GetComponent<SpriteRenderer>();
         mainCamera = Camera.main;

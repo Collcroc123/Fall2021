@@ -3,24 +3,29 @@ using UnityEngine;
 [CreateAssetMenu]
 public class HealthData : ScriptableObject
 {
-    public float health, maxHealth = 10f;
+    public int health, maxHealth = 10;
     public StatsData stats;
+    
 
-    void ChangeHealth(float amount)
+    public void Heal(int amount, int excess)
     {
         health += amount;
         if (health > maxHealth)
+        {
+            excess = health - maxHealth;
             health = maxHealth;
-        
-        else if (health <= 0)
+        }
+        stats.healthGained += amount;
+    }
+
+    public void Damage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
         {
             //die?
             stats.deaths++;
         }
-
-        if (amount < 0)
-            stats.damageTaken += amount;
-        else if (amount > 0)
-            stats.healthGained += amount;
+        stats.damageTaken += amount;
     }
 }

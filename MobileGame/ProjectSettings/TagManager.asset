@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Crate
   - Doorframe
+  - Canvas
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

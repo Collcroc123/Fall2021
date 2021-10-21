@@ -3,23 +3,26 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GunData gun;
-    private Rigidbody rbody;
-    private GameObject player;
-    public SpriteRenderer texture;
-    public StatsData stats;
+    private GunData gun; //current gun
+    private Rigidbody rbody; //bullet's rigidbody
+    private GameObject bulletSpawn; //location where bullet spawns
+    public SpriteRenderer texture; //bullet's texture
+    public AudioSource source; //gunshot sound
+    public StatsData stats; //tracks statistics
+    
     void Start()
-    {
-        stats.bulletsFired++;
-        player = GameObject.Find("BulletSpawn");
-        gun = player.GetComponent<GunManager>().gun;
-        texture.material = gun.bulletTexture;
+    { //gives bullet attributes depending on what gun is fired
         rbody = GetComponent<Rigidbody>();
-        rbody.velocity = player.transform.forward * gun.bulletSpeed;
+        bulletSpawn = GameObject.Find("BulletSpawn");
+        gun = bulletSpawn.GetComponent<GunManager>().gun;
+        texture.material = gun.bulletTexture;
+        rbody.velocity = bulletSpawn.transform.forward * gun.bulletSpeed;
+        source.clip = gun.gunshot.soundArray[Random.Range(0, gun.gunshot.soundArray.Length - 1)];
+        stats.bulletsFired++;
     }
 
     private void OnTriggerEnter(Collider other)
-    {
+    { //checks if bullet hits something
         if (other.CompareTag("Enemy"))
         {
             EnemyManager enemy = other.GetComponent<EnemyManager>();
@@ -27,16 +30,18 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         else if (other.CompareTag("Wall") || other.CompareTag("Crate") || other.CompareTag("Door"))
-            Destroy(gameObject); 
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
-    {
-        waitFor(3);
+    { //deletes bullet if it hits nothing after 5 secs
+        StartCoroutine(WaitFor(5));
         Destroy(gameObject);
     }
 
-    private IEnumerator waitFor(float seconds)
+    private IEnumerator WaitFor(float seconds)
     {
         yield return new WaitForSeconds(seconds);
     }

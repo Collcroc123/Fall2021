@@ -1,5 +1,5 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
+//using Random = UnityEngine.Random;
 
 public class OLDMAPGEN : MonoBehaviour
 {   //https://www.youtube.com/watch?v=qAf9axsyijY

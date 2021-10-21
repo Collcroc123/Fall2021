@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class RoomManager : MonoBehaviour
 {
-    public Animator roomFade;
-    public HoleFiller door1, door2, door3, door4; //All doors in the room
-    private OLDMAPGEN mapGen; //Auto sets spawn room as complete
-    public bool roomComplete; //True if no enemies in room, controls door state
-    private bool done; //If done=true, keeps door from ever opening or closing
+    public Animator roomFade; //black that covers outside rooms
+    public HoleFiller door1, door2, door3, door4; //all doors in the room
+    private OLDMAPGEN mapGen; //sets spawn room as complete
+    public bool roomComplete; //no enemies in room, opens doors
+    private bool done; //keeps door from ever opening or closing
+    public Light lightOne, lightTwo;
 
     void Start()
     {
+        //lightOne = GetComponentInChildren<Light>();
+        //lightTwo = GetComponentInChildren<Light>();
         roomComplete = true; //TEMP TRUE WITHOUT ENEMIES
         mapGen = GetComponentInParent<OLDMAPGEN>();
         if (mapGen.isSpawn) { roomComplete = true; }
@@ -53,6 +57,8 @@ public class RoomManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //lightOne.enabled = true;
+            //lightTwo.enabled = true;
             roomFade.SetBool("Enter", true);
             if (!roomComplete) 
                 Close();
@@ -61,8 +67,12 @@ public class RoomManager : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("Player"))
+        {
+            //lightOne.enabled = false;
+            //lightTwo.enabled = false;
             roomFade.SetBool("Enter", false);
+        }
         else if (other.CompareTag("Enemy")) 
             roomComplete = true;
     }
