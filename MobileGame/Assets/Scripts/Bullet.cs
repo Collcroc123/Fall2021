@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public SpriteRenderer texture; //bullet's texture
     public AudioSource source; //gunshot sound
     public StatsData stats; //tracks statistics
+    public AudioClip hitSound;
     
     void Start()
     { //gives bullet attributes depending on what gun is fired
@@ -18,6 +19,7 @@ public class Bullet : MonoBehaviour
         texture.material = gun.bulletTexture;
         rbody.velocity = bulletSpawn.transform.forward * gun.bulletSpeed;
         source.clip = gun.gunshot.soundArray[Random.Range(0, gun.gunshot.soundArray.Length - 1)];
+        source.Play();
         stats.bulletsFired++;
     }
 
@@ -27,22 +29,30 @@ public class Bullet : MonoBehaviour
         {
             EnemyManager enemy = other.GetComponent<EnemyManager>();
             enemy.health -= gun.bulletDamage;
-            Destroy(gameObject);
+            Hit();
         }
         else if (other.CompareTag("Wall") || other.CompareTag("Crate") || other.CompareTag("Door"))
         {
-            Destroy(gameObject);
+            Hit();
         }
     }
 
     private void OnTriggerExit(Collider other)
     { //deletes bullet if it hits nothing after 5 secs
         StartCoroutine(WaitFor(5));
-        Destroy(gameObject);
     }
 
     private IEnumerator WaitFor(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        Destroy(gameObject);
+    }
+
+    private void Hit()
+    {
+        source.clip = hitSound;
+        source.Play();
+        texture.enabled = false;
+        StartCoroutine(WaitFor(0.5f));
     }
 }

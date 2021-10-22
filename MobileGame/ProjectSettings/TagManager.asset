@@ -11,8 +11,8 @@ TagManager:
   - Enemy
   - Crate
   - Doorframe
-  - Canvas
   - EnemyBullet
+  - Hearts
   layers:
   - Default
   - TransparentFX

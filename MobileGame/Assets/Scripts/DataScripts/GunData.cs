@@ -12,7 +12,6 @@ public class GunData : ScriptableObject
 
     /* TO DO:
     x Bullet gets current gun from player
-    Bullet applies damage to enemy it collides with
     AI damages itself
     DONT FORGET GAMEACTIONS!
     Spawn enemies (random enemy, position, and amount)
