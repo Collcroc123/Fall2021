@@ -19,7 +19,61 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793cc5a1-5e27-4b92-8541-c33f4f61bd1e" name="Default Changelist" comment="" />
+    <list default="true" id="793cc5a1-5e27-4b92-8541-c33f4f61bd1e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AIDefault.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AIDefault.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3 Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3 Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/5 Door.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/5 Door.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Floor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh-3 Floor 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh-3 Floor 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh-5 Floor 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh-5 Floor 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh-Floor 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NavMesh-Floor 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Old Gen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Old Gen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataScripts/GunData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataScripts/GunData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Datas/GunLaser.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Datas/GunLaser.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Datas/GunNormal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Datas/GunNormal.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GunManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GunManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/AIBoss.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/AIBoss.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/GoodBomb.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/GoodBomb.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/PhysicsBallBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/PhysicsBallBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/Walls.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Blueprints/Walls.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Maps/Boss.umap" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Content/RollingBP/Maps/Boss.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Intermediate/CachedAssetRegistry.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Intermediate/CachedAssetRegistry.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/AutoScreenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/AutoScreenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-291EE789492DDC09818D1E8CD4CF0577/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-34DFAC02407110B63680E78B79F99897/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-61DE6B0D4C774B017564D28395F8D044/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-743EA199410AE43C118DB685C1FA0408/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-8189B3504D64F79E20B75FB888A3D02C/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-98D3B7894B8CEFD1C423978E23F815F2/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-9D45DCCB4EBF93BC6154B4BA37675631/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-B82219FF41A8BE73C35DB0BB8882DED6/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-CF1E986C470EFE7C0B131B8E08F3878B/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-EB7262D4457B6308D3646290086E28B6/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/CrashReportClient/UE4CC-Windows-EBCC761448F7D85DBD0C21863DD5D363/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/Windows/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/Windows/EditorPerProjectUserSettings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/WorldState/3797998236.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Config/WorldState/3797998236.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Logs/Roller-backup-2021.10.18-00.37.26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Logs/Roller.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/Roller/Saved/Logs/Roller.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +92,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/AIDefault.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DataScripts/GameAction.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -54,15 +107,17 @@
         <option value="$PROJECT_DIR$/Assets/RoomManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DataScripts/HealthData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AimMover.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/OLDMAPGEN.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DataScripts/ArrayData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HoleFiller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DataScripts/GunData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OLDMAPGEN.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DataScripts/GunData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GunManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/AIDefault.cs" />
       </list>
     </option>
   </component>
@@ -94,9 +149,8 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -104,9 +158,8 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -147,6 +200,7 @@
       <workItem from="1634668503465" duration="8269000" />
       <workItem from="1634770128894" duration="28799000" />
       <workItem from="1634837812016" duration="15907000" />
+      <workItem from="1634934897437" duration="12239000" />
     </task>
     <servers />
   </component>

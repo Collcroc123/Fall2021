@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2193325140796608648, guid: b1c66b5df193eff46b3be67222a6fed5, type: 3}
   gunColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
-  fireRate: 0.15
-  reloadSpeed: 1.5
+  fireRate: 0.25
   bulletSpeed: 8
-  bulletDamage: 1
   ammo: 0
-  bulletTexture: {fileID: 2100000, guid: 5d3aebbe12701b44db62cfaaa6c59c9a, type: 2}
+  reloadSpeed: 1.5
+  bulletDamage: 1
+  bulletTexture: {fileID: 2100000, guid: 9eabaa9f5145a1f41af017ac1e4324e8, type: 2}
   gunshot: {fileID: 11400000, guid: d7aaf0b5c96a0c04b997ed9f059715ed, type: 2}
-  reloadSound: {fileID: 0}

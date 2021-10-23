@@ -80,7 +80,7 @@ MonoBehaviour:
   texture: {fileID: 2210931030017876993}
   source: {fileID: 7593976470086029736}
   stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
-  hitSound: {fileID: 8300000, guid: 5f2e218e51f04bd4e9215ba994ef60e8, type: 3}
+  hitAnim: {fileID: 7960022413478583678, guid: 5edfb737b2acd754cbe9905d25c61de2, type: 3}
 --- !u!82 &7593976470086029736
 AudioSource:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1a3f6c0dd30ff73418d8a4c3c107497d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.66
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -5,7 +5,7 @@ public class RoomManager : MonoBehaviour
     public Animator roomFade; //black that covers outside rooms
     public HoleFiller door1, door2, door3, door4; //all doors in the room
     private OLDMAPGEN mapGen; //sets spawn room as complete
-    public bool roomComplete; //no enemies in room, opens doors
+    public bool roomComplete, playerEntered; //no enemies in room, opens doors
     private bool done; //keeps door from ever opening or closing
     public Light lightOne, lightTwo;
 
@@ -13,7 +13,7 @@ public class RoomManager : MonoBehaviour
     {
         //lightOne = GetComponentInChildren<Light>();
         //lightTwo = GetComponentInChildren<Light>();
-        roomComplete = true; //TEMP TRUE WITHOUT ENEMIES
+        //roomComplete = true; //TEMP TRUE WITHOUT ENEMIES
         mapGen = GetComponentInParent<OLDMAPGEN>();
         if (mapGen.isSpawn) { roomComplete = true; }
         Invoke(nameof(Open), 0.5f);
@@ -58,6 +58,7 @@ public class RoomManager : MonoBehaviour
         {
             //lightOne.enabled = true;
             //lightTwo.enabled = true;
+            playerEntered = true;
             roomFade.SetBool("Enter", true);
             if (!roomComplete) 
                 Close();
@@ -70,6 +71,7 @@ public class RoomManager : MonoBehaviour
         {
             //lightOne.enabled = false;
             //lightTwo.enabled = false;
+            playerEntered = false;
             roomFade.SetBool("Enter", false);
         }
         else if (other.CompareTag("Enemy")) 

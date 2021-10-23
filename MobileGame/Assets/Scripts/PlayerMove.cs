@@ -88,8 +88,8 @@ public class PlayerMove : MonoBehaviour
     IEnumerator Shoot()
     { //shoots bullet(s)
         isShooting = true;
-        print("SHOOTING!");
-        Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
+        Bullet bullet = Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation).GetComponent<Bullet>();
+        bullet.bulletSpawn = bulletSpawn;
         yield return new WaitForSeconds(gun.fireRate);
         isShooting = false;
     }

@@ -3,35 +3,47 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [HideInInspector] public GameObject bulletSpawn; //location where bullet spawns
     private GunData gun; //current gun
     private Rigidbody rbody; //bullet's rigidbody
-    private GameObject bulletSpawn; //location where bullet spawns
     public SpriteRenderer texture; //bullet's texture
     public AudioSource source; //gunshot sound
     public StatsData stats; //tracks statistics
-    public AudioClip hitSound;
+    private bool hit;
+    public bool isEnemyBullet;
+    public GameObject hitAnim;
     
     void Start()
     { //gives bullet attributes depending on what gun is fired
         rbody = GetComponent<Rigidbody>();
-        bulletSpawn = GameObject.Find("BulletSpawn");
         gun = bulletSpawn.GetComponent<GunManager>().gun;
         texture.material = gun.bulletTexture;
         rbody.velocity = bulletSpawn.transform.forward * gun.bulletSpeed;
         source.clip = gun.gunshot.soundArray[Random.Range(0, gun.gunshot.soundArray.Length - 1)];
         source.Play();
-        stats.bulletsFired++;
+        //stats.bulletsFired++;
     }
 
     private void OnTriggerEnter(Collider other)
     { //checks if bullet hits something
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !isEnemyBullet)
         {
-            EnemyManager enemy = other.GetComponent<EnemyManager>();
-            enemy.health -= gun.bulletDamage;
+            AIDefault enemy = other.GetComponent<AIDefault>();
+            enemy.health.health -= gun.bulletDamage;
             Hit();
         }
-        else if (other.CompareTag("Wall") || other.CompareTag("Crate") || other.CompareTag("Door"))
+        else if (other.CompareTag("Player") && isEnemyBullet)
+        {
+            HealthManager player = other.GetComponent<HealthManager>();
+            player.health.health -= gun.bulletDamage;
+            print(player.health.health);
+            Hit();
+        }
+        else if (other.CompareTag("Crate"))
+        {
+            //Do Item Stuff Here!
+        }
+        else if (other.CompareTag("Wall") || other.CompareTag("Door"))
         {
             Hit();
         }
@@ -50,9 +62,7 @@ public class Bullet : MonoBehaviour
 
     private void Hit()
     {
-        source.clip = hitSound;
-        source.Play();
-        texture.enabled = false;
-        StartCoroutine(WaitFor(0.5f));
+        Instantiate(hitAnim, gameObject.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

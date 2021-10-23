@@ -1,126 +1,77 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIDefault : MonoBehaviour
 {
-    private WaitForFixedUpdate wffu;
-    private WaitForSeconds waitFor;
-    private WaitForSeconds focusFor;
-    private Vector3 startPos;
-    public bool canPatrol = true;
-    public bool canNavigate;
-    public Transform player;
-    public float waitTime = 2f;
-    public float focusTime = 1f;
-    public float runSpeed = 8f;
-    public float patrolSpeed = 4f;
-    public int patrolRange = 5;
-    public bool seen = false;
-    public bool attackMode = false;
-    public bool enemyTurn;
-    public GameObject damage;
-    private bool coroRunning = false;
-
+    public HealthData health; //[HideInInspector] 
     private NavMeshAgent agent;
-    
-    // Start is called before the first frame update
+    private Vector3 startPos;
+    private bool moving, isShooting;
+    public float waitBeforeMove, moveSpeed;
+    public int enemyHealth, patrolRange;
+    public GameObject player, sprite, bulletSpawn, deathAnim;
+    public GunData gun;
+    private RoomManager roomMan;
+
     void Start()
     {
+        health = ScriptableObject.CreateInstance<HealthData>();
+        health.health = enemyHealth;
+        player = GameObject.FindGameObjectWithTag("Player");
         startPos = transform.position;
         agent = GetComponent<NavMeshAgent>();
-        waitFor = new WaitForSeconds(waitTime);
-        focusFor = new WaitForSeconds(focusTime);
         StartCoroutine(Patrol());
     }
 
-    public IEnumerator Navigate()
+    private void Update()
     {
-        coroRunning = true;
-        damage.SetActive(true);
-        canPatrol = false;
-        canNavigate = true;
-        yield return focusFor;
-        while (canNavigate)
+        Vector3 relativePos = player.transform.position - gameObject.transform.position; relativePos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+        sprite.transform.rotation = rotation;
+        if (!isShooting && roomMan.playerEntered)
         {
-            seen = true;
-            agent.speed = runSpeed;
-            yield return wffu;
-            agent.destination = player.position;
-            if (enemyTurn == false && !attackMode)
-            {
-                coroRunning = false;
-                StopCoroutine(Navigate());
-                break;
-            }
+            StartCoroutine(Shoot());
+        }
+
+        if (health.health <= 0)
+        {
+            Instantiate(deathAnim, gameObject.transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
     public IEnumerator Patrol()
     {
-        coroRunning = true;
-        damage.SetActive(false);
-        canPatrol = true;
-        canNavigate = false;
-        while (canPatrol)
+        moving = true;
+        agent.speed = moveSpeed;
+        while (moving)
         {
-            agent.speed = patrolSpeed;
-            yield return wffu;
+            yield return new WaitForFixedUpdate();
             if (agent.pathPending || !(agent.remainingDistance < 0.5f)) continue;
-            yield return waitFor;
-            agent.destination = (Random.insideUnitSphere * patrolRange) + startPos;
-            if (enemyTurn == true && !attackMode)
+            yield return new WaitForSeconds(waitBeforeMove);
+            if (roomMan.playerEntered)
             {
-                coroRunning = false;
-                StopCoroutine(Patrol());
-                break;
+                agent.destination = (Random.insideUnitSphere * patrolRange) + startPos;
             }
         }
     }
     
+    IEnumerator Shoot()
+    { //shoots bullet(s)
+        isShooting = true;
+        Bullet bullet = Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation).GetComponent<Bullet>();
+        bullet.bulletSpawn = bulletSpawn;
+        yield return new WaitForSeconds(gun.fireRate);
+        isShooting = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            canPatrol = false;
-            canNavigate = false;
-            if (attackMode || enemyTurn == true)
-            {
-                StartCoroutine(Navigate());
-            }
-            else
-            {
-                StartCoroutine(Patrol());
-            }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (!coroRunning && other.gameObject.CompareTag("Player"))
-        {
-            canPatrol = false;
-            canNavigate = false;
-            if (enemyTurn == true)
-            {
-                StartCoroutine(Navigate());
-            }
-            else
-            {
-                StartCoroutine(Patrol());
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            canPatrol = false;
-            canNavigate = false;
-            seen = false;
-            StartCoroutine(Patrol());
-        }
+        roomMan = other.GetComponent<RoomManager>();
+        print(roomMan);
     }
 }

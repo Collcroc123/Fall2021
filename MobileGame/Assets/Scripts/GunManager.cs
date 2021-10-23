@@ -5,16 +5,9 @@ public class GunManager : MonoBehaviour
     public GunData gun;
     public SpriteRenderer gunSprite;
     
-    // Start is called before the first frame update
     void Start()
     {
         SetGun();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void SetGun() //If crate is shot
