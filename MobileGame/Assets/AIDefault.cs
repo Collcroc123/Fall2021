@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
@@ -16,6 +15,8 @@ public class AIDefault : MonoBehaviour
     public GameObject player, sprite, bulletSpawn, deathAnim;
     public GunData gun;
     private RoomManager roomMan;
+    public int touchDamage = 1;
+    bool done;
 
     void Start()
     {
@@ -71,7 +72,18 @@ public class AIDefault : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        roomMan = other.GetComponent<RoomManager>();
-        print(roomMan);
+        if (!done)
+        {
+            roomMan = other.GetComponent<RoomManager>();
+            print(roomMan);
+            done = true;
+        }
+
+        if (other.CompareTag("Bullet")) //!other.GetComponent<Bullet>().isEnemyBullet)
+        {
+            Bullet pBullet = other.GetComponent<Bullet>();
+            health.health -= pBullet.gun.bulletDamage;
+            print(health.health);
+        }
     }
 }

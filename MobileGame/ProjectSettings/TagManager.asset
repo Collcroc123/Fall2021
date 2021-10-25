@@ -13,6 +13,7 @@ TagManager:
   - Doorframe
   - EnemyBullet
   - Hearts
+  - Bullet
   layers:
   - Default
   - TransparentFX

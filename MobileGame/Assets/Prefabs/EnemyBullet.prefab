@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7593976470086029736}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 0}
+  gun: {fileID: 0}
   texture: {fileID: 2210931030017876993}
   source: {fileID: 7593976470086029736}
   stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}

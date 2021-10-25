@@ -3,6 +3,7 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>Assets</Path>
       <Path>Library/PackageCache/com.unity.ads@3.7.1</Path>
       <Path>Library/PackageCache/com.unity.ai.navigation@1.0.0-exp.4</Path>
       <Path>Library/PackageCache/com.unity.analytics@3.5.3</Path>

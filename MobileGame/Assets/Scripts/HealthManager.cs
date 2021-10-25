@@ -26,7 +26,9 @@ public class HealthManager : MonoBehaviour
         heartArray.Clear();
         numFrames = health.health / 2; //checks if health is odd or even
         if (health.health % 2 == 1)
+        {
             numFrames++;
+        }
         int z = 0;
         for (int i = 0; i < numFrames; i++)
         { //
@@ -54,7 +56,6 @@ public class HealthManager : MonoBehaviour
                 halfHeart = null;
                 z++;
             }
-            
         }
     }
 
@@ -68,20 +69,25 @@ public class HealthManager : MonoBehaviour
             }
             else if (health.health == 0)
             {
-                
+                //Death
             }
         }
     }
 
     private void OnTriggerStay(Collider other)
     { //damages player when touching enemy or their bullets
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBullet"))
+        if (!invincible)
         {
-            if (!invincible)
+            if (other.CompareTag("Enemy"))
             {
-                aSource.clip = hurtSound;
-                aSource.Play();
-                StartCoroutine(Hurt(1));
+                AIDefault enemy = other.GetComponent<AIDefault>();
+                StartCoroutine(Hurt(enemy.touchDamage));
+            
+            }
+            else if (other.CompareTag("EnemyBullet"))
+            {
+                Bullet eBullet = other.GetComponent<Bullet>();
+                StartCoroutine(Hurt(eBullet.gun.bulletDamage));
             }
         }
     }
@@ -89,6 +95,8 @@ public class HealthManager : MonoBehaviour
     IEnumerator Hurt(int damage)
     { //hurts player, plays animations
         invincible = true;
+        aSource.clip = hurtSound;
+        aSource.Play();
         health.Damage(damage);
         heartArray.GetLast();
         Destroy(heartArray.array[lastHeartSlot.value]);

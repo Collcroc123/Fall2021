@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7593976470086029736}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,9 +77,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefcab1a8e87c8144bc9cf20214562a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletSpawn: {fileID: 0}
+  gun: {fileID: 0}
   texture: {fileID: 2210931030017876993}
   source: {fileID: 7593976470086029736}
   stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
+  isEnemyBullet: 0
   hitAnim: {fileID: 7960022413478583678, guid: 5edfb737b2acd754cbe9905d25c61de2, type: 3}
 --- !u!82 &7593976470086029736
 AudioSource:
