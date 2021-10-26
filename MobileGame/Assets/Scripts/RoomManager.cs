@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
@@ -7,6 +8,9 @@ public class RoomManager : MonoBehaviour
     private OLDMAPGEN mapGen; //sets spawn room as complete
     public bool roomComplete, playerEntered; //no enemies in room, opens doors
     private bool done; //keeps door from ever opening or closing
+    public int enemyNum;
+    public GameObject cratePrefab;
+    public IntData roomsSinceLastCrate;
     public Light lightOne, lightTwo;
 
     void Start()
@@ -21,9 +25,21 @@ public class RoomManager : MonoBehaviour
 
     private void Update()
     {
+        if (enemyNum <= 0)
+        {
+            roomComplete = true;
+        }
         if (roomComplete && !done)
         {
             done = true;
+            if (roomsSinceLastCrate.value >= 5)
+            {
+                if (Random.Range(0, 5) >= 2.5f)
+                {
+                    Instantiate(cratePrefab, gameObject.transform.position, Quaternion.identity);
+                    roomsSinceLastCrate.value = 0;
+                }
+            }
             Invoke(nameof(Open), 0.5f);
         }
     }
@@ -58,6 +74,7 @@ public class RoomManager : MonoBehaviour
         {
             //lightOne.enabled = true;
             //lightTwo.enabled = true;
+            StartCoroutine(Wait());
             playerEntered = true;
             roomFade.SetBool("Enter", true);
             if (!roomComplete) 
@@ -76,5 +93,10 @@ public class RoomManager : MonoBehaviour
         }
         else if (other.CompareTag("Enemy")) 
             roomComplete = true;
+    }
+    
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
     }
 }

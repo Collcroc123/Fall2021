@@ -55,6 +55,12 @@ MonoBehaviour:
   door3: {fileID: 0}
   door4: {fileID: 0}
   roomComplete: 0
+  playerEntered: 0
+  enemyNum: 0
+  cratePrefab: {fileID: 4691262111243214251, guid: 1f09422719063d04aa86298f30da76a9, type: 3}
+  roomsSinceLastCrate: {fileID: 11400000, guid: e1a0c1f1f23b4f248b2e1c91fc2455b9, type: 2}
+  lightOne: {fileID: 0}
+  lightTwo: {fileID: 0}
 --- !u!65 &977504505040085347
 BoxCollider:
   m_ObjectHideFlags: 0

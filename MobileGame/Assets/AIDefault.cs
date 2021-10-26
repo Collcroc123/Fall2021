@@ -41,6 +41,7 @@ public class AIDefault : MonoBehaviour
         if (health.health <= 0)
         {
             Instantiate(deathAnim, gameObject.transform.position, Quaternion.identity);
+            roomMan.enemyNum--;
             Destroy(gameObject);
         }
     }
@@ -75,11 +76,11 @@ public class AIDefault : MonoBehaviour
         if (!done)
         {
             roomMan = other.GetComponent<RoomManager>();
-            print(roomMan);
+            roomMan.enemyNum++;
             done = true;
         }
 
-        if (other.CompareTag("Bullet")) //!other.GetComponent<Bullet>().isEnemyBullet)
+        if (other.CompareTag("Bullet"))
         {
             Bullet pBullet = other.GetComponent<Bullet>();
             health.health -= pBullet.gun.bulletDamage;

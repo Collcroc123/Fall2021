@@ -17,6 +17,12 @@ EditorUserSettings:
     RecentlyUsedScenePath-3:
       value: 2242470311464669020919273e2c50141a12570d0e0b273d283b1c7cd1e33136e7f479cec5193e313c10ee03363b0f3bf7183d0eee1f1f191440e80018eb09
       flags: 0
+    RecentlyUsedScenePath-4:
+      value: 22424703114646680e0b0227036c73150012146439262f2434
+      flags: 0
+    RecentlyUsedScenePath-5:
+      value: 22424703114646680e0b0227036c72111f1958072926337e38271427fb
+      flags: 0
     UnityEditor.ShaderGraph.Blackboard:
       value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd2e2d293c4ead313b08042de6030a0afa240c0d020be94c4ba75e435d8715fa32c70d15d11612dacc11fee5d3c5d1fe9ab1bf968e93e2ffcbc3e7e2f0b3ffe0e8b0be9af8ffaeffff8e85dd8390e3949c8899daa7
       flags: 0
@@ -31,6 +37,9 @@ EditorUserSettings:
       flags: 0
     UnityRemoteDevice:
       value: 225f4d46245b0d4902070862342649191512
+      flags: 0
+    UnityRemoteJoystickSource:
+      value: 315459091150
       flags: 0
     UnityRemoteResolution:
       value: 2d5e460b0459
