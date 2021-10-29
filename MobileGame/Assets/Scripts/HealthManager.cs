@@ -15,6 +15,7 @@ public class HealthManager : MonoBehaviour
     private AudioSource aSource; //plays damage sounds
     public AudioClip lowSound, hurtSound; //damage sounds
     private bool coroRunning;
+    public GameObject deathPanel;
     
     void Start()
     { //spawns hearts
@@ -69,7 +70,9 @@ public class HealthManager : MonoBehaviour
             }
             else if (health.health == 0)
             {
-                //Death
+                Destroy(gameObject);
+                deathPanel.SetActive(true);
+                coroRunning = true;
             }
         }
     }
@@ -102,7 +105,7 @@ public class HealthManager : MonoBehaviour
         Destroy(heartArray.array[lastHeartSlot.value]);
         cam.Shake(5, 0.1f);
         invincibleAnimation.SetBool("Invincible", true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         invincibleAnimation.SetBool("Invincible", false);
         invincible = false;
     }

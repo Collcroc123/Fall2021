@@ -19,7 +19,59 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793cc5a1-5e27-4b92-8541-c33f4f61bd1e" name="Default Changelist" comment="" />
+    <list default="true" id="793cc5a1-5e27-4b92-8541-c33f4f61bd1e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AIDefault.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AIDefault.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/CameraPlayAnim.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/CameraPlayAnim.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/DoorClose.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DoorClose.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/DoorOpen.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DoorOpen.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/MenuFade.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/MenuFade.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/StartFade.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/StartFade.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/lowhealth.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/lowhealth.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/lowhealth.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/lowhealth.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Load.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Load.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Load.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Load.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/1Door/E.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/1Door/E.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/1Door/N.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/1Door/N.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/1Door/S.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/1Door/S.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/1Door/W.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/1Door/W.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2Doors/ES.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2Doors/ES.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2Doors/EW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2Doors/EW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2Doors/NE.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2Doors/NE.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2Doors/NS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2Doors/NS.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2Doors/NW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2Doors/NW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/2Doors/SW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/2Doors/SW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3Doors/ESW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3Doors/ESW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3Doors/NES.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3Doors/NES.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3Doors/NEW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3Doors/NEW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/3Doors/NSW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/3Doors/NSW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Floor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NESW.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NESW.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Datas/Controls.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Datas/Controls.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventWait.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventWait.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Blueprints/VehicleBlueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Blueprints/VehicleBlueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Blueprints/WheelData/Vehicle_BackTireDrift.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Blueprints/WheelData/Vehicle_BackTireDrift.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap_BuiltData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Intermediate/CachedAssetRegistry.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Intermediate/CachedAssetRegistry.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/AutoScreenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/AutoScreenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/CrashReportClient/UE4CC-Windows-65F95F7F46564EA094D39B91616E6DAB/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/CrashReportClient/UE4CC-Windows-E97484D545CB5BC3F6DAF0963957DA2B/CrashReportClient.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/Windows/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/Windows/EditorPerProjectUserSettings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/WorldState/1583457753.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/WorldState/1583457753.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,8 +89,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventWait.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AIDefault.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Plugins/OnScreen/OnScreenStick.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -60,12 +112,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/OLDMAPGEN.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DataScripts/GunData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GunManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/AIDefault.cs" />
         <option value="$PROJECT_DIR$/Assets/AutoDelete.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/Pauser.cs" />
+        <option value="$PROJECT_DIR$/Assets/Pauser.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventWait.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/AIDefault.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RoomManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" />
       </list>
     </option>
   </component>
@@ -84,7 +139,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="F:/Builds\MobileGame.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -154,6 +209,7 @@
       <workItem from="1635183159411" duration="65000" />
       <workItem from="1635183243189" duration="2965000" />
       <workItem from="1635265607484" duration="8879000" />
+      <workItem from="1635464463883" duration="12745000" />
     </task>
     <servers />
   </component>

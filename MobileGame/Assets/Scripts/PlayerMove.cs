@@ -71,17 +71,23 @@ public class PlayerMove : MonoBehaviour
         
         else if (controls.gamepad && Gamepad.current != null)
         { //checks for controller/touch input
-            if (controls.touch && !isShooting) 
-                StartCoroutine(Shoot());
-            else if (Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting)
-                StartCoroutine(Shoot());
-            
             Vector3 direction = new Vector3(Gamepad.current.leftStick.x.ReadValue(), 0f, Gamepad.current.leftStick.y.ReadValue());
+            Vector3 aimDirection = new Vector3(Gamepad.current.rightStick.x.ReadValue(), 0f, Gamepad.current.rightStick.y.ReadValue());
             if (direction.magnitude >= 0.1f)
             {
                 Vector3 moveVector = direction * (direction.magnitude * speed);
                 controller.Move(moveVector * Time.deltaTime);
             }
+            if (controls.touch && aimDirection.magnitude > 0.25f && !isShooting)
+            {
+                StartCoroutine(Shoot());
+            }
+            else if (!controls.touch && Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting)
+            {
+                StartCoroutine(Shoot());
+            }
+            
+            
         }
     }
 

@@ -16,10 +16,10 @@ public class AIDefault : MonoBehaviour
     public GunData gun;
     private RoomManager roomMan;
     public int touchDamage = 1;
-    bool done;
 
     void Start()
     {
+        roomMan = GetComponentInParent<RoomManager>();
         health = ScriptableObject.CreateInstance<HealthData>();
         health.health = enemyHealth;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -73,13 +73,6 @@ public class AIDefault : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!done)
-        {
-            roomMan = other.GetComponent<RoomManager>();
-            roomMan.enemyNum++;
-            done = true;
-        }
-
         if (other.CompareTag("Bullet"))
         {
             Bullet pBullet = other.GetComponent<Bullet>();

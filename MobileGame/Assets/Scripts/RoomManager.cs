@@ -9,17 +9,29 @@ public class RoomManager : MonoBehaviour
     public bool roomComplete, playerEntered; //no enemies in room, opens doors
     private bool done; //keeps door from ever opening or closing
     public int enemyNum;
+    public GameObject enemyPrefab;
     public GameObject cratePrefab;
     public IntData roomsSinceLastCrate;
-    public Light lightOne, lightTwo;
+    private AudioSource doorSource;
+    public AudioClip open, close;
+    //public Light lightOne, lightTwo;
 
     void Start()
     {
         //lightOne = GetComponentInChildren<Light>();
         //lightTwo = GetComponentInChildren<Light>();
         //roomComplete = true; //TEMP TRUE WITHOUT ENEMIES
+        doorSource = GetComponent<AudioSource>();
         mapGen = GetComponentInParent<OLDMAPGEN>();
         if (mapGen.isSpawn) { roomComplete = true; }
+        else
+        {
+            enemyNum = Random.Range(0, 3);
+            GameObject newEnemy = Instantiate(enemyPrefab);
+            newEnemy.transform.SetParent(gameObject.transform);
+            newEnemy.transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0.5f, Random.Range(-2.5f, 2.5f));
+
+        }
         Invoke(nameof(Open), 0.5f);
     }
 
@@ -54,10 +66,13 @@ public class RoomManager : MonoBehaviour
             door3.OpenDoor();
         if (door4 != null) 
             door4.OpenDoor();
+        doorSource.clip = open;
+        doorSource.Play();
     }
 
     private void Close()
     {
+        
         if (door1 != null) 
             door1.CloseDoor();
         if (door2 != null) 
@@ -77,8 +92,13 @@ public class RoomManager : MonoBehaviour
             StartCoroutine(Wait());
             playerEntered = true;
             roomFade.SetBool("Enter", true);
-            if (!roomComplete) 
+            if (!roomComplete)
+            {
+                doorSource.mute = false;
+                doorSource.clip = close;
+                doorSource.Play();
                 Close();
+            }
         }
     }
 
@@ -91,8 +111,8 @@ public class RoomManager : MonoBehaviour
             playerEntered = false;
             roomFade.SetBool("Enter", false);
         }
-        else if (other.CompareTag("Enemy")) 
-            roomComplete = true;
+        else if (other.CompareTag("Enemy"))
+            enemyNum--;
     }
     
     IEnumerator Wait()
