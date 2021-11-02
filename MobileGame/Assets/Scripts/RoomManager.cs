@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class RoomManager : MonoBehaviour
 {
@@ -26,11 +27,13 @@ public class RoomManager : MonoBehaviour
         if (mapGen.isSpawn) { roomComplete = true; }
         else
         {
-            enemyNum = Random.Range(0, 3);
-            GameObject newEnemy = Instantiate(enemyPrefab);
-            newEnemy.transform.SetParent(gameObject.transform);
-            newEnemy.transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0.5f, Random.Range(-2.5f, 2.5f));
-
+            enemyNum = Random.Range(1, 3);
+            for (int i = 0; i < enemyNum; i++)
+            {
+                GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+                newEnemy.transform.SetParent(gameObject.transform);
+                newEnemy.transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0.5f, Random.Range(-2.5f, 2.5f));
+            }
         }
         Invoke(nameof(Open), 0.5f);
     }

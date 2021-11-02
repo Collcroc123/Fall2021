@@ -48,6 +48,7 @@ public class AIDefault : MonoBehaviour
 
     public IEnumerator Patrol()
     {
+        yield return new WaitForSeconds(1f);
         moving = true;
         agent.speed = moveSpeed;
         while (moving)

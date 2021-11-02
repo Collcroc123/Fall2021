@@ -6,6 +6,7 @@ public class HoleFiller : MonoBehaviour
     private GameManager manager; //checks if level is done generating
     private Animator doorAnim; //opens and closes doors
     private MeshFilter mesh; //doorframe's mesh
+    private MeshCollider meshColl;
     private BoxCollider boxCollider; //checks if door leads to wall
     private bool door, done; //keeps door from constantly filling
     public GameObject lDoor, rDoor; //door objects
@@ -17,6 +18,7 @@ public class HoleFiller : MonoBehaviour
         manager = GameObject.Find("/Manager").GetComponent<GameManager>();
         doorAnim = GetComponent<Animator>();
         mesh = GetComponent<MeshFilter>();
+        meshColl = GetComponent<MeshCollider>();
         boxCollider = GetComponent<BoxCollider>();
         
     }
@@ -71,6 +73,7 @@ public class HoleFiller : MonoBehaviour
         Destroy(lDoor); 
         Destroy(rDoor);
         mesh.mesh = wall;
+        meshColl.sharedMesh = wall;
         gameObject.transform.tag = "Wall";
         mapDoor.color = new Color(255, 255, 255, 255);
         boxCollider.enabled = false;
