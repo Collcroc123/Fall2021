@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class EventWait : MonoBehaviour
 {
-    public Animator door, cam, uiFade;
-    public AudioSource open;//, woosh;
+    public AudioSource open;
+    public Animator door, cam, uiFade, fadeOut;
+    
     public void WaitFor(float time)
     {
         StartCoroutine(Wait(time));
@@ -19,9 +20,20 @@ public class EventWait : MonoBehaviour
         open.Play();
         yield return new WaitForSeconds(num);
         cam.SetTrigger("Play");
-        //woosh.Play();
         yield return new WaitForSeconds(num*3);
         door.SetBool("Open", false);
         SceneManager.LoadScene("Level"); 
+    }
+    
+    public void SceneChange(string load)
+    {
+        StartCoroutine(Scene(load));
+    }
+    
+    IEnumerator Scene(string scene)
+    {
+        fadeOut.SetTrigger("Fade");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(scene); 
     }
 }
