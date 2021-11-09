@@ -261,7 +261,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5b93223d7c06cde4982f5f3d4d91c6d3, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -300,12 +300,16 @@ MonoBehaviour:
   moveSpeed: 4
   enemyHealth: 5
   patrolRange: 5
+  points: 500
   player: {fileID: 0}
   sprite: {fileID: 3587620675849051201}
   bulletSpawn: {fileID: 3587620675782112111}
   deathAnim: {fileID: 7960022413478583678, guid: 581264349048b054eb5c483538fc2fef, type: 3}
   gun: {fileID: 11400000, guid: ab21ccb7e92eea442888ef9df02968a8, type: 2}
   touchDamage: 1
+  stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
+  score: {fileID: 11400000, guid: 80aa75d5b0f0c4848b6268c7bacf1797, type: 2}
+  manager: {fileID: 0}
 --- !u!65 &3587620676071164302
 BoxCollider:
   m_ObjectHideFlags: 0

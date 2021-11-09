@@ -18,7 +18,7 @@ public class AimMover : MonoBehaviour
     
     void Update()
     {
-        if (aim)
+        if (aim && sprite != null)
         {
             if (controls.mouse)
             {//https://stackoverflow.com/questions/46998241/getting-mouse-position-in-unity

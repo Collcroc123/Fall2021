@@ -1,24 +1,22 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Pauser : MonoBehaviour
 {
-    public Button resume, quit;
-    public GameObject panel;
+    //public GameObject panel;
     public Animator fade;
 
-    void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
-        panel.SetActive(true);
+        //panel.SetActive(true);
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
-        panel.SetActive(false);
+        //panel.SetActive(false);
     }
 
     public void Fade()
@@ -30,6 +28,6 @@ public class Pauser : MonoBehaviour
     {
         fade.SetTrigger("Fade");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Level"); 
+        SceneManager.LoadScene("Menu"); 
     }
 }

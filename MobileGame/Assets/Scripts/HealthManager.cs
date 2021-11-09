@@ -13,10 +13,11 @@ public class HealthManager : MonoBehaviour
     public IntData lastHeartSlot; //what array slot holds rightmost heart
     private CamMover cam; //shakes cam
     private AudioSource aSource; //plays damage sounds
-    public AudioClip lowSound, hurtSound; //damage sounds
+    public AudioClip lowSound, hurtSound, healSound; //damage sounds
     private bool coroRunning;
     public GameObject deathPanel;
-    
+    public StatsData stats;
+
     void Start()
     { //spawns hearts
         aSource = GetComponent<AudioSource>();
@@ -68,12 +69,14 @@ public class HealthManager : MonoBehaviour
             {
                 StartCoroutine(LowHealth(health.health));
             }
-            else if (health.health == 0)
-            {
-                Destroy(gameObject);
-                deathPanel.SetActive(true);
-                coroRunning = true;
-            }
+        }
+        else if (health.health == 0)
+        {
+            coroRunning = true;
+            stats.deaths++;
+            deathPanel.SetActive(true);
+            Destroy(gameObject);
+            
         }
     }
 
@@ -93,6 +96,15 @@ public class HealthManager : MonoBehaviour
                 StartCoroutine(Hurt(eBullet.gun.bulletDamage));
             }
         }
+
+        if (other.CompareTag("Crate"))
+        {
+            if (health.health < health.maxHealth)
+            {
+                Destroy(other.gameObject);
+                StartCoroutine(Heal(1));
+            }
+        }
     }
 
     IEnumerator Hurt(int damage)
@@ -101,6 +113,7 @@ public class HealthManager : MonoBehaviour
         aSource.clip = hurtSound;
         aSource.Play();
         health.Damage(damage);
+        stats.damageTaken += damage;
         heartArray.GetLast();
         Destroy(heartArray.array[lastHeartSlot.value]);
         cam.Shake(5, 0.1f);
@@ -110,12 +123,26 @@ public class HealthManager : MonoBehaviour
         invincible = false;
     }
 
+    IEnumerator Heal(int healing)
+    {
+        invincible = true;
+        aSource.clip = healSound;
+        aSource.Play();
+        health.Heal(healing);
+        stats.healthGained += healing;
+        heartArray.GetLast();
+        //SPAWN HEALTH HERE
+        invincibleAnimation.SetBool("Invincible", true);
+        yield return new WaitForSeconds(1f);
+        invincibleAnimation.SetBool("Invincible", false);
+    }
+
     IEnumerator LowHealth(int health)
     {
         coroRunning = true;
+        yield return new WaitForSeconds(health * 0.75f);
         aSource.clip = lowSound;
         aSource.Play();
-        yield return new WaitForSeconds(health * 0.75f);
         coroRunning = false;
     }
 }

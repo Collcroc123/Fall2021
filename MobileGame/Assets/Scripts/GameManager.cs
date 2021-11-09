@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,10 +11,15 @@ public class GameManager : MonoBehaviour
     public GameObject tempRoom; //temporarily stores last room
     public StatsData stats; //tracks statistics
     public bool levelDone; //true if level is done generating
+    public AudioSource music;
+    public ArrayData clips;
+    public Text scoreTitle, scoreNum;
     
     private void Start()
     { //freezes player, starts generation check
         //movement.DisableInput();
+        music.clip = clips.soundArray[Random.Range(0, clips.soundArray.Length)];
+        music.Play();
         movement.enabled = false;
         totalRooms.value = 0;
         StartCoroutine(CheckDone());

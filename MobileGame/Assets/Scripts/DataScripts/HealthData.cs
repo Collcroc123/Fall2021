@@ -7,12 +7,12 @@ public class HealthData : ScriptableObject
     public StatsData stats;
     
 
-    public void Heal(int amount, int excess)
+    public void Heal(int amount)//, int excess
     {
         health += amount;
         if (health > maxHealth)
         {
-            excess = health - maxHealth;
+            //excess = health - maxHealth;
             health = maxHealth;
         }
         stats.healthGained += amount;
