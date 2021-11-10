@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
+    public GameManager manager;
     public HealthData health; //tracks and edits health
     public ArrayData heartArray; //tracks hearts in scene
     public GameObject heartPrefab, halfHeartPrefab; //heart prefabs
@@ -15,8 +16,8 @@ public class HealthManager : MonoBehaviour
     private AudioSource aSource; //plays damage sounds
     public AudioClip lowSound, hurtSound, healSound; //damage sounds
     private bool coroRunning;
-    public GameObject deathPanel;
-    public StatsData stats;
+    public GameObject deathPanel, deathAnim;
+    //public StatsData stats;
 
     void Start()
     { //spawns hearts
@@ -73,8 +74,9 @@ public class HealthManager : MonoBehaviour
         else if (health.health == 0)
         {
             coroRunning = true;
-            stats.deaths++;
+            manager.stats.deaths++;
             deathPanel.SetActive(true);
+            Instantiate(deathAnim, gameObject.transform.position, Quaternion.Euler(90, 0 ,0));
             Destroy(gameObject);
             
         }
@@ -113,7 +115,7 @@ public class HealthManager : MonoBehaviour
         aSource.clip = hurtSound;
         aSource.Play();
         health.Damage(damage);
-        stats.damageTaken += damage;
+        manager.stats.damageTaken += damage;
         heartArray.GetLast();
         Destroy(heartArray.array[lastHeartSlot.value]);
         cam.Shake(5, 0.1f);
@@ -129,7 +131,7 @@ public class HealthManager : MonoBehaviour
         aSource.clip = healSound;
         aSource.Play();
         health.Heal(healing);
-        stats.healthGained += healing;
+        manager.stats.healthGained += healing;
         heartArray.GetLast();
         //SPAWN HEALTH HERE
         invincibleAnimation.SetBool("Invincible", true);

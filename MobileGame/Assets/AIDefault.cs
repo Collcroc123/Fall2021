@@ -73,6 +73,7 @@ public class AIDefault : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             health.health -= other.GetComponent<Bullet>().gun.bulletDamage;
+            manager.stats.damageDealt += other.GetComponent<Bullet>().gun.bulletDamage;
         }
     }
 }

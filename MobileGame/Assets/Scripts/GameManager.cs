@@ -6,13 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public Animator genPanel; //loading screen
     public PlayerMove movement; //script that controls player
-    public IntData totalRooms, maxRooms; //keeps track of rooms
+    public IntData totalRooms, maxRooms, levelCount; //keeps track of rooms
     public GameObjectData lastRoom; //stores final room generated
     public StatsData stats; //tracks statistics
     public bool levelDone; //true if level is done generating
     public AudioSource music;
     public ArrayData clips;
     public Text scoreTitle, scoreNum;
+    public GameObject stairs;
     
     private void Start()
     { //freezes player, starts generation check
@@ -47,6 +48,11 @@ public class GameManager : MonoBehaviour
     void FinishMap()
     { //marks end room, finishes generation
         lastRoom.end.GetComponent<OLDMAPGEN>().isEnd = true;
+        //GameObject stairObject = Instantiate(stairs, lastRoom.end.transform.position, Quaternion.identity);
+        //Stairs stair = stairObject.GetComponent<Stairs>();
+        //stair.manager = this;
+        Vector3 loc = lastRoom.end.transform.position;
+        stairs.transform.position = new Vector3(loc.x, loc.y + 1.125f, loc.z);
         levelDone = true;
         genPanel.SetBool("LoadingDone", true);
         //movement.EnableInput();

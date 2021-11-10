@@ -50,16 +50,13 @@ public class RoomManager : MonoBehaviour
             done = true;
             if (roomsSinceLastCrate.value >= 3)
             {
-                if (Random.Range(0f, 5f) >= 2f)
+                if (Random.Range(0f, 5f) >= 3f)
                 {
                     Instantiate(cratePrefab, gameObject.transform.position, Quaternion.identity);
-                    roomsSinceLastCrate.value = 0;
-                }
-                else
-                {
-                    roomsSinceLastCrate.value++;
+                    roomsSinceLastCrate.value = -1;
                 }
             }
+            roomsSinceLastCrate.value++;
             Invoke(nameof(Open), 0.5f);
         }
     }

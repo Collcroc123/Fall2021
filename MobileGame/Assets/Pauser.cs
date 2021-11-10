@@ -26,6 +26,7 @@ public class Pauser : MonoBehaviour
 
     IEnumerator waitFade()
     {
+        Time.timeScale = 0;
         fade.SetTrigger("Fade");
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("Menu"); 
