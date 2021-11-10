@@ -1,68 +1,57 @@
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIDefault : MonoBehaviour
 {
-    public HealthData health; //[HideInInspector] 
-    private NavMeshAgent agent;
-    private Vector3 startPos;
-    private bool moving, isShooting;
-    public float waitBeforeMove, moveSpeed;
-    public int enemyHealth, patrolRange, points;
-    public GameObject player, sprite, bulletSpawn, deathAnim;
-    public GunData gun;
-    private RoomManager roomMan;
-    public int touchDamage = 1;
-    public StatsData stats;
-    public IntData score;
     public GameManager manager;
-
+    [HideInInspector] public HealthData health;
+    private RoomManager roomMan;
+    private NavMeshAgent agent;
+    private GunManager gunMan;
+    private Vector3 startPos;
+    private bool moving;
+    public GameObject player, sprite, deathAnim;
+    public int enemyHealth,touchDamage, patrolRange, points;
+    public float waitBeforeMove, moveSpeed;
+    
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
         roomMan = GetComponentInParent<RoomManager>();
         health = ScriptableObject.CreateInstance<HealthData>();
-        health.health = enemyHealth;
-        player = GameObject.FindGameObjectWithTag("Player");
-        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
-        startPos = transform.position;
+        gunMan = GetComponentInChildren<GunManager>();
         agent = GetComponent<NavMeshAgent>();
+        health.health = enemyHealth;
+        startPos = transform.position;
         StartCoroutine(Patrol());
     }
 
     private void Update()
     {
         if (player != null)
-        {
+        { //Looks at player, shoots
             Vector3 relativePos = player.transform.position - gameObject.transform.position; relativePos.y = 0;
             Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
             sprite.transform.rotation = rotation;
-            if (!isShooting && roomMan.playerEntered)
-            {
-                StartCoroutine(Shoot());
-            }
-
-            if (health.health <= 0)
-            {
-                score.value += points;
-                manager.scoreNum.text = score.value.ToString();
-                if (score.value > stats.highScore)
-                {
-                    stats.highScore = score.value;
-                    manager.scoreTitle.text = "HIGH SCORE!";
-                }
-                stats.enemiesKilled++;
-                Instantiate(deathAnim, gameObject.transform.position, Quaternion.identity);
-                roomMan.enemyNum--;
-                Destroy(gameObject);
+            if (!gunMan.isShooting && roomMan.playerEntered)
+            { //Won't shoot while on cooldown or if player isn't in room
+                gunMan.Shoot();
             }
         }
+        if (health.health <= 0)
+        {
+            manager.AddPoints(points);
+            manager.stats.enemiesKilled++;
+            Instantiate(deathAnim, gameObject.transform.position, Quaternion.Euler(90, 0 ,0));
+            roomMan.enemyNum--;
+            Destroy(gameObject);
+        }
     }
-
-    public IEnumerator Patrol()
+    IEnumerator Patrol()
     {
         yield return new WaitForSeconds(1f);
         moving = true;
@@ -72,29 +61,18 @@ public class AIDefault : MonoBehaviour
             yield return new WaitForFixedUpdate();
             if (agent.pathPending || !(agent.remainingDistance < 0.5f)) continue;
             yield return new WaitForSeconds(waitBeforeMove);
-            if (roomMan.playerEntered)
+            if (roomMan.playerEntered) //Enemy won't move until player enters
             {
                 agent.destination = (Random.insideUnitSphere * patrolRange) + startPos;
             }
         }
-    }
-    
-    IEnumerator Shoot()
-    { //shoots bullet(s)
-        isShooting = true;
-        yield return new WaitForSeconds(gun.fireRate);
-        Bullet bullet = Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation).GetComponent<Bullet>();
-        bullet.bulletSpawn = bulletSpawn;
-        isShooting = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            Bullet pBullet = other.GetComponent<Bullet>();
-            health.health -= pBullet.gun.bulletDamage;
-            print(health.health);
+            health.health -= other.GetComponent<Bullet>().gun.bulletDamage;
         }
     }
 }

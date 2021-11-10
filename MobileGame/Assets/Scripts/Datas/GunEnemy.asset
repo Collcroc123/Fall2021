@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92989dc938d09ad43a810eac7cea9ae7, type: 3}
   m_Name: GunEnemy
   m_EditorClassIdentifier: 
-  bullet: {fileID: 2193325140796608648, guid: 543562f57f6e5ce4c9509390845ab37a, type: 3}
-  gunColor: {r: 0.8490566, g: 0.7655126, b: 0.3964934, a: 1}
+  bullet: {fileID: 2193325140796608648, guid: b1c66b5df193eff46b3be67222a6fed5, type: 3}
+  gunColor: {r: 0.21885875, g: 0.8509804, b: 0.19607843, a: 1}
   fireRate: 1
   bulletSpeed: 9
   ammo: 0

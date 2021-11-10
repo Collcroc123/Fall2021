@@ -19,45 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="793cc5a1-5e27-4b92-8541-c33f4f61bd1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MobileGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AIDefault.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AIDefault.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/EndFade.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/EndFade.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/StartFade.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/StartFade.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Pauser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pauser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Crate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Crate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AimMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AimMover.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DataScripts/HealthData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DataScripts/HealthData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Blueprints/CarBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Blueprints/CarBP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Content/VehicleAdvBP/Maps/VehicleAdvExampleMap_BuiltData.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Intermediate/CachedAssetRegistry.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Intermediate/CachedAssetRegistry.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/AutoScreenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/AutoScreenshot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Autosaves/Game/VehicleAdvBP/Blueprints/CarBP_Auto1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Autosaves/Game/VehicleAdvBP/Blueprints/CarBP_Auto1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Autosaves/Game/VehicleAdvBP/Maps/VehicleAdvExampleMap_Auto1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Autosaves/Game/VehicleAdvBP/Maps/VehicleAdvExampleMap_Auto1.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/CrashReportClient/UE4CC-Windows-163210F84F207255AEAE64B15BAA0B03/CrashReportClient.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/CrashReportClient/UE4CC-Windows-20448FE04DEB9444C2285793584320E1/CrashReportClient.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/CrashReportClient/UE4CC-Windows-328A411D4E10AF18B6EB29B0E97E4078/CrashReportClient.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/CrashReportClient/UE4CC-Windows-6C40AD2D4B8D8EBDE2CBA0A8B69ADED5/CrashReportClient.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/Windows/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/Windows/EditorPerProjectUserSettings.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/WorldState/1583457753.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Config/WorldState/1583457753.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars-backup-2021.10.28-22.39.52.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars-backup-2021.10.30-07.29.00.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars-backup-2021.10.31-00.08.12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars-backup-2021.11.01-01.59.42.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Unreal Projects/ToyCars/Saved/Logs/ToyCars.log" afterDir="false" />
-    </list>
+    <list default="true" id="793cc5a1-5e27-4b92-8541-c33f4f61bd1e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,8 +37,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/AIDefault.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Plugins/OnScreen/OnScreenStick.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AIDefault.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -125,7 +87,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="F:/Builds\MobileGame.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -199,6 +161,7 @@
       <workItem from="1635869546678" duration="4310000" />
       <workItem from="1636057760552" duration="2414000" />
       <workItem from="1636237044772" duration="9630000" />
+      <workItem from="1636480707547" duration="19316000" />
     </task>
     <servers />
   </component>

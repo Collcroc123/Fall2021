@@ -1,21 +1,20 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameManager manager;
     private CharacterController controller; //moves player
     private PlayerControls input; //gets player inputs
     public GameObject moveStick; //touchscreen stick to move
     public BoolData controls; //determines control scheme (REPLACE)
-    public GunData gun; //current equipped gun
-    public GameObject bulletSpawn; //location where bullet spawns
-    private bool isShooting; //checks if player is shooting
     public float speed = 5f; //movement speed
+    public GunManager gunMan;
     
     private void Start()
     { //sets up controls
         controller = GetComponent<CharacterController>();
+        gunMan = GetComponentInChildren<GunManager>();
         input = new PlayerControls();
         if (controls.keyboard)
             moveStick.SetActive(false);
@@ -65,8 +64,8 @@ public class PlayerMove : MonoBehaviour
             if (!Input.anyKey) posi = Vector3.zero;
             Vector3 movePos = posi * speed;
             controller.Move(movePos * Time.deltaTime);
-            if (Input.GetKey(KeyCode.Mouse0) && !isShooting) 
-                StartCoroutine(Shoot());
+            if (Input.GetKey(KeyCode.Mouse0) && !gunMan.isShooting) 
+                gunMan.Shoot();
         }
         
         else if (controls.gamepad && Gamepad.current != null)
@@ -78,28 +77,18 @@ public class PlayerMove : MonoBehaviour
                 Vector3 moveVector = direction * (direction.magnitude * speed);
                 controller.Move(moveVector * Time.deltaTime);
             }
-            if (controls.touch && aimDirection.magnitude > 0.25f && !isShooting)
+            if (controls.touch && aimDirection.magnitude > 0.25f && !gunMan.isShooting)
             {
-                StartCoroutine(Shoot());
+                gunMan.Shoot();
             }
-            else if (!controls.touch && Gamepad.current.rightTrigger.ReadValue() > 0.1f && !isShooting)
+            else if (!controls.touch && Gamepad.current.rightTrigger.ReadValue() > 0.1f && !gunMan.isShooting)
             {
-                StartCoroutine(Shoot());
+                gunMan.Shoot();
             }
-            
-            
         }
     }
-
-    IEnumerator Shoot()
-    { //shoots bullet(s)
-        isShooting = true;
-        Bullet bullet = Instantiate(gun.bullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation).GetComponent<Bullet>();
-        bullet.bulletSpawn = bulletSpawn;
-        yield return new WaitForSeconds(gun.fireRate);
-        isShooting = false;
-    }
 }
+
 /* if (Gamepad.current != null) print(Gamepad.current);
  * else if (Mouse.current != null && Keyboard.current != null) print(Mouse.current + " and " + Keyboard.current);
  * else if (Touchscreen.current != null) print(Touchscreen.current);

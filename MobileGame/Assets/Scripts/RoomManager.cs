@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 public class RoomManager : MonoBehaviour
 {
@@ -15,6 +14,8 @@ public class RoomManager : MonoBehaviour
     public IntData roomsSinceLastCrate;
     private AudioSource doorSource;
     public AudioClip open, close;
+    public SpriteRenderer mapBG;
+    public Color mapColor;
     //public Light lightOne, lightTwo;
 
     void Start()
@@ -27,7 +28,7 @@ public class RoomManager : MonoBehaviour
         if (mapGen.isSpawn) { roomComplete = true; }
         else
         {
-            enemyNum = Random.Range(1, 3);
+            enemyNum = Random.Range(1, 2);
             for (int i = 0; i < enemyNum; i++)
             {
                 GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
@@ -47,12 +48,16 @@ public class RoomManager : MonoBehaviour
         if (roomComplete && !done)
         {
             done = true;
-            if (roomsSinceLastCrate.value >= 5)
+            if (roomsSinceLastCrate.value >= 3)
             {
-                if (Random.Range(0, 5) >= 2.5f)
+                if (Random.Range(0f, 5f) >= 2f)
                 {
                     Instantiate(cratePrefab, gameObject.transform.position, Quaternion.identity);
                     roomsSinceLastCrate.value = 0;
+                }
+                else
+                {
+                    roomsSinceLastCrate.value++;
                 }
             }
             Invoke(nameof(Open), 0.5f);
@@ -95,6 +100,7 @@ public class RoomManager : MonoBehaviour
             StartCoroutine(Wait());
             playerEntered = true;
             roomFade.SetBool("Enter", true);
+            mapBG.color = mapColor;
             if (!roomComplete)
             {
                 doorSource.mute = false;

@@ -3,47 +3,42 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [HideInInspector] public GameObject bulletSpawn; //location where bullet spawns
+    public GameManager manager;
     [HideInInspector] public GunData gun; //current gun
+    [HideInInspector] public GameObject bulletSpawn; //location where bullet spawns
+    private Renderer texture; //bullet's texture
     private Rigidbody rbody; //bullet's rigidbody
-    public SpriteRenderer texture; //bullet's texture
-    public AudioSource source; //gunshot sound
-    public StatsData stats; //tracks statistics
-    //private bool hit; //unsure?
-    public bool isEnemyBullet; //tells if bullet is fired by player
+    private AudioSource source; //gunshot sound
     public GameObject hitAnim; //sound and particles
+    //private Light bulletLight;
     
     void Start()
     { //gives bullet attributes depending on what gun is fired
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
+        texture = GetComponentInChildren<MeshRenderer>();
+        //bulletLight = GetComponentInChildren<Light>();
+        source = GetComponent<AudioSource>();
         rbody = GetComponent<Rigidbody>();
-        gun = bulletSpawn.GetComponent<GunManager>().gun;
         texture.material = gun.bulletTexture;
         rbody.velocity = bulletSpawn.transform.forward * gun.bulletSpeed;
         source.clip = gun.gunshot.soundArray[Random.Range(0, gun.gunshot.soundArray.Length - 1)];
         source.Play();
-        if (!isEnemyBullet)
-        {
-            stats.bulletsFired++;
-        }
+        if (gameObject.CompareTag("Bullet"))
+            manager.stats.bulletsFired++;
     }
 
     private void OnTriggerEnter(Collider other)
     { //checks if bullet hits something
-        if (other.CompareTag("Enemy") && !isEnemyBullet)
+        if (other.CompareTag("Enemy") && gameObject.CompareTag("Bullet"))
         {
             Hit();
         }
-        else if (other.CompareTag("Player") && isEnemyBullet)
+        else if (other.CompareTag("Player") && gameObject.CompareTag("EnemyBullet"))
         {
             Hit();
         }
-        else if (other.CompareTag("Wall") || other.CompareTag("Door"))
+        else if (other.CompareTag("Wall") || other.CompareTag("Door") || other.CompareTag("Crate"))
         {
-            Hit();
-        }
-        else if (other.CompareTag("Crate"))
-        {
-            //Do Item Stuff Here!
             Hit();
         }
     }

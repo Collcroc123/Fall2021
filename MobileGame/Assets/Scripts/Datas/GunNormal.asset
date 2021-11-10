@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GunNormal
   m_EditorClassIdentifier: 
   bullet: {fileID: 2193325140796608648, guid: b1c66b5df193eff46b3be67222a6fed5, type: 3}
-  gunColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+  gunColor: {r: 0.7830189, g: 0.19575472, b: 0.19575472, a: 1}
   fireRate: 0.25
   bulletSpeed: 8
   ammo: 0

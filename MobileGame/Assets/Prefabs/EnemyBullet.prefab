@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefcab1a8e87c8144bc9cf20214562a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawn: {fileID: 0}
   gun: {fileID: 0}
+  bulletSpawn: {fileID: 0}
   texture: {fileID: 2210931030017876993}
   source: {fileID: 7593976470086029736}
   stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
@@ -324,7 +324,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9eabaa9f5145a1f41af017ac1e4324e8, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

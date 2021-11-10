@@ -60,8 +60,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629e841c464de29428af78d4f181ac4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 11400000, guid: a06850dfde7d29e4c841305e148b01e0, type: 2}
+  gun: {fileID: 11400000, guid: ab21ccb7e92eea442888ef9df02968a8, type: 2}
   gunSprite: {fileID: 3587620675984326647}
+  isShooting: 0
+  isEnemy: 1
 --- !u!1 &3587620675849051201
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,21 +297,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82280d3f1c722a9448506d51eb9cad97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   health: {fileID: 0}
-  waitBeforeMove: 1
-  moveSpeed: 4
-  enemyHealth: 5
-  patrolRange: 5
-  points: 500
   player: {fileID: 0}
   sprite: {fileID: 3587620675849051201}
-  bulletSpawn: {fileID: 3587620675782112111}
   deathAnim: {fileID: 7960022413478583678, guid: 581264349048b054eb5c483538fc2fef, type: 3}
-  gun: {fileID: 11400000, guid: ab21ccb7e92eea442888ef9df02968a8, type: 2}
+  enemyHealth: 5
   touchDamage: 1
-  stats: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
-  score: {fileID: 11400000, guid: 80aa75d5b0f0c4848b6268c7bacf1797, type: 2}
-  manager: {fileID: 0}
+  patrolRange: 5
+  points: 500
+  waitBeforeMove: 1
+  moveSpeed: 4
 --- !u!65 &3587620676071164302
 BoxCollider:
   m_ObjectHideFlags: 0

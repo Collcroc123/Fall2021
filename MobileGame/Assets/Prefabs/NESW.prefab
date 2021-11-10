@@ -63,6 +63,8 @@ MonoBehaviour:
   roomsSinceLastCrate: {fileID: 11400000, guid: e1a0c1f1f23b4f248b2e1c91fc2455b9, type: 2}
   open: {fileID: 8300000, guid: df6f81c7de145a64d98e58c91e5dafa8, type: 3}
   close: {fileID: 8300000, guid: 9885d5d9a5c8b2d4192b1a26420bcae0, type: 3}
+  mapBG: {fileID: 7975399522575484356}
+  mapColor: {r: 0.35039157, g: 0.4555186, b: 0.5849056, a: 1}
 --- !u!65 &993753482340130493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -429,6 +431,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4af4360debb25384c92e9b07d3e10f3b, type: 3}
+    - target: {fileID: 1933084728534833067, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.29
+      objectReference: {fileID: 0}
     - target: {fileID: 2558698944998740736, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -507,6 +513,11 @@ Transform:
 --- !u!95 &4238490634417366331 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 686155480673718273, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
+  m_PrefabInstance: {fileID: 3699586150801536314}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7975399522575484356 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6771687179003654398, guid: 2d9256ab6d980aa4f87a5e0a928a2d1a, type: 3}
   m_PrefabInstance: {fileID: 3699586150801536314}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7465230674122302023
