@@ -21,7 +21,9 @@ public class Bullet : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
         texture.material = gun.bulletTexture;
         rbody.velocity = bulletSpawn.transform.forward * gun.bulletSpeed;
-        source.clip = gun.gunshot.soundArray[Random.Range(0, gun.gunshot.soundArray.Length - 1)];
+        //source.clip = gun.gunshot[Random.Range(0, gun.gunshot.Length - 1)];
+        source.clip = gun.gunshot[0];
+        source.pitch = Random.Range(0.9f, 1.1f);
         source.Play();
         if (gameObject.CompareTag("Bullet"))
             manager.stats.bulletsFired++;

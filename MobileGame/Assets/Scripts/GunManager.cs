@@ -6,21 +6,23 @@ public class GunManager : MonoBehaviour
     public GunData gun;
     public SpriteRenderer gunSprite;
     public bool isShooting, isEnemy;
-    
+    public BoolData canShoot;
+
     void Start()
     {
-        SetGun();
+        SetGun(gun);
     }
 
-    void SetGun() //If crate touched
+    public void SetGun(GunData newGun) //If crate touched
     {
-        //gun = GetComponent<GunData>().gun; //Get other gun
+        gun = newGun;
         gunSprite.material.color = gun.gunColor;
     }
 
     public void Shoot()
     {
-        StartCoroutine(ShootCoro());
+        if (canShoot.value)
+            StartCoroutine(ShootCoro());
     }
 
     IEnumerator ShootCoro()

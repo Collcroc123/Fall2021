@@ -64,6 +64,7 @@ MonoBehaviour:
   gunSprite: {fileID: 3587620675984326647}
   isShooting: 0
   isEnemy: 1
+  canShoot: {fileID: 11400000, guid: 823db2a4c56ceff49bf790bdb9b01043, type: 2}
 --- !u!1 &3587620675849051201
 GameObject:
   m_ObjectHideFlags: 0

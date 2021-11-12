@@ -2871,6 +2871,7 @@ MonoBehaviour:
   gunSprite: {fileID: 1823542083}
   isShooting: 0
   isEnemy: 0
+  canShoot: {fileID: 11400000, guid: 823db2a4c56ceff49bf790bdb9b01043, type: 2}
 --- !u!1 &1257968243
 GameObject:
   m_ObjectHideFlags: 0
@@ -4027,15 +4028,16 @@ MonoBehaviour:
   manager: {fileID: 1468680735}
   health: {fileID: 11400000, guid: 66c22f755cea49540ae1e9b5c06e5294, type: 2}
   heartArray: {fileID: 11400000, guid: 77fdecead577f7c4dba4ab03aaa72fc5, type: 2}
-  heartPrefab: {fileID: 1361587421893825367, guid: d732ee00603b47c47b4ef90b29983a1d, type: 3}
+  heartFramePrefab: {fileID: 1361587421893825367, guid: d732ee00603b47c47b4ef90b29983a1d, type: 3}
   halfHeartPrefab: {fileID: 9005271889327353305, guid: a8e1993da5487784f82252a207d3e6ce, type: 3}
   invincibleAnimation: {fileID: 1883250827}
   lastHeartSlot: {fileID: 11400000, guid: 97f042afa3405e34193ba264d19ad023, type: 2}
   lowSound: {fileID: 8300000, guid: cc0cdd1b70fd6844aba93d948922fb1d, type: 3}
   hurtSound: {fileID: 8300000, guid: 7fe1116391835dd4b8c44ef53f159549, type: 3}
   healSound: {fileID: 8300000, guid: 80600bbf7366671419bd6c29e341a295, type: 3}
+  crateSound: {fileID: 8300000, guid: 80600bbf7366671419bd6c29e341a295, type: 3}
   deathPanel: {fileID: 1345940039}
-  deathAnim: {fileID: 0}
+  deathAnim: {fileID: 7960022413478583678, guid: 581264349048b054eb5c483538fc2fef, type: 3}
 --- !u!95 &1883250827
 Animator:
   serializedVersion: 3
@@ -4667,7 +4669,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0555556, y: 1}
+    m_SensorSize: {x: 2.1666667, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4754,6 +4756,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1468680735}
+    - target: {fileID: 7837076141970517592, guid: 837c8c50422178d44b6de3abc8d3f74a, type: 3}
+      propertyPath: canShoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 823db2a4c56ceff49bf790bdb9b01043, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 837c8c50422178d44b6de3abc8d3f74a, type: 3}
 --- !u!1 &2119503148 stripped
@@ -5025,9 +5031,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c986dff89f4f166438b182560931038c, type: 2}
     - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 11400000, guid: 66c22f755cea49540ae1e9b5c06e5294, type: 2}
+    - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
       propertyPath: stairs
       value: 
       objectReference: {fileID: 2119503148}
+    - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
+      propertyPath: canShoot
+      value: 
+      objectReference: {fileID: 11400000, guid: 823db2a4c56ceff49bf790bdb9b01043, type: 2}
     - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
       propertyPath: genPanel
       value: 
@@ -5064,6 +5078,18 @@ PrefabInstance:
       propertyPath: totalRooms
       value: 
       objectReference: {fileID: 11400000, guid: 29aea88f3cf49a54b9c1513cd9ec7979, type: 2}
+    - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
+      propertyPath: musicArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
+      propertyPath: musicArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 53bc3e38188c36a4399664f7fd7c55dc, type: 3}
+    - target: {fileID: 9021753149640543803, guid: 93c57008d9998774797472d62892a254, type: 3}
+      propertyPath: musicArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b072ade0378ebec40b02a4b0e3a8a153, type: 3}
     m_RemovedComponents:
     - {fileID: 9021753149640543800, guid: 93c57008d9998774797472d62892a254, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 93c57008d9998774797472d62892a254, type: 3}

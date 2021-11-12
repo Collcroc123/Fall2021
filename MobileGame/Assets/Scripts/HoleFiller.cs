@@ -3,30 +3,31 @@ using UnityEngine;
 
 public class HoleFiller : MonoBehaviour
 {
-    private GameManager manager; //checks if level is done generating
-    private Animator doorAnim; //opens and closes doors
-    private MeshFilter mesh; //doorframe's mesh
-    private MeshCollider meshColl;
-    private BoxCollider boxCollider; //checks if door leads to wall
-    private bool door, done; //keeps door from constantly filling
-    public GameObject lDoor, rDoor; //door objects
-    public SpriteRenderer mapDoor; //door on minimap
-    public Mesh wall; //replaces doorframe if leading to wall
+    private GameManager manager; // Checks if level is done generating
+    private Animator doorAnim; // Opens and closes doors
+    private MeshFilter mesh; // Doorframe's mesh
+    private MeshCollider meshColl; // Doorframe collider
+    //public GameObject colliderObject;
+    private BoxCollider boxCollider; // Checks if door leads to wall
+    private bool door, done; // Keeps door from constantly filling
+    public GameObject lDoor, rDoor; // Door objects
+    public SpriteRenderer mapDoor; // Door on minimap
+    public Mesh wall; // Replaces doorframe if leading to wall
     
     private void Start()
-    { //door = false; done = false;
+    { // door = false; done = false;
         manager = GameObject.Find("/Manager").GetComponent<GameManager>();
         doorAnim = GetComponent<Animator>();
         mesh = GetComponent<MeshFilter>();
         meshColl = GetComponent<MeshCollider>();
-        boxCollider = GetComponent<BoxCollider>();
+        boxCollider = GetComponent<BoxCollider>(); //colliderObject.
         
     }
 
     private void Update()
     {
         if (manager.levelDone && !done)
-        { //prevents running more than once after level gen
+        { // Prevents running more than once after level gen
             StartCoroutine(waitDoor());
             done = true;
             if (!door)
@@ -37,7 +38,7 @@ public class HoleFiller : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-    { //sets door true if this door connects to another
+    { // Sets door true if this door connects to another
         if (other.CompareTag("Doorframe"))
         {
             door = true;
@@ -49,7 +50,7 @@ public class HoleFiller : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other)
-    { //sets door true if this door connects to another
+    { // Sets door true if this door connects to another
         if (other.CompareTag("Doorframe"))
         {
             door = true;
@@ -61,7 +62,7 @@ public class HoleFiller : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    { //sets door false if other door no longer seen (deleted in gen)
+    { // Sets door false if other door no longer seen (deleted in gen)
         if (other.CompareTag("Doorframe"))
         {
             door = false;
@@ -69,7 +70,7 @@ public class HoleFiller : MonoBehaviour
     }
 
     void FillHole()
-    { //replaces doorframe with wall
+    { // Replaces doorframe with wall
         Destroy(lDoor); 
         Destroy(rDoor);
         mesh.mesh = wall;
@@ -77,6 +78,7 @@ public class HoleFiller : MonoBehaviour
         gameObject.transform.tag = "Wall";
         mapDoor.color = new Color(255, 255, 255, 255);
         boxCollider.enabled = false;
+        //Destroy(colliderObject);
         print("Doors filled: ");
     }
 
@@ -90,7 +92,7 @@ public class HoleFiller : MonoBehaviour
     }
 
     IEnumerator waitDoor()
-    { //moves & toggles doors after gen to register their door status
+    { // Moves & toggles doors after gen to register their door status
         Vector3 pos = gameObject.transform.position;
         gameObject.transform.position = new Vector3(pos.x, -10, pos.z);
         yield return new WaitForSeconds(0.1f);

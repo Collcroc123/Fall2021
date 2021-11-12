@@ -4,7 +4,6 @@ using UnityEngine;
 public class ArrayData : ScriptableObject
 {
     public GameObject[] array;
-    public AudioClip[] soundArray;
     public IntData lastNum;
 
     public void Clear() 

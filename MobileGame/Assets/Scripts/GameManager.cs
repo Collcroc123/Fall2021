@@ -4,20 +4,25 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Animator genPanel; //loading screen
-    public PlayerMove movement; //script that controls player
-    public IntData totalRooms, maxRooms, levelCount; //keeps track of rooms
-    public GameObjectData lastRoom; //stores final room generated
-    public StatsData stats; //tracks statistics
-    public bool levelDone; //true if level is done generating
-    public AudioSource music;
-    public ArrayData clips;
-    public Text scoreTitle, scoreNum;
-    public GameObject stairs;
+    public Animator genPanel; // Loading screen
+    public PlayerMove movement; // Script that controls player
+    public IntData totalRooms, maxRooms, levelCount; // Keeps track of rooms
+    public HealthData health;
+    public GameObjectData lastRoom; // Stores final room generated
+    public StatsData stats; // Tracks statistics
+    public bool levelDone; // True if level is done generating
+    public AudioSource music; // Plays  music
+    public Text scoreTitle, scoreNum; // Score that appears on death screen
+    public GameObject stairs; // Stairs object that spawn at end of each level
+    public BoolData canShoot; // Manages if enemies and player can shoot
+    public AudioClip[] musicArray; // Array of music to play randomly
     
     private void Start()
     { //freezes player, starts generation check
-        music.clip = clips.soundArray[Random.Range(0, clips.soundArray.Length)];
+        if (levelCount.value == 1)
+            health.health = 10;
+        canShoot.value = false;
+        music.clip = musicArray[Random.Range(0, musicArray.Length)];
         music.Play();
         totalRooms.value = 0;
         //movement.DisableInput();
@@ -48,12 +53,10 @@ public class GameManager : MonoBehaviour
     void FinishMap()
     { //marks end room, finishes generation
         lastRoom.end.GetComponent<OLDMAPGEN>().isEnd = true;
-        //GameObject stairObject = Instantiate(stairs, lastRoom.end.transform.position, Quaternion.identity);
-        //Stairs stair = stairObject.GetComponent<Stairs>();
-        //stair.manager = this;
         Vector3 loc = lastRoom.end.transform.position;
         stairs.transform.position = new Vector3(loc.x, loc.y + 1.125f, loc.z);
         levelDone = true;
+        canShoot.value = true;
         genPanel.SetBool("LoadingDone", true);
         //movement.EnableInput();
         movement.enabled = true;

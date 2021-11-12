@@ -8,7 +8,7 @@ public class GunData : ScriptableObject
     public float fireRate, bulletSpeed, ammo, reloadSpeed; //gun & bullet attributes
     public int bulletDamage; //bullet damage
     public Material bulletTexture; //bullet color
-    public ArrayData gunshot; //gunshot sounds
+    public AudioClip[] gunshot; //gunshot sounds
     //public AudioClip reloadSound; //reload sound
 
     /* TO DO:

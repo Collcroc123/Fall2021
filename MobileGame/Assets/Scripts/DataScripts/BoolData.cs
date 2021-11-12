@@ -3,5 +3,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BoolData : ScriptableObject
 {
-    public bool keyboard, mouse, touch, gamepad;
+    public bool value, keyboard, mouse, touch, gamepad;
+
+    public void ToggleBool(bool var) { var = !var; }
 }
