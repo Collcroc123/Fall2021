@@ -1,5 +1,6 @@
 import maya.cmds as cmds
 
+
 def Rename(find, replace):
     objects = cmds.ls(sl=True)
     isInt = False
@@ -15,6 +16,7 @@ def Rename(find, replace):
         else:
             cmds.rename(item.replace(find, replace))
 
+
 def Name(name, count):
     objects = cmds.ls(sl=True)
     hashNum = ""
@@ -22,12 +24,13 @@ def Name(name, count):
         if char == "#":
             hashNum += "#"
     for item in objects:
-        #print(count, item, name, hashNum)
+        # print(count, item, name, hashNum)
         cmds.rename(item, name.replace(hashNum, str(count).zfill(len(hashNum))))
         count += 1
 
-#Name(Name, Count) Use "##" for nums, Count = starting num
+
+# Name(Name, Count) Use "##" for nums, Count = starting num
 Name("Leg_####_Jnt", 0)
 
-#Rename(Find, Replace) Replace = starting num if want to count up
-#Rename("Jnt", 0)
+# Rename(Find, Replace) Replace = starting num if want to count up
+# Rename("Jnt", 0)

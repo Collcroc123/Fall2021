@@ -4,7 +4,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     public Animator roomFade; //black that covers outside rooms
-    public HoleFiller door1, door2, door3, door4; //all doors in the room
+    public DoorAnim[] doors; //all doors in the room
     private OLDMAPGEN mapGen; //sets spawn room as complete
     public bool roomComplete, playerEntered; //no enemies in room, opens doors
     private bool done; //keeps door from ever opening or closing
@@ -64,29 +64,18 @@ public class RoomManager : MonoBehaviour
     
     private void Open()
     {
-        if (door1 != null) 
-            door1.OpenDoor();
-        if (door2 != null) 
-            door2.OpenDoor();
-        if (door3 != null) 
-            door3.OpenDoor();
-        if (door4 != null) 
-            door4.OpenDoor();
+        foreach (var door in doors)
+            door.OpenDoor();
         doorSource.clip = open;
         doorSource.Play();
     }
 
     private void Close()
     {
-        
-        if (door1 != null) 
-            door1.CloseDoor();
-        if (door2 != null) 
-            door2.CloseDoor();
-        if (door3 != null) 
-            door3.CloseDoor();
-        if (door4 != null) 
-            door4.CloseDoor();
+        foreach (var door in doors)
+            door.CloseDoor();
+        doorSource.clip = close;
+        doorSource.Play();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -102,8 +91,6 @@ public class RoomManager : MonoBehaviour
             if (!roomComplete)
             {
                 doorSource.mute = false;
-                doorSource.clip = close;
-                doorSource.Play();
                 Close();
             }
         }

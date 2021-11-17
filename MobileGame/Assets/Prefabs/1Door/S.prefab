@@ -51,10 +51,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomFade: {fileID: 1771132706968348463}
-  door1: {fileID: 5401929715604158276}
-  door2: {fileID: 0}
-  door3: {fileID: 0}
-  door4: {fileID: 0}
+  doors:
+  - {fileID: 8605484211932397865}
   roomComplete: 0
   playerEntered: 0
   enemyNum: 0
@@ -307,15 +305,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7473705157966244071, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
   m_PrefabInstance: {fileID: 1058186993669378857}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5401929715604158276 stripped
+--- !u!114 &8605484211932397865 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4924946787517359213, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8774064559409107456, guid: 1cfb9d6b302751a409d858cfbff5e017, type: 3}
   m_PrefabInstance: {fileID: 1058186993669378857}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b98696d0fbe53eb44a5ee2c43682efb3, type: 3}
+  m_Script: {fileID: 11500000, guid: e4b3a14a7fd824346be78cbda7315d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1230016056417990446

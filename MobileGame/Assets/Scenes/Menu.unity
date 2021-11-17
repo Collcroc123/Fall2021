@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 547171087}
   - component: {fileID: 547171089}
   - component: {fileID: 547171088}
+  - component: {fileID: 547171090}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -904,7 +905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "INFINIST\u2373\n\xBF\u014B\u0192\u03B9\u03C0\u0129$\u03C4"
+  m_Text: 
 --- !u!222 &547171089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -913,6 +914,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547171086}
   m_CullTransparentMesh: 1
+--- !u!114 &547171090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547171086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb906a196245fb49a874b157e0aa2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &632499302
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,7 +3794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6494852224515671738, guid: fef84cbf0835f4648a82de729ae09d7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6494852224515671739, guid: fef84cbf0835f4648a82de729ae09d7a, type: 3}
       propertyPath: m_Pivot.x

@@ -4,24 +4,14 @@ using UnityEngine;
 public class HoleFiller : MonoBehaviour
 {
     private GameManager manager; // Checks if level is done generating
-    private Animator doorAnim; // Opens and closes doors
-    private MeshFilter mesh; // Doorframe's mesh
-    private MeshCollider meshColl; // Doorframe collider
-    //public GameObject colliderObject;
-    private BoxCollider boxCollider; // Checks if door leads to wall
+    public GameObject doorFrame, wallPrefab; // Frame and Wall objects
     private bool door, done; // Keeps door from constantly filling
-    public GameObject lDoor, rDoor; // Door objects
-    public SpriteRenderer mapDoor; // Door on minimap
-    public Mesh wall; // Replaces doorframe if leading to wall
+    private BoxCollider boxCollider; // Detects if door touches wall
     
     private void Start()
-    { // door = false; done = false;
+    {
         manager = GameObject.Find("/Manager").GetComponent<GameManager>();
-        doorAnim = GetComponent<Animator>();
-        mesh = GetComponent<MeshFilter>();
-        meshColl = GetComponent<MeshCollider>();
-        boxCollider = GetComponent<BoxCollider>(); //colliderObject.
-        
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     private void Update()
@@ -43,7 +33,7 @@ public class HoleFiller : MonoBehaviour
         {
             door = true;
         }
-        else if (other.CompareTag("Wall"))
+        if (other.CompareTag("Wall"))
         {
             door = false;
         }
@@ -55,7 +45,7 @@ public class HoleFiller : MonoBehaviour
         {
             door = true;
         }
-        else if (other.CompareTag("Wall"))
+        if (other.CompareTag("Wall"))
         {
             door = false;
         }
@@ -71,24 +61,10 @@ public class HoleFiller : MonoBehaviour
 
     void FillHole()
     { // Replaces doorframe with wall
-        Destroy(lDoor); 
-        Destroy(rDoor);
-        mesh.mesh = wall;
-        meshColl.sharedMesh = wall;
-        gameObject.transform.tag = "Wall";
-        mapDoor.color = new Color(255, 255, 255, 255);
-        boxCollider.enabled = false;
-        //Destroy(colliderObject);
+        Destroy(doorFrame);
+        Instantiate(wallPrefab, gameObject.transform);
         print("Doors filled: ");
-    }
-
-    public void OpenDoor()
-    {
-        doorAnim.SetBool("Open", true);
-    }
-    public void CloseDoor()
-    {
-        doorAnim.SetBool("Open", false);
+        Destroy(gameObject);
     }
 
     IEnumerator waitDoor()

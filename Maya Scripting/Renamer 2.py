@@ -1,8 +1,8 @@
 import maya.cmds as cmds
 
 
-def Renamer(name, start_num):
-    sels = cmds.ls(sl=True)
+def Rename(name, start_num):
+    objects = cmds.ls(sl=True)
     new_objs = []
 
     num_chars = name.count('#')
@@ -13,12 +13,13 @@ def Renamer(name, start_num):
         cmds.error('Argument string requires at least one "#" character. Additional characters')
 
     # loop through each selected object
-    for index, sel in enumerate(sels, start=start_num):
+    for index, sel in enumerate(objects, start=start_num):
         new_name = name_parts[0] + str(index).zfill(num_chars) + name_parts[2]
         new_name = cmds.rename(sel, new_name)
         new_objs.append(new_name)
 
     return new_objs
 
-# Renamer('NAME', STARTING INT)   NAME REQUIRES MINIMUM 1 '#'
-Renamer('Arm_#_Jnt_##', 1)
+
+# Rename('NAME', STARTING INT)   NAME REQUIRES MINIMUM 1 '#'
+Rename('Arm_#_Jnt_##', 1)
