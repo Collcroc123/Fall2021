@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DoorAnim.cs" />
      <Compile Include="Assets\Scripts\GunManager.cs" />
      <Compile Include="Assets\Scripts\AutoDelete.cs" />
      <Compile Include="Assets\Datas\DataScripts\GameObjectData.cs" />
@@ -52,6 +53,7 @@
      <Compile Include="Assets\Datas\DataScripts\GameAction.cs" />
      <Compile Include="Assets\Scripts\HoleFiller.cs" />
      <Compile Include="Assets\Datas\DataScripts\StatsData.cs" />
+     <Compile Include="Assets\Scripts\TitleEffect.cs" />
      <Compile Include="Assets\Datas\DataScripts\GunData.cs" />
      <Compile Include="Assets\Datas\DataScripts\BoolData.cs" />
      <Compile Include="Assets\Scripts\WallGenerator.cs" />
@@ -71,8 +73,6 @@
      <Compile Include="Assets\Scripts\EventSceneChange.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Datas\DataScripts\EnemyData.cs" />
-     <Compile Include="Assets\DoorAnim.cs" />
-     <Compile Include="Assets\TitleEffect.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity 2021.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

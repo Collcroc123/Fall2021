@@ -6,32 +6,31 @@ def Control(rad, hue, sect, deg):
     objects = cmds.ls(sl=True)
     if objects:
         for item in objects:
-            NewControl(item, rad, hue, sect, deg)
+            newName = item.rpartition('_')[0] + "_Ctrl"
+            CreateControl(item, rad, hue, sect, deg, newName)
     else:
-        NewControl(0, rad, hue, sect, deg)
+        newName = "Default_Ctrl"
+        CreateControl(0, rad, hue, sect, deg, newName)
 
 
-def NewControl(obj, rad, hue, sect, deg):
+def CreateControl(item, rad, hue, sect, deg, newName):
     if deg is 0:
         deg = 360
     if sect is 0:
         sect = 30
 
-    if obj is 0:
-        newName = "Default_Ctrl"
-    else:
-        itemPos = cmds.getAttr(obj + ".translate")
-        # cmds.move(itemPos[0], newControl, relative=True)
-        newName = obj.rpartition('_')[0] + "_Ctrl"
     newControl = cmds.circle(center=(0, 0, 0), radius=rad, sections=sect, sweep=deg, name=newName, d=1)
     newControl = cmds.listRelatives(newControl)
-    # newControl = cmds.rename(newControl, newName)
+    group = cmds.group(newControl, name=newName + "_Grp")
 
-    cmds.setAttr(newControl + ".overrideEnabled", 1)
-    cmds.setAttr(newControl + ".overrideRGBColors", 1)
+    if item is not 0:
+        cmds.matchTransform(group, item)
+
+    cmds.setAttr(newControl[0] + ".overrideEnabled", 1)
+    cmds.setAttr(newControl[0] + ".overrideRGBColors", 1)
     color = colorsys.hsv_to_rgb(hue / 360, 1, 0.7)
-    cmds.setAttr(newControl + ".overrideColorRGB", color[0], color[1], color[2])
+    cmds.setAttr(newControl[0] + ".overrideColorRGB", color[0], color[1], color[2])
 
 
 # Control(radius=Size, hue=1<->360 sections=NumOfSides(20+circle), sweep=0<->360)
-Control(2, 282, 30, 360)
+Control(1.5, 282, 30, 360)

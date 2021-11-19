@@ -15,11 +15,11 @@ public class Bullet : MonoBehaviour
     void Start()
     { //gives bullet attributes depending on what gun is fired
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
-        texture = GetComponentInChildren<MeshRenderer>();
+        texture = GetComponentInChildren<SpriteRenderer>();
         //bulletLight = GetComponentInChildren<Light>();
         source = GetComponent<AudioSource>();
         rbody = GetComponent<Rigidbody>();
-        texture.material = gun.bulletTexture;
+        texture.material.color = gun.gunColor;
         rbody.velocity = bulletSpawn.transform.forward * gun.bulletSpeed;
         //source.clip = gun.gunshot[Random.Range(0, gun.gunshot.Length - 1)];
         source.clip = gun.gunshot[0];
@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
     
     private void Hit()
     {
-        Instantiate(hitAnim, gameObject.transform.position, Quaternion.identity);
+        Instantiate(hitAnim, gameObject.transform.position, Quaternion.Euler(90, 0 ,0));
         Destroy(gameObject);
     }
     

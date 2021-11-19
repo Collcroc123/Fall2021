@@ -64,7 +64,7 @@ public class HoleFiller : MonoBehaviour
         Destroy(doorFrame);
         Instantiate(wallPrefab, gameObject.transform);
         print("Doors filled: ");
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     IEnumerator waitDoor()

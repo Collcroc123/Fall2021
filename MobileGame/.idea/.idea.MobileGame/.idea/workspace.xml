@@ -37,8 +37,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/TitleEffect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DoorAnim.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Plugins/OnScreen/OnScreenStick.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -168,6 +166,7 @@
       <workItem from="1636571529881" duration="5298000" />
       <workItem from="1636651941668" duration="18082000" />
       <workItem from="1637085627717" duration="8003000" />
+      <workItem from="1637261257046" duration="9741000" />
     </task>
     <servers />
   </component>

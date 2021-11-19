@@ -40,7 +40,7 @@ public class HealthManager : MonoBehaviour
                 halfHeartTemp = Instantiate(halfHeartPrefab, new Vector3(50, -50, 0), Quaternion.identity);
                 halfHeartTemp.transform.SetParent(heartFrameTemp.transform, false);
             }
-            else if (numFrames * 2 == health.health && i == numFrames - 1)
+            else if (health.health % 2 == 0 && i == numFrames - 1)
             { // If last frame and health is even, fill frame
                 halfHeartTemp = Instantiate(halfHeartPrefab, new Vector3(50, -50, 0), Quaternion.identity);
                 halfHeartTemp.transform.SetParent(heartFrameTemp.transform, false);
@@ -105,7 +105,7 @@ public class HealthManager : MonoBehaviour
         { // Heals player touching crate
             if (other.GetComponent<Crate>().isHeart == true && health.health < health.maxHealth)
             {
-                Destroy(other.gameObject);
+                Destroy(other.GetComponent<Crate>().crate);
                 StartCoroutine(Heal(1));
             }
             else if (other.GetComponent<Crate>().isHeart == false && !coroRunning)

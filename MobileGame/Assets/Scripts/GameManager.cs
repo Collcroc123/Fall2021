@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     { //freezes player, starts generation check
         if (levelCount.value == 1)
-            health.health = 10;
+            health.health = 9;
         canShoot.value = false;
         music.clip = musicArray[Random.Range(0, musicArray.Length)];
         music.Play();

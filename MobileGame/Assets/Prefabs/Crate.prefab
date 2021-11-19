@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76de311bec35ed44a92ec28fcf965d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crate: {fileID: 4691262111243214251}
   isHeart: 0
   gunsArray:
   - {fileID: 11400000, guid: a06850dfde7d29e4c841305e148b01e0, type: 2}

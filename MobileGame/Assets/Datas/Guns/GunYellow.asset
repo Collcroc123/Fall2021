@@ -19,7 +19,7 @@ MonoBehaviour:
   ammo: 0
   reloadSpeed: 1.5
   bulletDamage: 1
-  bulletTexture: {fileID: 2100000, guid: 176fe017efd4d344cb135a6d52b86057, type: 2}
+  bulletTexture: {fileID: 2100000, guid: 9eabaa9f5145a1f41af017ac1e4324e8, type: 2}
   gunshot:
   - {fileID: 8300000, guid: a93496fc2feccf543b932ff4bc50c5ee, type: 3}
   - {fileID: 8300000, guid: 3d45487e4482f84469a5052791fe849a, type: 3}

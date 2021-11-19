@@ -28,7 +28,7 @@ public class RoomManager : MonoBehaviour
         if (mapGen.isSpawn) { roomComplete = true; }
         else
         {
-            enemyNum = Random.Range(1, 2);
+            enemyNum = Random.Range(1, 3);
             for (int i = 0; i < enemyNum; i++)
             {
                 GameObject newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
@@ -48,9 +48,9 @@ public class RoomManager : MonoBehaviour
         if (roomComplete && !done)
         {
             done = true;
-            if (roomsSinceLastCrate.value >= 1) //3 and 3
+            if (roomsSinceLastCrate.value >= 3)
             {
-                if (Random.Range(0f, 5f) >= 0f)
+                if (Random.Range(0f, 5f) >= 3f)
                 {
                     Vector3 pos = gameObject.transform.position;
                     Instantiate(cratePrefab, new Vector3(pos.x, pos.y+3, pos.z), Quaternion.identity);
@@ -65,7 +65,8 @@ public class RoomManager : MonoBehaviour
     private void Open()
     {
         foreach (var door in doors)
-            door.OpenDoor();
+            if (door != null)
+                door.OpenDoor();
         doorSource.clip = open;
         doorSource.Play();
     }
@@ -73,7 +74,8 @@ public class RoomManager : MonoBehaviour
     private void Close()
     {
         foreach (var door in doors)
-            door.CloseDoor();
+            if (door != null)
+                door.CloseDoor();
         doorSource.clip = close;
         doorSource.Play();
     }

@@ -60,10 +60,12 @@ public class AIDefault : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
             if (agent.pathPending || !(agent.remainingDistance < 0.5f)) continue;
-            yield return new WaitForSeconds(waitBeforeMove);
+            //yield return new WaitForSeconds(waitBeforeMove);
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
+            agent.destination = (Random.insideUnitSphere * patrolRange) + startPos;
             if (roomMan.playerEntered) //Enemy won't move until player enters
             {
-                agent.destination = (Random.insideUnitSphere * patrolRange) + startPos;
+                //agent.destination = (Random.insideUnitSphere * patrolRange) + startPos;
             }
         }
     }

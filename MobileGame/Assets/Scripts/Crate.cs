@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
+    public GameObject crate;
     private SpriteRenderer sprite;
     public bool isHeart;
     public GunData[] gunsArray;

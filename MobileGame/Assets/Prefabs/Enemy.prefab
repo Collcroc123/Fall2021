@@ -305,7 +305,7 @@ MonoBehaviour:
   deathAnim: {fileID: 7960022413478583678, guid: 581264349048b054eb5c483538fc2fef, type: 3}
   enemyHealth: 5
   touchDamage: 1
-  patrolRange: 5
+  patrolRange: 3
   points: 500
   waitBeforeMove: 1
   moveSpeed: 4
