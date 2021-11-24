@@ -657,7 +657,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531829216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc9aa9de1216c4d489c59bb0eb04c4bd, type: 3}
   m_Name: 
@@ -3915,7 +3915,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830550040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc9aa9de1216c4d489c59bb0eb04c4bd, type: 3}
   m_Name: 
@@ -3993,6 +3993,7 @@ GameObject:
   - component: {fileID: 1883250830}
   - component: {fileID: 1883250832}
   - component: {fileID: 1883250827}
+  - component: {fileID: 1883250831}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4031,7 +4032,6 @@ MonoBehaviour:
   heartFramePrefab: {fileID: 1361587421893825367, guid: d732ee00603b47c47b4ef90b29983a1d, type: 3}
   halfHeartPrefab: {fileID: 9005271889327353305, guid: a8e1993da5487784f82252a207d3e6ce, type: 3}
   invincibleAnimation: {fileID: 1883250827}
-  lastHeartSlot: {fileID: 11400000, guid: 97f042afa3405e34193ba264d19ad023, type: 2}
   lowSound: {fileID: 8300000, guid: cc0cdd1b70fd6844aba93d948922fb1d, type: 3}
   hurtSound: {fileID: 8300000, guid: 7fe1116391835dd4b8c44ef53f159549, type: 3}
   healSound: {fileID: 8300000, guid: 80600bbf7366671419bd6c29e341a295, type: 3}
@@ -4088,10 +4088,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 1468680735}
-  moveStick: {fileID: 1597409352}
-  controls: {fileID: 11400000, guid: 2d2b05b11093225448bc257f91f63f53, type: 2}
-  speed: 5
   gunMan: {fileID: 1246197523}
+  aimStick: {fileID: 541619735}
+  moveStick: {fileID: 1597409352}
+  aimIcon: {fileID: 531829216}
+  moveIcon: {fileID: 1830550040}
+  playerSprite: {fileID: 598744236}
+  controls: {fileID: 1883250831}
+  speed: 5
+  mainCamera: {fileID: 963194227}
 --- !u!82 &1883250830
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4188,6 +4193,96 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1883250831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883250824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 85fbba575ea65e242b5c81770d1085d9, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883250829}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: ControlsChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883250829}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f8894f9e-949a-4d80-864d-d77b7fb59e4c
+    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883250829}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: Aim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a22d8398-5e96-42d5-bf8e-91635c99416a
+    m_ActionName: Player/Look[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1883250829}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 05f13208-1e4e-4112-935e-4953044d8d34
+    m_ActionName: Player/Shoot[/Mouse/leftButton,/XInputControllerWindows/rightTrigger]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 963194227}
 --- !u!143 &1883250832
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4669,7 +4764,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1666667, y: 1}
+    m_SensorSize: {x: 2, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

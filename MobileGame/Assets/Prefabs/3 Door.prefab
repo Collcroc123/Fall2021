@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7473705157966244071}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8148900000224377588
 MonoBehaviour:
@@ -259,7 +259,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7473705157966244071}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7473705156563358639
 MeshFilter:
@@ -398,8 +398,8 @@ Transform:
   m_Children:
   - {fileID: 6934793848236072138}
   - {fileID: 6934793848046258703}
-  - {fileID: 3125512320240927575}
   - {fileID: 7473705156563358635}
+  - {fileID: 3125512320240927575}
   - {fileID: 3110314182849576318}
   - {fileID: 4913288228868213646}
   - {fileID: 4333883765516318563}
@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5155f0c4b6ec5334e8352b1899fef3b6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 236c212390dec2b4b9b24a35497ac6b4, type: 2}
     - target: {fileID: 919132149155446097, guid: 5155f0c4b6ec5334e8352b1899fef3b6, type: 3}
       propertyPath: m_Name
       value: Doorframe
@@ -790,14 +790,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
---- !u!1 &7743524973856982640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
-  m_PrefabInstance: {fileID: 7473705157085215521}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6934793848236072138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
+  m_PrefabInstance: {fileID: 7473705157085215521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7743524973856982640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f37e15bbec11fd048b6590bae91357cc, type: 3}
   m_PrefabInstance: {fileID: 7473705157085215521}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7473705157246966237

@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
                 if (lastRoom.end == tempRoom)
                 {
                     FinishMap();
+                    // TO FIX MAP NOT STOPPING GEN: CREATE 2 TEMP ROOMS, SWAP BETWEEN EVERY OTHER ROOM, IF LAST ROOM IS DELETED, GET 2ND TEMP
                 }
             }
         }
