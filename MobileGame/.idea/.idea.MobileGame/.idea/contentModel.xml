@@ -17,6 +17,7 @@
             <e p="GunData.cs" t="Include" />
             <e p="HealthData.cs" t="Include" />
             <e p="IntData.cs" t="Include" />
+            <e p="MaterialData.cs" t="Include" />
             <e p="StatsData.cs" t="Include" />
             <e p="StringData.cs" t="Include" />
           </e>

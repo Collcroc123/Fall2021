@@ -28,6 +28,8 @@ public class GunManager : MonoBehaviour
     IEnumerator ShootCoro()
     {
         isShooting = true;
+        if (isEnemy)
+            yield return new WaitForSeconds(1f);
         Bullet bullet = Instantiate(gun.bullet, gameObject.transform.position, gameObject.transform.rotation).GetComponent<Bullet>();
         bullet.gun = gun;
         bullet.bulletSpawn = gameObject;

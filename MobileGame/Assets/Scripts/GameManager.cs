@@ -16,11 +16,12 @@ public class GameManager : MonoBehaviour
     public GameObject stairs; // Stairs object that spawn at end of each level
     public BoolData canShoot; // Manages if enemies and player can shoot
     public AudioClip[] musicArray; // Array of music to play randomly
+    public MaterialData roomTextures;
     
     private void Start()
     { //freezes player, starts generation check
-        if (levelCount.value == 1)
-            health.health = 9;
+        //if (levelCount.value == 1)
+        
         canShoot.value = false;
         music.clip = musicArray[Random.Range(0, musicArray.Length)];
         music.Play();
@@ -53,6 +54,8 @@ public class GameManager : MonoBehaviour
 
     void FinishMap()
     { //marks end room, finishes generation
+        roomTextures.Randomize();
+        print(roomTextures.slot);
         lastRoom.end.GetComponent<OLDMAPGEN>().isEnd = true;
         Vector3 loc = lastRoom.end.transform.position;
         stairs.transform.position = new Vector3(loc.x, loc.y + 1.125f, loc.z);

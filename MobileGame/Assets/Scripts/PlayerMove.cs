@@ -54,7 +54,6 @@ public class PlayerMove : MonoBehaviour
     
     public void Aim(InputAction.CallbackContext context)
     {
-        print(context.GetType());
         Vector2 aimDir = context.ReadValue<Vector2>();
         if (isKeyboard)
         {

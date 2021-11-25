@@ -36,6 +36,7 @@ public class RoomManager : MonoBehaviour
                 newEnemy.transform.localPosition = new Vector3(Random.Range(-5f, 5f), 0.5f, Random.Range(-2.5f, 2.5f));
             }
         }
+        roomsSinceLastCrate.value = 0;
         Invoke(nameof(Open), 0.5f);
     }
 

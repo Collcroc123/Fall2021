@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa4321cef294dce4bbbafb4d412ffd3e, type: 3}
+  m_Name: Materials
+  m_EditorClassIdentifier: 
+  wall1: {fileID: 2100000, guid: 236c212390dec2b4b9b24a35497ac6b4, type: 2}
+  wall3: {fileID: 2100000, guid: bb94eef6fe9242b4d88b14b390924ed4, type: 2}
+  wall5: {fileID: 2100000, guid: 6f3e6aa0f63e5cf489df92ecae40b10d, type: 2}
+  floor: {fileID: 2100000, guid: a64ab9ac8b8cb784081d814930c03021, type: 2}
+  wallTextures:
+  - {fileID: 2800000, guid: 3c07c060a0775724b8731b01dcce9f5b, type: 3}
+  - {fileID: 2800000, guid: 533363f671650b945b441cc42624cb3d, type: 3}
+  - {fileID: 2800000, guid: 38c9f545e03ae8c4e8f0e3866e90e26c, type: 3}
+  - {fileID: 2800000, guid: ab473039506c3094a98907076a1307a1, type: 3}
+  floorTextures:
+  - {fileID: 2800000, guid: 5913f9ac386484342a8b02d32291c25d, type: 3}
+  - {fileID: 2800000, guid: 5e799e79172ab8c4ea490189d234ce2e, type: 3}
+  - {fileID: 2800000, guid: 091fb783448dd29448c8a94e791ae3b8, type: 3}
+  - {fileID: 2800000, guid: 888492e99588bba419ecf70d1e9df5ba, type: 3}
+  lastSlot: {fileID: 11400000, guid: 9dbf4430cb1523c4180e9a34a41ea817, type: 2}

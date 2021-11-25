@@ -14,6 +14,7 @@ public class Stairs : MonoBehaviour
         {
             manager.levelCount.value++;
             manager.stats.levelsCompleted++;
+            manager.stats.currentScore += 1000;
             StartCoroutine(waitFade());
         }
     }
