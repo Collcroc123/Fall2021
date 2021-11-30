@@ -2872,6 +2872,7 @@ MonoBehaviour:
   isShooting: 0
   isEnemy: 0
   canShoot: {fileID: 11400000, guid: 823db2a4c56ceff49bf790bdb9b01043, type: 2}
+  gunArray: {fileID: 0}
 --- !u!1 &1257968243
 GameObject:
   m_ObjectHideFlags: 0

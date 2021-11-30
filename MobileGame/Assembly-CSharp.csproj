@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\Scripts\HealthManager.cs" />
      <Compile Include="Assets\Datas\DataScripts\HealthData.cs" />
+     <Compile Include="Assets\Datas\DataScripts\MaterialData.cs" />
      <Compile Include="Assets\Datas\DataScripts\IntData.cs" />
      <Compile Include="Assets\Datas\DataScripts\ArrayData.cs" />
      <Compile Include="Assets\Datas\DataScripts\StringData.cs" />
@@ -73,7 +74,6 @@
      <Compile Include="Assets\Scripts\EventSceneChange.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
      <Compile Include="Assets\Datas\DataScripts\EnemyData.cs" />
-     <Compile Include="Assets\Datas\DataScripts\MaterialData.cs" />
      <None Include="Assets\Resources\BillingMode.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

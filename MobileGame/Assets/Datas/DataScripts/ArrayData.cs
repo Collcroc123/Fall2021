@@ -5,6 +5,7 @@ public class ArrayData : ScriptableObject
 {
     public GameObject[] array;
     public IntData lastNum;
+    public GunData[] guns;
 
     public void Clear() 
     { //clears array

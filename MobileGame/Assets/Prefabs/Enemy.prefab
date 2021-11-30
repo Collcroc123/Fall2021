@@ -65,6 +65,7 @@ MonoBehaviour:
   isShooting: 0
   isEnemy: 1
   canShoot: {fileID: 11400000, guid: 823db2a4c56ceff49bf790bdb9b01043, type: 2}
+  gunArray: {fileID: 11400000, guid: c34b37b6954cb684684cd6c04a8a77f4, type: 2}
 --- !u!1 &3587620675849051201
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +304,7 @@ MonoBehaviour:
   player: {fileID: 0}
   sprite: {fileID: 3587620675849051201}
   deathAnim: {fileID: 7960022413478583678, guid: 581264349048b054eb5c483538fc2fef, type: 3}
-  enemyHealth: 5
+  enemyHealth: 10
   touchDamage: 1
   patrolRange: 3
   points: 500

@@ -7,6 +7,7 @@ public class GunManager : MonoBehaviour
     public SpriteRenderer gunSprite;
     public bool isShooting, isEnemy;
     public BoolData canShoot;
+    public ArrayData gunArray;
 
     void Start()
     {
@@ -16,6 +17,10 @@ public class GunManager : MonoBehaviour
     public void SetGun(GunData newGun) //If crate touched
     {
         gun = newGun;
+        if (isEnemy)
+        {
+            gun = gunArray.guns[Random.Range(0, 5)];
+        }
         gunSprite.material.color = gun.gunColor;
     }
 

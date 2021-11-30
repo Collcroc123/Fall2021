@@ -76,7 +76,7 @@ public class HealthManager : MonoBehaviour
             }
         }
         else if (health.health == 0)
-        { //Dead
+        { // Dead
             coroRunning = true;
             manager.stats.deaths++;
             deathPanel.SetActive(true);
@@ -98,7 +98,7 @@ public class HealthManager : MonoBehaviour
             else if (other.CompareTag("EnemyBullet"))
             {
                 Bullet eBullet = other.GetComponent<Bullet>();
-                StartCoroutine(Hurt(eBullet.gun.bulletDamage));
+                StartCoroutine(Hurt(1)); // eBullet.gun.bulletDamage
             }
         }
         if (other.CompareTag("Crate"))
@@ -161,7 +161,7 @@ public class HealthManager : MonoBehaviour
     }
 
     IEnumerator LowHealth(int health)
-    { //Plays low health sound
+    { // Plays low health sound
         coroRunning = true;
         yield return new WaitForSeconds(health * 0.75f);
         aSource.clip = lowSound;
