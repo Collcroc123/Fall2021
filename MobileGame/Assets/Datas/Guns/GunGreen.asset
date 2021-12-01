@@ -21,7 +21,7 @@ MonoBehaviour:
   bulletDamage: 4
   bulletTexture: {fileID: 2100000, guid: 9eabaa9f5145a1f41af017ac1e4324e8, type: 2}
   gunshot:
-  - {fileID: 8300000, guid: 44a9f38e406d3fd44adc53c9bf859b28, type: 3}
-  - {fileID: 8300000, guid: a3121bde3b0f55843a155ed67b3f351e, type: 3}
-  - {fileID: 8300000, guid: 0abd741fda97f8840b8a7b21c9f38030, type: 3}
-  - {fileID: 8300000, guid: 1bb3f79e38683c04e8724f107cc5a467, type: 3}
+  - {fileID: 8300000, guid: 6a72e60b6589ff9488d7f18860f8485f, type: 3}
+  - {fileID: 8300000, guid: 40c01ca5deadf124c9c847fa1cbf89f3, type: 3}
+  - {fileID: 8300000, guid: eb65fc1b630a912489692aa7fe4fe3a1, type: 3}
+  - {fileID: 8300000, guid: c8a48fbce36cce44a88aa6dec793a529, type: 3}
