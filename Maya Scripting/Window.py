@@ -1,8 +1,13 @@
+import importlib
 import maya.cmds as cmds
+import colorsys as colorsys
+import Tools
+importlib.reload(Tools)
 
 
-#import ToolUI
-#reload ToolUI
+colorButton = 0
+color = 0
+
 
 class ToolUI:
     def __init__(self):
@@ -10,31 +15,26 @@ class ToolUI:
         self.width = 250
         self.height = 500
 
-    def create(self):
-        self.delete()
-        self.m_Window = cmds.window(self.m_Window, title="RIGGER", iconName="icon", widthHeight=(self.width, self.height))
-        m_column = cmds.columnLayout(parent=self.m_Window, adjustableColumn=True)  # numberOfColumns=2
-        cmds.button(parent=m_column, label="Sphere", command="cmds.polySphere()", backgroundColor=(0.7, 0, 0.6))
-        cmds.button(parent=m_column, label="Color", command=lambda x: ChangeColor(13), backgroundColor=(0.7, 0, 0.2))
-        cmds.button(parent=m_column, label=" ")
+    def Create(self):
+        global colorButton
+        self.Delete()  # , s=False, mxb=False
+        values = cmds.colorEditor(query=True, hsv=True)
+        self.m_Window = cmds.window(self.m_Window, t="RIGGER", iconName="icon", wh=(self.width, self.height))
+        m_column = cmds.rowColumnLayout(p=self.m_Window, numberOfColumns=2)  # numberOfColumns=2
+        cmds.button(l="Create Sphere", c="cmds.polySphere()", bgc=(0.5, 0, 0.7), h=50, w=self.width / 2)
+        colorButton = cmds.button(p=m_column, l="Color Picker", c=lambda x: self.ColorPick(), bgc=(1, 1, 1), h=50, w=self.width / 2)
+        cmds.button(p=m_column, l="Rename", c=lambda x: Tools.Rename('Arm_#_Jnt', 1), bgc=(0, 0.7, 0.2), h=50, w=self.width / 2)
+        cmds.button(p=m_column, l="Set Color", c=lambda x: Tools.ColorChange(color), bgc=(0.7, 0, 0.2), h=50, w=self.width / 2)
         cmds.showWindow(self.m_Window)
 
-    def delete(self):
+    def Delete(self):
         if cmds.window(self.m_Window, exists=True):
             cmds.deleteUI(self.m_Window)
 
-
-def ChangeColor(color):
-    sels = cmds.ls(sl=True)
-    for sel in sels:
-        shapes = cmds.listRelatives(sel, children=True, shapes=True)
-        for shape in shapes:
-            cmds.setAttr("%s.overrideEnabled" % (shape), True)
-            cmds.setAttr("%s.overrideColor" % (shape), color)
-    return
+    def ColorPick(self):
+        global color
+        color = Tools.ColorEdit()
+        cmds.button(colorButton, edit=True, bgc=colorsys.hsv_to_rgb(color / 250, 1, 0.9))
 
 
-myUI = ToolUI()
-myUI.create()
-#myUI.delete()
-#myUI.show()
+ToolUI().Create()

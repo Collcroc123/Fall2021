@@ -22,4 +22,4 @@ def Rename(name, start_num):
 
 
 # Rename('NAME', STARTING INT)   NAME REQUIRES MINIMUM 1 '#'
-Rename('Arm_#_Jnt_##', 1)
+Rename('Arm_#_Jnt', 1)
