@@ -44,6 +44,39 @@ def Rename(name, start_num):
     return new_objs
 
 
+def Control(rad, hue, sect, deg):
+    objects = cmds.ls(sl=True)
+    if objects:
+        for item in objects:
+            controlName = item.rpartition('_')[0] + "_Ctrl"
+            CreateControl(item, rad, hue, sect, deg, controlName)
+    else:
+        controlName = "Default_Ctrl"
+        CreateControl(0, rad, hue, sect, deg, controlName)
+
+
+def CreateControl(item, rad, hue, sect, deg, controlName):
+    if deg is 0:
+        deg = 360
+    if sect is 0:
+        sect = 30
+
+    newControl = cmds.circle(center=(0, 0, 0), radius=rad, sections=sect, sweep=deg, name=controlName, d=1)
+    newControl = cmds.listRelatives(newControl)
+    group = cmds.group(newControl, name=controlName + "_Grp")
+
+    if item is not 0:
+        cmds.matchTransform(group, item)
+
+    cmds.setAttr(newControl[0] + ".overrideEnabled", 1)
+    cmds.setAttr(newControl[0] + ".overrideRGBColors", 1)
+    color = colorsys.hsv_to_rgb(hue / 360, 1, 0.7)
+    cmds.setAttr(newControl[0] + ".overrideColorRGB", color[0], color[1], color[2])
+
+
+# Control(radius=Size, hue=1<->360 sections=NumOfSides(20+circle), sweep=0<->360)
+
+
 def SayHello(name):
     print("Hello %s!" % name)
     return

@@ -3,7 +3,7 @@ from random import randint
 import time
 
 length = 0
-memory = [0,3,2,2,3,1,0,1]
+memory = [0, 3, 2, 2, 3, 1, 0, 1]
 game = True
 red = (0.7, 0, 0.2)
 yellow = (0.9, 0.6, 0)
@@ -14,6 +14,7 @@ b0 = 0
 b1 = 0
 b2 = 0
 b3 = 0
+
 
 def WindowMaker(size):
     global b0
@@ -58,6 +59,27 @@ def ShowPattern():
         print(memory[item])
 
 
-WindowMaker(250)
-ShowPattern()
+# WindowMaker(250)
+# ShowPattern()
 
+window = cmds.window()
+cmds.rowColumnLayout(numberOfColumns=2, columnAttach=(1, 'right', 0), columnWidth=[(1, 100), (2, 250)])
+cmds.text(label='Name')
+name = cmds.textField(pht="First Last")
+cmds.text(label='Address')
+address = cmds.textField(pht="Address, City, State")
+cmds.text(label='Phone Number')
+phoneNumber = cmds.textField(pht="999-999-9999")
+cmds.text(label='Email')
+email = cmds.textField(pht="Email@Website.Domain")
+
+#    Attach commands to pass focus to the next field if the Enter
+#    key is pressed. Hitting just the Return key will keep focus
+#    in the current field.
+#
+cmds.textField(name, edit=True, enterCommand=('cmds.setFocus(\"' + address + '\")'))
+cmds.textField(address, edit=True, enterCommand=('cmds.setFocus(\"' + phoneNumber + '\")'))
+cmds.textField(phoneNumber, edit=True, enterCommand=('cmds.setFocus(\"' + email + '\")'))
+cmds.textField(email, edit=True, enterCommand=('cmds.setFocus(\"' + name + '\")'))
+
+cmds.showWindow(window)
