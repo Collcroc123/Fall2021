@@ -48,7 +48,7 @@ def Control(rad, hue, sect, deg):
     objects = cmds.ls(sl=True)
     if objects:
         for item in objects:
-            controlName = item.rpartition('_')[0] + "_Ctrl"
+            controlName = item + "_Ctrl" # item.rpartition('_')[0]
             CreateControl(item, rad, hue, sect, deg, controlName)
     else:
         controlName = "Default_Ctrl"
@@ -61,9 +61,9 @@ def CreateControl(item, rad, hue, sect, deg, controlName):
     if sect is 0:
         sect = 30
 
-    newControl = cmds.circle(center=(0, 0, 0), radius=rad, sections=sect, sweep=deg, name=controlName, d=1)
+    newControl = cmds.circle(c=(0, 0, 0), r=rad, s=sect, sw=deg, n=controlName, d=1)
     newControl = cmds.listRelatives(newControl)
-    group = cmds.group(newControl, name=controlName + "_Grp")
+    group = cmds.group(newControl, n=controlName + "_Grp")
 
     if item is not 0:
         cmds.matchTransform(group, item)
