@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     void FinishMap()
     { //marks end room, finishes generation
         roomTextures.Randomize();
-        print(roomTextures.slot);
+        //print(roomTextures.slot);
         lastRoom.end.GetComponent<OLDMAPGEN>().isEnd = true;
         Vector3 loc = lastRoom.end.transform.position;
         stairs.transform.position = new Vector3(loc.x, loc.y + 1.125f, loc.z);

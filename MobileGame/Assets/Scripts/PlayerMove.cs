@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private CharacterController controller; // Moves Player
     private PlayerControls input; // Gets Player Inputs
     private SpriteRenderer aimSprite; // Aim Icon Sprite
-    private bool isController, isTouchscreen, isKeyboard; // What Control System in Use
+    private bool isTouchscreen; //, isController, isKeyboard; // What Control System in Use
     private Vector3 movePos = Vector3.zero, aimPos = Vector3.zero; // Player and Aim Positions
     [HideInInspector] public GunManager gunMan; // Manages Shooting
     public GameObject aimStick, moveStick, aimIcon, moveIcon, playerSprite; // Touchscreen Sticks to Move and Aim
@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
         gunMan = GetComponentInChildren<GunManager>();
         input = new PlayerControls();
         aimSprite = aimIcon.GetComponent<SpriteRenderer>();
-        ControlsChange();
+        //ControlsChange();
     }
 
     public void EnableInput() { input.Enable(); }
@@ -35,8 +35,8 @@ public class PlayerMove : MonoBehaviour
     
     public void Move(InputAction.CallbackContext context)
     {
-        //print(context);
         Vector2 moveDir = context.ReadValue<Vector2>();
+        print("MOVEMENT: " + moveDir);
         if (moveDir.magnitude >= 0.1f)
         {
             movePos.x = moveDir.x * (moveDir.magnitude * speed);
@@ -44,18 +44,33 @@ public class PlayerMove : MonoBehaviour
         }
         else { movePos = Vector3.zero; }
 
-        if (isController || isTouchscreen)
-        {
-            Vector3 relativePos = moveIcon.transform.position - gameObject.transform.position; relativePos.y = 0;
-            Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-            playerSprite.transform.rotation = rotation;
-        }
+        Vector3 relativePos = moveIcon.transform.position - gameObject.transform.position; relativePos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+        playerSprite.transform.rotation = rotation;
     }
     
     public void Aim(InputAction.CallbackContext context)
     {
         Vector2 aimDir = context.ReadValue<Vector2>();
-        if (isKeyboard)
+        print("AIMING: " + aimDir);
+        aimIcon.transform.parent = gameObject.transform;
+        aimIcon.transform.localPosition = new Vector3(aimDir.x * 6f, gameObject.transform.localPosition.y, aimDir.y * 6f);
+        if (aimDir.magnitude > 0.25f)
+        {
+            aimSprite.enabled = true;
+            Vector3 relativePos = aimIcon.transform.position - gameObject.transform.position; relativePos.y = 0;
+            Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+            playerSprite.transform.rotation = rotation;
+            if (isTouchscreen) { Shoot(); }
+        }
+        else
+        {
+            aimPos = Vector3.zero;
+            playerSprite.transform.rotation = playerSprite.transform.rotation;
+            aimSprite.enabled = false;
+        }
+        
+        /*if (isKeyboard)
         {
             aimIcon.transform.parent = mainCamera.transform;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -69,26 +84,7 @@ public class PlayerMove : MonoBehaviour
                 Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
                 playerSprite.transform.rotation = rotation;
             }
-        }
-        else if (isController || isTouchscreen)
-        {
-             aimIcon.transform.parent = gameObject.transform;
-             aimIcon.transform.localPosition = new Vector3(aimDir.x * 6f, gameObject.transform.localPosition.y, aimDir.y * 6f);
-             if (aimDir.magnitude > 0.25f)
-             {
-                 aimSprite.enabled = true;
-                 Vector3 relativePos = aimIcon.transform.position - gameObject.transform.position; relativePos.y = 0;
-                 Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-                 playerSprite.transform.rotation = rotation;
-                 if (isTouchscreen) { Shoot(); }
-             }
-             else
-             {
-                 aimPos = Vector3.zero;
-                 playerSprite.transform.rotation = playerSprite.transform.rotation;
-                 aimSprite.enabled = false;
-             }
-        }
+        }*/
     }
 
     public void Shoot()
@@ -102,13 +98,13 @@ public class PlayerMove : MonoBehaviour
     public void ControlsChange()
     {
         moveStick.SetActive(false);
-        aimStick.SetActive(true);
-        if (controls.currentControlScheme == "Touchscreen")
+        aimStick.SetActive(false);
+        if (controls.currentControlScheme == "Controls")
         {
             isTouchscreen = true;
             moveStick.SetActive(true);
             aimStick.SetActive(true);
-        }
+        }/*
         else if (controls.currentControlScheme == "Controller")
         {
             isController = true;
@@ -120,7 +116,8 @@ public class PlayerMove : MonoBehaviour
             isKeyboard = true;
             moveStick.SetActive(false);
             aimStick.SetActive(false);
-        }
+        }*/
         print("CONTROLS CHANGED TO " + controls.currentControlScheme);
+        
     }
 }
