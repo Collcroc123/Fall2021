@@ -9,10 +9,9 @@ def ColorChange(hue):
         for shape in shapes:
             cmds.setAttr("%s.overrideEnabled" % shape, True)
             cmds.setAttr("%s.overrideRGBColors" % shape, True)
-            print(str(hue) + ", 1, 0.7")
-            color = colorsys.hsv_to_rgb(hue / 360, 1, 0.7)
-            print(color)
+            color = colorsys.hsv_to_rgb(hue[0] / 360, hue[1], hue[2])  # / 360, 1, 0.7
             cmds.setAttr("%s.overrideColorRGB" % shape, color[0], color[1], color[2])
+            print("Set selected object's color to " + color)
     return
 
 
@@ -21,34 +20,34 @@ def ColorEdit():
     if cmds.colorEditor(query=True, result=True):
         values = cmds.colorEditor(query=True, hsv=True)
         print("Selected Hue is " + str(values[0]))
-        return values[0]
+        return values  # [0]
 
 
-def Rename(name, start_num):
+def Rename(name, startNum):
     objects = cmds.ls(sl=True)
-    new_objs = []
+    newObjs = []
 
     num_chars = name.count('#')
     name_parts = name.partition('#' * num_chars)
 
     # Is argument string correctly formatted?
     if not name_parts[2]:
-        cmds.error('Argument string requires at least one "#" character. Additional characters')
+        cmds.error('Argument string requires at least one "#" character.')
 
     # loop through each selected object
-    for index, sel in enumerate(objects, start=start_num):
-        new_name = name_parts[0] + str(index).zfill(num_chars) + name_parts[2]
-        new_name = cmds.rename(sel, new_name)
-        new_objs.append(new_name)
+    for index, sel in enumerate(objects, start=startNum):
+        newName = name_parts[0] + str(index).zfill(num_chars) + name_parts[2]
+        newName = cmds.rename(sel, newName)
+        newObjs.append(newName)
 
-    return new_objs
+    return newObjs
 
 
 def Control(rad, hue, sect, deg):
     objects = cmds.ls(sl=True)
     if objects:
         for item in objects:
-            controlName = item + "_Ctrl" # item.rpartition('_')[0]
+            controlName = item + "_Ctrl"  # item.rpartition('_')[0]
             CreateControl(item, rad, hue, sect, deg, controlName)
     else:
         controlName = "Default_Ctrl"
@@ -56,10 +55,12 @@ def Control(rad, hue, sect, deg):
 
 
 def CreateControl(item, rad, hue, sect, deg, controlName):
-    if deg is 0:
-        deg = 360
-    if sect is 0:
+    if rad == 0:
+        rad = 2
+    if sect == 0:
         sect = 30
+    if deg == 0:
+        deg = 360
 
     newControl = cmds.circle(c=(0, 0, 0), r=rad, s=sect, sw=deg, n=controlName, d=1)
     newControl = cmds.listRelatives(newControl)
@@ -70,13 +71,5 @@ def CreateControl(item, rad, hue, sect, deg, controlName):
 
     cmds.setAttr(newControl[0] + ".overrideEnabled", 1)
     cmds.setAttr(newControl[0] + ".overrideRGBColors", 1)
-    color = colorsys.hsv_to_rgb(hue / 360, 1, 0.7)
+    color = colorsys.hsv_to_rgb(hue[0] / 360, hue[1], hue[2])  # / 360, 1, 0.7
     cmds.setAttr(newControl[0] + ".overrideColorRGB", color[0], color[1], color[2])
-
-
-# Control(radius=Size, hue=1<->360 sections=NumOfSides(20+circle), sweep=0<->360)
-
-
-def SayHello(name):
-    print("Hello %s!" % name)
-    return
