@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     private CharacterController controller; // Moves Player
     private PlayerControls input; // Gets Player Inputs
     private SpriteRenderer aimSprite; // Aim Icon Sprite
-    private bool isTouchscreen; //, isController, isKeyboard; // What Control System in Use
+    private bool isTouchscreen, isController, isKeyboard; // What Control System in Use
     private Vector3 movePos = Vector3.zero, aimPos = Vector3.zero; // Player and Aim Positions
     [HideInInspector] public GunManager gunMan; // Manages Shooting
     public GameObject aimStick, moveStick, aimIcon, moveIcon, playerSprite; // Touchscreen Sticks to Move and Aim
@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
         gunMan = GetComponentInChildren<GunManager>();
         input = new PlayerControls();
         aimSprite = aimIcon.GetComponent<SpriteRenderer>();
-        //ControlsChange();
+        ControlsChange();
     }
 
     public void EnableInput() { input.Enable(); }
@@ -51,7 +51,7 @@ public class PlayerMove : MonoBehaviour
     
     public void Aim(InputAction.CallbackContext context)
     {
-        Vector2 aimDir = context.ReadValue<Vector2>();
+        /*Vector2 aimDir = context.ReadValue<Vector2>();
         print("AIMING: " + aimDir);
         aimIcon.transform.parent = gameObject.transform;
         aimIcon.transform.localPosition = new Vector3(aimDir.x * 6f, gameObject.transform.localPosition.y, aimDir.y * 6f);
@@ -68,9 +68,9 @@ public class PlayerMove : MonoBehaviour
             aimPos = Vector3.zero;
             playerSprite.transform.rotation = playerSprite.transform.rotation;
             aimSprite.enabled = false;
-        }
+        }*/
         
-        /*if (isKeyboard)
+        if (isKeyboard)
         {
             aimIcon.transform.parent = mainCamera.transform;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -84,7 +84,7 @@ public class PlayerMove : MonoBehaviour
                 Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
                 playerSprite.transform.rotation = rotation;
             }
-        }*/
+        }
     }
 
     public void Shoot()
@@ -104,7 +104,7 @@ public class PlayerMove : MonoBehaviour
             isTouchscreen = true;
             moveStick.SetActive(true);
             aimStick.SetActive(true);
-        }/*
+        }
         else if (controls.currentControlScheme == "Controller")
         {
             isController = true;
@@ -116,7 +116,7 @@ public class PlayerMove : MonoBehaviour
             isKeyboard = true;
             moveStick.SetActive(false);
             aimStick.SetActive(false);
-        }*/
+        }
         print("CONTROLS CHANGED TO " + controls.currentControlScheme);
         
     }
